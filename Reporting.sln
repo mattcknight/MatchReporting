@@ -1,0 +1,143 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DomesticDevReports", "DomesticDevReports\DomesticDevReports.rptproj", "{B2EE41AB-8637-4019-BD0B-9D752B5075AB}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "2014 Price Targeting", "2014 Price Targeting\2014 Price Targeting.rptproj", "{5A176B95-EA41-413F-A0A2-60F5F33C7545}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Impulse Buys", "Impulse Buys\Impulse Buys.rptproj", "{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{F1584A1B-B78D-472F-83AB-0496F18D013B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impulse Buys", "Impulse Buys", "{0626E704-DC83-49B3-B806-B22D1EBE4E52}"
+	ProjectSection(SolutionItems) = preProject
+		Top Spot Sales.sql = Top Spot Sales.sql
+		TopSpot Average Impressions per Buyer.sql = TopSpot Average Impressions per Buyer.sql
+		TopSpot Price and Duration Test.sql = TopSpot Price and Duration Test.sql
+		TopSpot Total Revenue.sql = TopSpot Total Revenue.sql
+		Undercover Sales.sql = Undercover Sales.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2014 Price Targeting", "2014 Price Targeting", "{8F3113F9-D6A0-4046-B4D4-A6AB998CE207}"
+	ProjectSection(SolutionItems) = preProject
+		Price Down Test GT 57 Cohort.sql = Price Down Test GT 57 Cohort.sql
+		Price Down Test LT23 Cohort Total Cash.sql = Price Down Test LT23 Cohort Total Cash.sql
+		Price Down Test LT23 Cohort.sql = Price Down Test LT23 Cohort.sql
+		Price Up Test Analysis.sql = Price Up Test Analysis.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site Health Monitoring", "Site Health Monitoring", "{E1E2E767-6F9E-4B81-A0DA-113F4F272FB6}"
+	ProjectSection(SolutionItems) = preProject
+		Error Page Views.sql = Error Page Views.sql
+		Match8 Application Restarts.sql = Match8 Application Restarts.sql
+	EndProjectSection
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Communication", "Communication\Communication.rptproj", "{DC630AB3-C92A-4BEF-A1BF-E874F316899A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modernization", "Modernization", "{0DA823FC-5F9D-42A8-B8D5-98ED20D7F0EE}"
+	ProjectSection(SolutionItems) = preProject
+		Daily Matches Reskin.sql = Daily Matches Reskin.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page Threshold", "Page Threshold", "{59C479EA-E621-4BC9-B3F9-E1042E0C3352}"
+	ProjectSection(SolutionItems) = preProject
+		Database Timeouts.sql = Database Timeouts.sql
+		Page Threshold by Data Center.sql = Page Threshold by Data Center.sql
+		Page Threshold by DC by Minute.sql = Page Threshold by DC by Minute.sql
+		Page Threshold Hourly with Averages.sql = Page Threshold Hourly with Averages.sql
+	EndProjectSection
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Page Threshold Monitoring", "Page Threshold Monitoring\Page Threshold Monitoring.rptproj", "{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Profile Import", "Profile Import\Profile Import.rptproj", "{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "AppDebug Monitoring", "AppDebug Monitoring\AppDebug Monitoring.rptproj", "{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Partnerships", "Partnerships\Partnerships.rptproj", "{96C5ACA8-26F1-4752-8C53-1722676F4880}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Match8 Communcation Metrics", "Match8 Communcation Metrics", "{16A128A1-90CE-406B-A372-C3B54E1431D9}"
+	ProjectSection(SolutionItems) = preProject
+		D5 Ratings by Platform.sql = D5 Ratings by Platform.sql
+		Emails by Platform.sql = Emails by Platform.sql
+		Favorites by Platform.sql = Favorites by Platform.sql
+		Likes by Platform.sql = Likes by Platform.sql
+		Winks by Platform.sql = Winks by Platform.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Debug|Default.ActiveCfg = Debug
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Debug|Default.Build.0 = DebugLocal
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Debug|Default.Deploy.0 = DebugLocal
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.DebugLocal|Default.Build.0 = DebugLocal
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Release|Default.ActiveCfg = Release
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Release|Default.Build.0 = Release
+		{B2EE41AB-8637-4019-BD0B-9D752B5075AB}.Release|Default.Deploy.0 = Release
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.Debug|Default.ActiveCfg = DebugLocal
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.Debug|Default.Build.0 = DebugLocal
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.DebugLocal|Default.Build.0 = DebugLocal
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.Release|Default.ActiveCfg = Release
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.Release|Default.Build.0 = Release
+		{5A176B95-EA41-413F-A0A2-60F5F33C7545}.Release|Default.Deploy.0 = Release
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.Debug|Default.ActiveCfg = DebugLocal
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.Debug|Default.Build.0 = DebugLocal
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.DebugLocal|Default.Build.0 = DebugLocal
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.Release|Default.ActiveCfg = Release
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.Release|Default.Build.0 = Release
+		{CCD9966D-6AE7-4EA8-924A-DCB86AB8C633}.Release|Default.Deploy.0 = Release
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.Debug|Default.ActiveCfg = DebugLocal
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.Debug|Default.Build.0 = DebugLocal
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.DebugLocal|Default.Build.0 = DebugLocal
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.Release|Default.ActiveCfg = Release
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.Release|Default.Build.0 = Release
+		{DC630AB3-C92A-4BEF-A1BF-E874F316899A}.Release|Default.Deploy.0 = Release
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.Debug|Default.ActiveCfg = DebugLocal
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.Debug|Default.Build.0 = DebugLocal
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.DebugLocal|Default.Build.0 = DebugLocal
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.Release|Default.ActiveCfg = Release
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.Release|Default.Build.0 = Release
+		{0ECA0BA0-0554-4C63-ADD3-2690CC53BE05}.Release|Default.Deploy.0 = Release
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.Debug|Default.ActiveCfg = DebugLocal
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.Debug|Default.Build.0 = DebugLocal
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.DebugLocal|Default.Build.0 = DebugLocal
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.Release|Default.ActiveCfg = Release
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.Release|Default.Build.0 = Release
+		{54CA7723-5737-405E-BE2B-CC6CF06D9DE2}.Release|Default.Deploy.0 = Release
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.Debug|Default.ActiveCfg = DebugLocal
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.Debug|Default.Build.0 = DebugLocal
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.DebugLocal|Default.Build.0 = DebugLocal
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.Release|Default.ActiveCfg = Release
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.Release|Default.Build.0 = Release
+		{D3695E24-D6D7-478F-BC8B-46E6EA7708E4}.Release|Default.Deploy.0 = Release
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Debug|Default.ActiveCfg = DebugLocal
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Debug|Default.Build.0 = DebugLocal
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.DebugLocal|Default.Build.0 = DebugLocal
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.ActiveCfg = Release
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.Build.0 = Release
+		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0626E704-DC83-49B3-B806-B22D1EBE4E52} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{8F3113F9-D6A0-4046-B4D4-A6AB998CE207} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{E1E2E767-6F9E-4B81-A0DA-113F4F272FB6} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{0DA823FC-5F9D-42A8-B8D5-98ED20D7F0EE} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{59C479EA-E621-4BC9-B3F9-E1042E0C3352} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{16A128A1-90CE-406B-A372-C3B54E1431D9} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+	EndGlobalSection
+EndGlobal

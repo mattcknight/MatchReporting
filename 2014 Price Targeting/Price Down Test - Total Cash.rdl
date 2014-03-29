@@ -1,0 +1,1766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Chart Name="Chart4">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart4_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Cohort.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!TestCohort.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Cohort.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Cash Indx </Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Cash_Indx_">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Cash_Indx_.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>'$'#,0;('$'#,0)</Format>
+                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <IntervalType>Number</IntervalType>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>0</Minimum>
+                <Maximum>100000</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>18-22 Cash</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>LT23</DataSetName>
+        <Top>0.33208in</Top>
+        <Left>0.37375in</Left>
+        <Height>5.80208in</Height>
+        <Width>6.61458in</Width>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+      <Chart Name="Chart5">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart5_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Cohort.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!TestCohort.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Cohort.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Cash Indx </Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Cash_Indx_">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Cash_Indx_.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style>
+                    <Color>Teal</Color>
+                  </Style>
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>'$'#,0;('$'#,0)</Format>
+                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <IntervalType>Number</IntervalType>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>0</Minimum>
+                <Maximum>100000</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>58+ Cash</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>GT58</DataSetName>
+        <Top>0.33208in</Top>
+        <Left>7.31125in</Left>
+        <Height>5.80208in</Height>
+        <Width>6.61458in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.27778in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.54861in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.24653in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cohort</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cash (indx)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Users (indx) </Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Conversion %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cash %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cohort">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cohort.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cohort</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cash_Indx_">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cash_Indx_.Value</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cash_Indx_</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Users_Indx_">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Users_Indx_.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Users_Indx_</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Conversion">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Conversion.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Conversion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cash">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cash.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cash</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>LT23</DataSetName>
+        <Top>6.16194in</Top>
+        <Left>0.37375in</Left>
+        <Height>0.5in</Height>
+        <Width>6.61458in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.27778in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.54861in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.24653in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cohort</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cash (indx)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Users (indx) </Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Conversion %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cash %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cohort2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cohort.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cohort</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cash_Indx_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cash_Indx_.Value</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cash_Indx_</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Users_Indx_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Users_Indx_.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Users_Indx_</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Conversion2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Conversion.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Conversion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cash2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cash.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> %</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cash</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details2" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>GT58</DataSetName>
+        <Top>6.16194in</Top>
+        <Left>7.31125in</Left>
+        <Height>0.5in</Height>
+        <Width>6.61458in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>12.08208in</Height>
+    <Style />
+  </Body>
+  <Width>15.54167in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="MAPR01">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=DA0MARP801</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>d3beb0a3-e7a7-4f02-923e-bbbb08374f0f</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="LT23">
+      <Query>
+        <DataSourceName>MAPR01</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+
+IF OBJECT_ID('tempdb..#tmpPriceDown') IS NOT NULL DROP TABLE #tmpPriceDown
+IF OBJECT_ID('tempdb..#totalsales') IS NOT NULL DROP TABLE #totalsales
+IF OBJECT_ID('tempdb..#initialsales') IS NOT NULL DROP TABLE #initialsales
+IF OBJECT_ID('tempdb..#tmpPriceDownFinal') IS NOT NULL DROP TABLE #tmpPriceDownFinal
+
+SELECT
+	u.UserId
+	,TestCohort = CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') THEN 0 -- Control
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') THEN 1 -- 25% Off
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') THEN 2 -- 50% Off
+		END
+	,AgeGroup = CASE 
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 THEN 1
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57 THEN 2
+		END
+	,DaysSinceReg = FLOOR(DATEDIFF(DAY, u.SignupDt, t.CreateDt) / 365)
+	,u.GenderGenderSeek
+	,Package = CASE 
+		WHEN td.DtlDays &lt;= 30 THEN 1
+		WHEN td.DtlDays &gt; 30 AND td.DtlDays &lt;= 100 THEN 3
+		WHEN td.DtlDays &gt; 100 AND td.DtlDays &lt;= 200 THEN 6
+		WHEN td.DtlDays &gt; 200 THEN 12
+		END
+	,CleanRead = CASE
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') AND ao.PromoID = 'default' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') AND ao.PromoID = '1160' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') AND ao.PromoID = '1161' THEN 1
+		ELSE 0
+		END
+	,MIN(t.statusdt) statusdt
+	,MIN(t.TrxId) trxId
+INTO #tmpPriceDown
+FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
+INNER JOIN ProfileReadData.dbo.Users u WITH (NOLOCK) ON u.UserID = ao.UserID AND u.sitecode = 1
+INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid AND t.lutrxtypeid IN (1, 8) AND t.lutrxstatusid = 1 AND t.lutrxcategoryid IN (1, 4)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 1
+WHERE t.StatusDt &gt;= '2014-01-28 14:00' -- Test Start Date
+AND t.StatusDt &lt;= '2014-02-27 14:00' -- to 1 mo of subs
+AND ao.IsResub = 0 -- FTS only
+AND u.LoginDisabled &lt;&gt; 2 -- No Fraud
+AND u.sitecode = 1 -- US and CA only
+AND u.GenderGenderSeek IN (1, 2, 3) -- MsW and LGBT GGS
+AND (FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 OR FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57) -- 18-22, 58+
+AND ao.PromoID &lt;&gt; '592' -- No Mobile Promo
+AND u.BrandID NOT IN (1026491, 1025282, 1025281, 1025279, 1026525, 1026754, 1026509) -- Exclude specific brandIDs
+GROUP BY 
+	u.userid
+	,CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') THEN 0
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') THEN 2
+		END
+	,CASE 
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 THEN 1
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57 THEN 2
+		END
+	,FLOOR(DATEDIFF(DAY, u.SignupDt, t.CreateDt) / 365)
+	,u.GenderGenderSeek
+	,CASE 
+		WHEN td.DtlDays &lt;= 30 THEN 1
+		WHEN td.DtlDays &gt; 30 AND td.DtlDays &lt;= 100 THEN 3
+		WHEN td.DtlDays &gt; 100 AND td.DtlDays &lt;= 200 THEN 6
+		WHEN td.DtlDays &gt; 200 THEN 12
+		END
+	,CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') AND ao.PromoID = 'default' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') AND ao.PromoID = '1160' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') AND ao.PromoID = '1161' THEN 1
+		ELSE 0
+		END
+	,td.DtlDays
+
+-- Remove users who are in other discount cohorts
+DELETE
+FROM #tmpPriceDown
+WHERE TestCohort IS NULL
+
+CREATE CLUSTERED INDEX #ifts201301 ON #tmpPriceDown (userid)
+
+-- Collect all cash
+SELECT 
+	f.TestCohort
+	,f.AgeGroup
+	,totalcashcollected = SUM(t.PreTaxAmt)
+	,cntdistinctusers = COUNT(DISTINCT f.userid)
+INTO #totalsales
+FROM #tmpPriceDown f
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.lutrxstatusid = 1 AND t.userid = f.userid AND t.luTrxCategoryID IN (0, 1, 2, 4) -- no auth
+WHERE t.StatusDt &gt;= f.statusdt
+GROUP BY f.TestCohort, f.AgeGroup
+ORDER BY f.TestCohort, f.AgeGroup
+
+-- Collect initial cash 
+SELECT 
+	f.TestCohort
+	,f.AgeGroup
+	,InitialCashCollected = SUM(t.pretaxamt)
+INTO #initialsales
+FROM #tmpPriceDown f
+INNER JOIN billingdata.dbo.Trx t WITH (NOLOCK) ON f.TrxId = t.TrxId AND f.UserID = t.UserID
+GROUP BY f.TestCohort, f.AgeGroup
+
+-- Get totals
+SELECT 
+	t1.AgeGroup
+	,t1.TestCohort
+	,t1.totalcashcollected
+	,t1.cntdistinctusers
+INTO #tmpPriceDownFinal
+FROM #totalsales t1
+JOIN #initialsales t2 ON t1.TestCohort = t2.TestCohort AND t1.AgeGroup = t2.AgeGroup
+ORDER BY t1.AgeGroup, t1.TestCohort
+
+
+DECLARE @ControlCash_LT23 DECIMAL(10,2)
+DECLARE @ControlDistSubs_LT23 DECIMAL(10,2)
+DECLARE @ControlCash_Indx_LT23 DECIMAL(10,2)
+DECLARE @ControlDistSubs_Indx_LT23 DECIMAL(10,2)
+
+DECLARE @ControlCash_GT58 DECIMAL(10,2)
+DECLARE @ControlDistSubs_GT58 DECIMAL(10,2)
+DECLARE @ControlCash_Indx_GT58 DECIMAL(10,2)
+DECLARE @ControlDistSubs_Indx_GT58 DECIMAL(10,2)
+
+SELECT 
+	@ControlCash_LT23 = SUM(totalcashcollected)
+	,@ControlCash_Indx_LT23 = SUM(totalcashcollected*.75)
+	,@ControlDistSubs_LT23 = SUM(cntdistinctusers)
+	,@ControlDistSubs_Indx_LT23 = SUM(cntdistinctusers*.75)
+FROM #tmpPriceDownFinal
+WHERE TestCohort = 0
+AND AgeGroup = 1
+GROUP BY AgeGroup, TestCohort
+
+SELECT
+	@ControlCash_GT58 = SUM(totalcashcollected)
+	,@ControlCash_Indx_GT58 = SUM(totalcashcollected*.75)
+	,@ControlDistSubs_GT58 = SUM(cntdistinctusers)
+	,@ControlDistSubs_Indx_GT58 = SUM(cntdistinctusers*.75)
+FROM #tmpPriceDownFinal
+WHERE TestCohort = 0
+AND AgeGroup = 2
+GROUP BY AgeGroup, TestCohort
+
+-- Normalize and Summarize
+SELECT
+	[TestCohort] 
+	,[Cohort] = CASE
+		WHEN TestCohort = 0 THEN 'Control'
+		WHEN TestCohort = 1 THEN '25% Off'
+		WHEN TestCohort = 2 THEN '50% Off'
+		END
+	,[Cash(Indx)] = CASE
+		WHEN TestCohort = 0 THEN CAST(ROUND(SUM(totalcashcollected*.75),2) AS NUMERIC(36,2))
+		ELSE CAST(ROUND(SUM(totalcashcollected),2) AS NUMERIC(36,2))
+		END
+	,[Users(Indx)] = CASE
+		WHEN TestCohort = 0 THEN CAST(SUM(cntdistinctusers*.75) AS NUMERIC(36,0))
+		ELSE CAST(SUM(cntdistinctusers) AS NUMERIC(36,0))
+		END
+	,[Conversion]= CASE
+		WHEN TestCohort &lt;&gt; 0 THEN CAST((((SUM(cntdistinctusers) / @ControlDistSubs_Indx_LT23) - 1)*100) AS NUMERIC(36,2))
+		ELSE 0
+		END
+	,[Cash] = CASE
+		WHEN TestCohort &lt;&gt; 0 THEN CAST((((SUM(totalcashcollected) / @ControlCash_Indx_LT23) - 1)*100) AS NUMERIC(36,2))
+		ELSE 0
+		END
+FROM #tmpPriceDownFinal
+WHERE AgeGroup = 1
+GROUP BY [TestCohort]
+ORDER BY [TestCohort]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TestCohort">
+          <DataField>TestCohort</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cash_Indx_">
+          <DataField>Cash(Indx)</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Users_Indx_">
+          <DataField>Users(Indx)</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Conversion">
+          <DataField>Conversion</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Cash">
+          <DataField>Cash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="GT58">
+      <Query>
+        <DataSourceName>MAPR01</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+
+IF OBJECT_ID('tempdb..#tmpPriceDown') IS NOT NULL DROP TABLE #tmpPriceDown
+IF OBJECT_ID('tempdb..#totalsales') IS NOT NULL DROP TABLE #totalsales
+IF OBJECT_ID('tempdb..#initialsales') IS NOT NULL DROP TABLE #initialsales
+IF OBJECT_ID('tempdb..#tmpPriceDownFinal') IS NOT NULL DROP TABLE #tmpPriceDownFinal
+
+SELECT
+	u.UserId
+	,TestCohort = CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') THEN 0 -- Control
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') THEN 1 -- 25% Off
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') THEN 2 -- 50% Off
+		END
+	,AgeGroup = CASE 
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 THEN 1
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57 THEN 2
+		END
+	,DaysSinceReg = FLOOR(DATEDIFF(DAY, u.SignupDt, t.CreateDt) / 365)
+	,u.GenderGenderSeek
+	,Package = CASE 
+		WHEN td.DtlDays &lt;= 30 THEN 1
+		WHEN td.DtlDays &gt; 30 AND td.DtlDays &lt;= 100 THEN 3
+		WHEN td.DtlDays &gt; 100 AND td.DtlDays &lt;= 200 THEN 6
+		WHEN td.DtlDays &gt; 200 THEN 12
+		END
+	,CleanRead = CASE
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') AND ao.PromoID = 'default' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') AND ao.PromoID = '1160' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') AND ao.PromoID = '1161' THEN 1
+		ELSE 0
+		END
+	,MIN(t.statusdt) statusdt
+	,MIN(t.TrxId) trxId
+INTO #tmpPriceDown
+FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
+INNER JOIN ProfileReadData.dbo.Users u WITH (NOLOCK) ON u.UserID = ao.UserID AND u.sitecode = 1
+INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid AND t.lutrxtypeid IN (1, 8) AND t.lutrxstatusid = 1 AND t.lutrxcategoryid IN (1, 4)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 1
+WHERE t.StatusDt &gt;= '2014-01-28 14:00' -- Test Start Date
+AND t.StatusDt &lt;= '2014-02-27 14:00' -- to 1 mo of subs
+AND ao.IsResub = 0 -- FTS only
+AND u.LoginDisabled &lt;&gt; 2 -- No Fraud
+AND u.sitecode = 1 -- US and CA only
+AND u.GenderGenderSeek IN (1, 2, 3) -- MsW and LGBT GGS
+AND (FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 OR FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57) -- 18-22, 58+
+AND ao.PromoID &lt;&gt; '592' -- No Mobile Promo
+AND u.BrandID NOT IN (1026491, 1025282, 1025281, 1025279, 1026525, 1026754, 1026509) -- Exclude specific brandIDs
+GROUP BY 
+	u.userid
+	,CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') THEN 0
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') THEN 2
+		END
+	,CASE 
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &lt; 23 THEN 1
+		WHEN FLOOR(DATEDIFF(DAY, u.Birthday, u.SignupDt) / 365) &gt; 57 THEN 2
+		END
+	,FLOOR(DATEDIFF(DAY, u.SignupDt, t.CreateDt) / 365)
+	,u.GenderGenderSeek
+	,CASE 
+		WHEN td.DtlDays &lt;= 30 THEN 1
+		WHEN td.DtlDays &gt; 30 AND td.DtlDays &lt;= 100 THEN 3
+		WHEN td.DtlDays &gt; 100 AND td.DtlDays &lt;= 200 THEN 6
+		WHEN td.DtlDays &gt; 200 THEN 12
+		END
+	,CASE 
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('0', '1', '2', '3') AND ao.PromoID = 'default' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('4', '5', '6') AND ao.PromoID = '1160' THEN 1
+		WHEN right(LEFT(u.testingguid, 4), 1) IN ('7', '8', '9') AND ao.PromoID = '1161' THEN 1
+		ELSE 0
+		END
+	,td.DtlDays
+
+-- Remove users who are in other discount cohorts
+DELETE
+FROM #tmpPriceDown
+WHERE TestCohort IS NULL
+
+CREATE CLUSTERED INDEX #ifts201301 ON #tmpPriceDown (userid)
+
+-- Collect all cash
+SELECT 
+	f.TestCohort
+	,f.AgeGroup
+	,totalcashcollected = SUM(t.PreTaxAmt)
+	,cntdistinctusers = COUNT(DISTINCT f.userid)
+INTO #totalsales
+FROM #tmpPriceDown f
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.lutrxstatusid = 1 AND t.userid = f.userid AND t.luTrxCategoryID IN (0, 1, 2, 4) -- no auth
+WHERE t.StatusDt &gt;= f.statusdt
+GROUP BY f.TestCohort, f.AgeGroup
+ORDER BY f.TestCohort, f.AgeGroup
+
+-- Collect initial cash 
+SELECT 
+	f.TestCohort
+	,f.AgeGroup
+	,InitialCashCollected = SUM(t.pretaxamt)
+INTO #initialsales
+FROM #tmpPriceDown f
+INNER JOIN billingdata.dbo.Trx t WITH (NOLOCK) ON f.TrxId = t.TrxId AND f.UserID = t.UserID
+GROUP BY f.TestCohort, f.AgeGroup
+
+-- Get totals
+SELECT 
+	t1.AgeGroup
+	,t1.TestCohort
+	,t1.totalcashcollected
+	,t1.cntdistinctusers
+INTO #tmpPriceDownFinal
+FROM #totalsales t1
+JOIN #initialsales t2 ON t1.TestCohort = t2.TestCohort AND t1.AgeGroup = t2.AgeGroup
+ORDER BY t1.AgeGroup, t1.TestCohort
+
+
+DECLARE @ControlCash_LT23 DECIMAL(10,2)
+DECLARE @ControlDistSubs_LT23 DECIMAL(10,2)
+DECLARE @ControlCash_Indx_LT23 DECIMAL(10,2)
+DECLARE @ControlDistSubs_Indx_LT23 DECIMAL(10,2)
+
+DECLARE @ControlCash_GT58 DECIMAL(10,2)
+DECLARE @ControlDistSubs_GT58 DECIMAL(10,2)
+DECLARE @ControlCash_Indx_GT58 DECIMAL(10,2)
+DECLARE @ControlDistSubs_Indx_GT58 DECIMAL(10,2)
+
+SELECT 
+	@ControlCash_LT23 = SUM(totalcashcollected)
+	,@ControlCash_Indx_LT23 = SUM(totalcashcollected*.75)
+	,@ControlDistSubs_LT23 = SUM(cntdistinctusers)
+	,@ControlDistSubs_Indx_LT23 = SUM(cntdistinctusers*.75)
+FROM #tmpPriceDownFinal
+WHERE TestCohort = 0
+AND AgeGroup = 1
+GROUP BY AgeGroup, TestCohort
+
+SELECT
+	@ControlCash_GT58 = SUM(totalcashcollected)
+	,@ControlCash_Indx_GT58 = SUM(totalcashcollected*.75)
+	,@ControlDistSubs_GT58 = SUM(cntdistinctusers)
+	,@ControlDistSubs_Indx_GT58 = SUM(cntdistinctusers*.75)
+FROM #tmpPriceDownFinal
+WHERE TestCohort = 0
+AND AgeGroup = 2
+GROUP BY AgeGroup, TestCohort
+
+-- Normalize and Summarize
+SELECT
+	[TestCohort] 
+	,[Cohort] = CASE
+		WHEN TestCohort = 0 THEN 'Control'
+		WHEN TestCohort = 1 THEN '25% Off'
+		WHEN TestCohort = 2 THEN '50% Off'
+		END
+	,[Cash(Indx)] = CASE
+		WHEN TestCohort = 0 THEN CAST(ROUND(SUM(totalcashcollected*.75),2) AS NUMERIC(36,2))
+		ELSE CAST(ROUND(SUM(totalcashcollected),2) AS NUMERIC(36,2))
+		END
+	,[Users(Indx)] = CASE
+		WHEN TestCohort = 0 THEN CAST(SUM(cntdistinctusers*.75) AS NUMERIC(36,0))
+		ELSE CAST(SUM(cntdistinctusers) AS NUMERIC(36,0))
+		END
+	,[Conversion]= CASE
+		WHEN TestCohort &lt;&gt; 0 THEN CAST((((SUM(cntdistinctusers) / @ControlDistSubs_Indx_GT58) - 1)*100) AS NUMERIC(36,2))
+		ELSE 0
+		END
+	,[Cash] = CASE
+		WHEN TestCohort &lt;&gt; 0 THEN CAST((((SUM(totalcashcollected) / @ControlCash_Indx_GT58) - 1)*100) AS NUMERIC(36,2))
+		ELSE 0
+		END
+FROM #tmpPriceDownFinal
+WHERE AgeGroup = 2
+GROUP BY [TestCohort]
+ORDER BY [TestCohort]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="TestCohort">
+          <DataField>TestCohort</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cash_Indx_">
+          <DataField>Cash(Indx)</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Users_Indx_">
+          <DataField>Users(Indx)</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Conversion">
+          <DataField>Conversion</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Cash">
+          <DataField>Cash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>1d9d4378-b2f0-49db-8278-4146de7ec5f0</rd:ReportID>
+</Report>
