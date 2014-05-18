@@ -461,7 +461,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 1/15: Dial-up to 50% for all members (100% in Miami and Seattle)</Value>
+                <Value>- 01/15:  Dial-up to 50% for all members (100% in Miami and Seattle)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -470,7 +470,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 1/23: Dial-up to 100% for all members</Value>
+                <Value>- 01/23:  Dial-up to 100% for all members</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -479,7 +479,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 2/5: Added Dashboard in-purchase experience</Value>
+                <Value>- 02/05:  Added Dashboard in-purchase experience</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -488,7 +488,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>        Added impression logging</Value>
+                <Value>- 02/05:  Added impression logging</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -497,7 +497,52 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 2/18: Added additional searches with TopSpot impression logging</Value>
+                <Value>- 02/18:  Added additional searches with TopSpot impression logging</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 03/04:  TopSpot added to MLT (MrSix)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 03/19:  Added Price and Duration test</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 04/07:  Added TopSpot to Communities and New People Game Search (MrSix)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 04/09:  Removed Price and Duration test: $2.99 for 60 mins is winner</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 05/07:  Added TopSpot Free Token redemption</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -508,7 +553,7 @@
         <Top>1in</Top>
         <Left>14.29167in</Left>
         <Height>5.14584in</Height>
-        <Width>4.20834in</Width>
+        <Width>4.90626in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -586,333 +631,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Chart Name="Chart2">
-        <ChartCategoryHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart2_CategoryGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!MetricDate_Start.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!MetricDate_Start.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!MetricDate_Start.Value</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Label>Total Impressions</Label>
-            </ChartMember>
-            <ChartMember>
-              <Label>Avg Impressions Buyer</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartSeriesHierarchy>
-        <ChartData>
-          <ChartSeriesCollection>
-            <ChartSeries Name="Buyers">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!TotalImpressions.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Primary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-            <ChartSeries Name="AvgImpressionsBuyer">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!AvgImpressionsBuyer.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                  </Style>
-                  <ChartMarker>
-                    <Type>Square</Type>
-                    <Size>8pt</Size>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Type>Line</Type>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Secondary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-          </ChartSeriesCollection>
-        </ChartData>
-        <ChartAreas>
-          <ChartArea Name="Default">
-            <ChartCategoryAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                  <Format>M-d</Format>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <Interval>2</Interval>
-                <IntervalType>Days</IntervalType>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Scalar>true</Scalar>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartCategoryAxes>
-            <ChartValueAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                  <Format>n0</Format>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Total Buyers</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Avg. Impressions / Buyer</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartValueAxes>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-            </Style>
-          </ChartArea>
-        </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <Position>BottomLeft</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption>Avg. Impression per Buyer</Caption>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>General</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-            </Style>
-          </ChartTitle>
-        </ChartTitles>
-        <Palette>BrightPastel</Palette>
-        <ChartBorderSkin>
-          <Style>
-            <BackgroundColor>Gray</BackgroundColor>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <Color>White</Color>
-          </Style>
-        </ChartBorderSkin>
-        <ChartNoDataMessage Name="NoDataMessage">
-          <Caption>No Data Available</Caption>
-          <Style>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <TextAlign>General</TextAlign>
-            <VerticalAlign>Top</VerticalAlign>
-          </Style>
-        </ChartNoDataMessage>
-        <DataSetName>AvgImpressionPerBuyer</DataSetName>
-        <Top>6.30083in</Top>
-        <Left>0.125in</Left>
-        <Height>5.02083in</Height>
-        <Width>14.05209in</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <BackgroundColor>White</BackgroundColor>
-          <BackgroundGradientType>None</BackgroundGradientType>
-        </Style>
-      </Chart>
     </ReportItems>
     <Height>14.04167in</Height>
     <Style />
@@ -948,7 +666,7 @@ DECLARE
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
 SELECT @FloorDate = '2014-01-15'-- MIN(BeginDt)
-FROM BillingData.dbo.AcctDtlTopSpot
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -967,13 +685,18 @@ SELECT
 	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
 INTO #tmpTopSpotPurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.dbo.AcctDtlImpulseBuys adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) AND adts.luProdFeatureID = 26
+LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
+	AND adts.luProdFeatureID = 26 
+	AND adts.IsComplimentary = 0 
+	AND adts.SuppressFromUser = 0
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM BillingData.dbo.AcctDtlImpulseBuys
+		FROM BillingData.dbo.ImpulseFeatureLog
 		WHERE luProdFeatureID = 26
+		AND IsComplimentary = 0 
+		AND SuppressFromUser = 0
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt
@@ -1032,58 +755,6 @@ INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.lu
         <Field Name="MetricValue">
           <DataField>MetricValue</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="AvgImpressionPerBuyer">
-      <Query>
-        <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-SET NOCOUNT ON
-
-IF OBJECT_ID('tempdb..#tmpTSImpressions') IS NOT NULL DROP TABLE #tmpTSImpressions
-
-SELECT 
-	MetricUnit = adib.AcctDtlID
-	,MetricDate_Start = CAST(adib.BeginDt AS DATE)
-	,MetricDate_End = CAST(adib.EndDt AS DATE)
-	,MetricValue = COUNT(1)
-INTO #tmpTSImpressions
-FROM BillingData.dbo.AcctDtlImpulseBuys adib WITH (NOLOCK)
-LEFT JOIN Match_4.dbo.TopSpotImpressions tsi WITH (NOLOCK) On adib.UserID = tsi.ResultUserID AND tsi.ImpressionDt BETWEEN adib.BeginDt AND adib.EndDt
-WHERE adib.BeginDt &gt;= '2014-01-15'
-AND adib.luProdFeatureID = 26
-GROUP BY 
-	adib.AcctDtlID
-	,CAST(adib.BeginDt AS DATE)
-	,CAST(adib.EndDt AS DATE)
-ORDER BY 2
-
-SELECT MetricDate_Start, COUNT(MetricUnit) AS Buyers, SUM(MetricValue) AS TotalImpressions,  SUM(MetricValue) / COUNT(MetricUnit) AS AvgImpressionsBuyer
-FROM #tmpTSImpressions
-WHERE MetricDate_Start &lt;= dateadd(day, -1, CAST(getdate() AS DATE))
-GROUP BY MetricDate_Start
-ORDER BY 1
-
-DROP TABLE #tmpTSImpressions</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="MetricDate_Start">
-          <DataField>MetricDate_Start</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Buyers">
-          <DataField>Buyers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TotalImpressions">
-          <DataField>TotalImpressions</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AvgImpressionsBuyer">
-          <DataField>AvgImpressionsBuyer</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>

@@ -8,42 +8,32 @@
             <ChartMember>
               <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!PurchaseDate.Value</GroupExpression>
+                  <GroupExpression>=Fields!MetricDate.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!PurchaseDate.Value</Value>
+                  <Value>=Fields!MetricDate.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!PurchaseDate.Value</Label>
+              <Label>=Fields!MetricDate.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart1_SeriesGroup">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!TestCohort.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!TestCohort.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!TestCohort.Value</Label>
+              <Label>Metric Vale</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="ARPU">
+            <ChartSeries Name="MetricVale">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!ARPU.Value)</Y>
+                    <Y>=Sum(Fields!MetricVale.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -55,7 +45,6 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Line</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -81,7 +70,7 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>MMM-dd</Format>
+                  <Format>M/d/yy</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -111,6 +100,7 @@
                   <Length>0.5</Length>
                 </ChartMinorTickMarks>
                 <CrossAt>NaN</CrossAt>
+                <Scalar>true</Scalar>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
                 <ChartAxisScaleBreak>
@@ -159,16 +149,13 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>'$'0.00;('$'0.00)</Format>
-                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>ARPU</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
-                <IntervalType>Number</IntervalType>
                 <ChartMajorGridLines>
                   <Style>
                     <Border>
@@ -236,25 +223,6 @@
             </Style>
           </ChartArea>
         </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <Position>RightCenter</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -272,10 +240,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.20708in</Top>
+        <Top>0.4384in</Top>
         <Left>0.11333in</Left>
-        <Height>5.23958in</Height>
-        <Width>15.5625in</Width>
+        <Height>4.52083in</Height>
+        <Width>11.01042in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -285,11 +253,43 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Subscriptions by day for Site Code 1 Non-US and Non-Canada countries</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>0.11896in</Top>
+        <Left>0.11333in</Left>
+        <Height>0.25in</Height>
+        <Width>5.67708in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>7.6025in</Height>
+    <Height>5.38375in</Height>
     <Style />
   </Body>
-  <Width>15.96875in</Width>
+  <Width>11.32292in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -302,7 +302,7 @@
     <DataSource Name="MARP03">
       <DataSourceReference>MARP03</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>cc02eeac-049f-4d10-a3a1-fb6d4993d862</rd:DataSourceID>
+      <rd:DataSourceID>7472c646-39c1-482c-9338-4de7442df132</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -310,73 +310,39 @@
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-
-IF OBJECT_ID('tempdb..#tmpTopSpotPriceTest') IS NOT NULL DROP TABLE #tmpTopSpotPriceTest
+SET NOCOUNT ON
 
 SELECT
-	u.UserId
-	,TestCohort = CASE 
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0','1') THEN '$1.99 for 15 Mins' -- $1.99 for 15 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('2','3') THEN '$1.99 for 30 Mins' -- $1.99 for 30 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('4','5') THEN '$2.99 for 30 Mins' -- $2.99 for 30 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('6','7') THEN '$2.99 for 60 Mins' -- $2.99 for 60 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('8','9') THEN '$3.00 for 30 Mins' -- $3.00 for 30 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('A','B') THEN '$3.00 for 60 Mins' -- $3.00 for 30 Mins - AKA Control
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('C','D') THEN '$3.99 for 60 Mins' -- $3.99 for 60 Mins
-		WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('E','F') THEN '$4.99 for 60 Mins' -- $4.99 for 60 Mins
-		END
-	,t.PreTaxAmt
-	,t.TrxID
-	,t.lutrxtypeid
-	,t.lutrxcategoryid
-	,PurchaseDate = CAST(t.CreateDt AS DATE)
-INTO #tmpTopSpotPriceTest
-FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
-INNER JOIN ProfileReadData.dbo.Users u WITH (NOLOCK) ON u.UserID = ao.UserID
-INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
-INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
-INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid AND t.lutrxtypeid = 14 AND t.lutrxstatusid = 1 AND t.lutrxcategoryid IN (1, 4)
-INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 26 -- TopSpot
-WHERE t.StatusDt &gt;= '2014-01-15' -- Test Start Date
-AND t.StatusDt &lt; CAST(GETDATE() AS DATE)
-AND u.LoginDisabled &lt;&gt; 2 -- No Fraud
-AND u.sitecode = 1 -- US and CA only
-
-
-SELECT 
-	PurchaseDate
-	,TestCohort
-	,Users = COUNT(DISTINCT UserID)
-	,TotalRevenue = SUM(PreTaxAmt)
-	,ARPU = SUM(PreTaxAmt) / COUNT(DISTINCT UserID)
-FROM #tmpTopSpotPriceTest
-GROUP BY PurchaseDate, TestCohort
-ORDER BY 1,2
-
-DROP TABLE #tmpTopSpotPriceTest</CommandText>
+	MetricDate = CAST(ao.CreateDt AS DATE)
+	,MetricVale = COUNT(1)
+FROM [BillingData].[dbo].[AcctOrder] ao WITH (NOLOCK)
+JOIN [BillingData].[dbo].[AcctDtl] adtl WITH (NOLOCK) ON ao.[AcctOrderID] = adtl.[AcctOrderID]
+JOIN [BillingData].[dbo].[ProdDtl] pdtl WITH (NOLOCK) ON adtl.[ProdDtlID] = pdtl.[ProdDtlID]
+JOIN [BillingData].[dbo].[Prod] prod WITH (NOLOCK) ON pdtl.[ProdID] = prod.[ProdID] 
+	AND [luProdFeatureID] = 1
+JOIN [BillingData].[dbo].[TrxDtl] tdtl WITH (NOLOCK) ON adtl.[AcctDtlID] = tdtl.[AcctDtlID]
+JOIN [BillingData].[dbo].[Trx] trx WITH (NOLOCK) ON tdtl.[TrxID] = trx.[TrxID] 
+	AND trx.[luTrxStatusID] = 1 
+	AND trx.[luTrxCategoryID] = 1 
+	AND trx.[luTrxTypeID] IN (1,8)
+JOIN ProfileReadData.dbo.Users u ON ao.UserID = u.UserID
+	AND u.LoginDisabled = 0
+	AND u.SiteCode = 1
+	AND u.CountryCode NOT IN (1,2)
+WHERE ao.SID IS NOT NULL
+AND ao.CreateDt &gt;= '2014-03-01'
+GROUP BY 
+	CAST(ao.CreateDt AS DATE)</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="PurchaseDate">
-          <DataField>PurchaseDate</DataField>
+        <Field Name="MetricDate">
+          <DataField>MetricDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="TestCohort">
-          <DataField>TestCohort</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Users">
-          <DataField>Users</DataField>
+        <Field Name="MetricVale">
+          <DataField>MetricVale</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="TotalRevenue">
-          <DataField>TotalRevenue</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ARPU">
-          <DataField>ARPU</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -384,5 +350,5 @@ DROP TABLE #tmpTopSpotPriceTest</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>5dd2708a-2f7b-4e58-a48a-f15c1cee6940</rd:ReportID>
+  <rd:ReportID>510b8a0c-b914-4cef-be34-6be9e2f86117</rd:ReportID>
 </Report>

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DomesticDevReports", "DomesticDevReports\DomesticDevReports.rptproj", "{B2EE41AB-8637-4019-BD0B-9D752B5075AB}"
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "2014 Price Targeting", "2014 Price Targeting\2014 Price Targeting.rptproj", "{5A176B95-EA41-413F-A0A2-60F5F33C7545}"
@@ -63,6 +63,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Match8 Communcation Metrics
 		Likes by Platform.sql = Likes by Platform.sql
 		Winks by Platform.sql = Winks by Platform.sql
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communities", "Communities", "{2AE18E2A-5E5D-4201-B54E-6325C83F6A44}"
+	ProjectSection(SolutionItems) = preProject
+		Community Adoptions.sql = Community Adoptions.sql
+	EndProjectSection
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Subscription", "Subscription\Subscription.rptproj", "{0562505A-C30A-44F3-9D5A-2E3AB25B889D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +135,14 @@ Global
 		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.ActiveCfg = Release
 		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.Build.0 = Release
 		{96C5ACA8-26F1-4752-8C53-1722676F4880}.Release|Default.Deploy.0 = Release
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Debug|Default.ActiveCfg = Debug
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Debug|Default.Build.0 = Debug
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Debug|Default.Deploy.0 = Debug
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.DebugLocal|Default.Build.0 = DebugLocal
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.ActiveCfg = Release
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.Build.0 = Release
+		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,5 +154,6 @@ Global
 		{0DA823FC-5F9D-42A8-B8D5-98ED20D7F0EE} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{59C479EA-E621-4BC9-B3F9-E1042E0C3352} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{16A128A1-90CE-406B-A372-C3B54E1431D9} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{2AE18E2A-5E5D-4201-B54E-6325C83F6A44} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 	EndGlobalSection
 EndGlobal

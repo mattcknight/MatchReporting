@@ -467,6 +467,24 @@
             </TextRuns>
             <Style />
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 4/16: Remove Price Test</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 4/16 Add Miami and Seattle to test geos</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>1in</Top>
@@ -585,7 +603,7 @@ DECLARE
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
 SELECT @FloorDate = '2014-03-19'-- MIN(BeginDt)
-FROM BillingData.dbo.AcctDtlTopSpot
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 27
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -604,13 +622,13 @@ SELECT
 	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
 INTO #tmpTopSpotPurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.dbo.AcctDtlImpulseBuys adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) AND adts.luProdFeatureID = 27 -- Undercover
+LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) AND adts.luProdFeatureID = 27
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM BillingData.dbo.AcctDtlImpulseBuys
-		WHERE luProdFeatureID = 27
+		FROM BillingData.dbo.ImpulseFeatureLog
+		WHERE luProdFeatureID = 26
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt
@@ -621,7 +639,8 @@ OPTION (maxrecursion 2000)
 
 SELECT *
 FROM #tmpTopSpotPurchases
-WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
+WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))
+ORDER BY PurchaseDate</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
