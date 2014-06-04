@@ -603,7 +603,7 @@ DECLARE
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
 SELECT @FloorDate = '2014-03-19'-- MIN(BeginDt)
-FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 27
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -622,13 +622,18 @@ SELECT
 	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
 INTO #tmpTopSpotPurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) AND adts.luProdFeatureID = 27
+LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
+	AND adts.luProdFeatureID = 27
+	AND adts.IsComplimentary = 0 
+	AND adts.SuppressFromUser = 0
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
 		FROM BillingData.dbo.ImpulseFeatureLog
-		WHERE luProdFeatureID = 26
+		WHERE luProdFeatureID = 27
+		AND IsComplimentary = 0 
+		AND SuppressFromUser = 0
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt
@@ -639,8 +644,7 @@ OPTION (maxrecursion 2000)
 
 SELECT *
 FROM #tmpTopSpotPurchases
-WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))
-ORDER BY PurchaseDate</CommandText>
+WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

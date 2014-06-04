@@ -800,7 +800,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.14583in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -820,7 +820,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Redeemed</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -834,6 +836,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -852,7 +855,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Not Redeemed</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -866,6 +871,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -884,7 +890,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Not Active</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -898,6 +906,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1032,8 +1041,187 @@
         <Top>5.75917in</Top>
         <Left>15.34375in</Left>
         <Height>0.5in</Height>
-        <Width>3in</Width>
+        <Width>3.14583in</Width>
         <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Group</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Group">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Group.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Group</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Total">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Total.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Total</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details1" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>FreeTSTotalSales</DataSetName>
+        <Top>6.32861in</Top>
+        <Left>15.34375in</Left>
+        <Height>0.5in</Height>
+        <Width>2in</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1210,6 +1398,93 @@ AND ifl.SuppressFromUser = 0</CommandText>
         </Field>
         <Field Name="Not_Active">
           <DataField>Not_Active</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="FreeTSTotalSales">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+IF OBJECT_ID('tempdb..#tmpTopSpotPurchases') IS NOT NULL
+	DROP TABLE  #tmpTopSpotPurchases
+ 
+DECLARE
+    @FloorDate DATE,
+    @CeilingDate DATE = dateadd(day, 1, getdate())
+
+IF OBJECT_ID('tempdb..#tmpFreeTopSpotUsers') IS NOT NULL
+	DROP TABLE  #tmpFreeTopSpotUsers
+
+SELECT 
+	tst.UserID
+	,[Group] = CASE 
+		WHEN tst.test_control_group = 1 THEN 'Week 1 Test'
+		WHEN tst.test_control_group = 2 THEN 'Week 2 Test'
+		WHEN tst.test_control_group = 3 THEN 'Control'
+		END
+INTO #tmpFreeTopSpotUsers
+FROM workdb.dbo.VP_topspottestusers_subset tst
+WHERE tst.test_control_group IN (1,3)
+
+
+SELECT @FloorDate = '2014-05-07'-- MIN(BeginDt)
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
+;
+WITH cteDateDriver(PurchaseDate)
+AS (
+	SELECT PurchaseDate = @FloorDate
+	UNION ALL
+	SELECT DATEADD(DAY, 1, PurchaseDate)
+	FROM cteDateDriver
+	WHERE PurchaseDate &lt; dateadd(day, -1, getdate())
+    )
+SELECT 
+	dd.PurchaseDate
+	,fts.[Group]
+    ,PurchaseCount = COUNT(adts.AcctDtlID)
+    ,DistinctUserCount = COUNT(DISTINCT adts.UserID)
+    ,NewUserCount = ISNULL(newusers.NewUserCount,0)
+	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00 * COUNT(adts.AcctDtlID) / NULLIF(COUNT(DISTINCT adts.UserID),0))
+	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00 * COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
+INTO #tmpTopSpotPurchases
+FROM cteDateDriver dd
+LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
+	AND adts.luProdFeatureID = 26 
+	AND adts.IsComplimentary = 0 
+	AND adts.SuppressFromUser = 0
+JOIN #tmpFreeTopSpotUsers fts ON adts.Userid = fts.Userid
+LEFT JOIN (
+	SELECT minBeginDt, NewUserCount = count(UserID)
+	FROM (
+		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
+		FROM BillingData.dbo.ImpulseFeatureLog
+		WHERE luProdFeatureID = 26
+		AND IsComplimentary = 0
+		AND SuppressFromUser = 0
+		GROUP BY UserID
+		) x
+	GROUP BY minBeginDt
+	) newusers ON dd.PurchaseDate = newusers.minBeginDt
+GROUP BY dd.PurchaseDate,fts.[Group], ISNULL(newusers.NewUserCount,0)
+ORDER BY 1,2
+OPTION (maxrecursion 2000)
+
+SELECT [Group], Total = SUM(PurchaseCount)
+FROM #tmpTopSpotPurchases
+WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))
+GROUP BY [Group]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Group">
+          <DataField>Group</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>

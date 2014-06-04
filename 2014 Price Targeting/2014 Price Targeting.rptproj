@@ -14,6 +14,14 @@
   <DataSets />
   <Reports>
     <ProjectItem>
+      <Name>Phase 3 Part 2.rdl</Name>
+      <FullPath>Phase 3 Part 2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Phase 3 Part 3.rdl</Name>
+      <FullPath>Phase 3 Part 3.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Phase 3.rdl</Name>
       <FullPath>Phase 3.rdl</FullPath>
     </ProjectItem>
@@ -30,8 +38,8 @@
       <FullPath>Price Up Test.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Phase 3 Part 2.rdl</Name>
-      <FullPath>Phase 3 Part 2.rdl</FullPath>
+      <Name>Phase 3 Part 4.rdl</Name>
+      <FullPath>Phase 3 Part 4.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

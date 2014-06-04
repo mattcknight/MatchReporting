@@ -20,10 +20,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impulse Buys", "Impulse Buy
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2014 Price Targeting", "2014 Price Targeting", "{8F3113F9-D6A0-4046-B4D4-A6AB998CE207}"
 	ProjectSection(SolutionItems) = preProject
-		Price Down Test GT 57 Cohort.sql = Price Down Test GT 57 Cohort.sql
-		Price Down Test LT23 Cohort Total Cash.sql = Price Down Test LT23 Cohort Total Cash.sql
-		Price Down Test LT23 Cohort.sql = Price Down Test LT23 Cohort.sql
-		Price Up Test Analysis.sql = Price Up Test Analysis.sql
+		Phase 1 Price Down Analysis.sql = Phase 1 Price Down Analysis.sql
+		Phase 1 Price Down Test GT 57 Cohort.sql = Phase 1 Price Down Test GT 57 Cohort.sql
+		Phase 1 Price Down Test LT23 Cohort Total Cash.sql = Phase 1 Price Down Test LT23 Cohort Total Cash.sql
+		Phase 1 Price Down Test LT23 Cohort.sql = Phase 1 Price Down Test LT23 Cohort.sql
+		Phase 2 Price Up Test Analysis.sql = Phase 2 Price Up Test Analysis.sql
+		Phase 3 Part 1.sql = Phase 3 Part 1.sql
+		Phase 3 Part 2.sql = Phase 3 Part 2.sql
+		Phase 3 Part 3.sql = Phase 3 Part 3.sql
+		Phase 3 Part 4.sql = Phase 3 Part 4.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site Health Monitoring", "Site Health Monitoring", "{E1E2E767-6F9E-4B81-A0DA-113F4F272FB6}"
@@ -70,6 +75,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communities", "Communities"
 	EndProjectSection
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Subscription", "Subscription\Subscription.rptproj", "{0562505A-C30A-44F3-9D5A-2E3AB25B889D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Profile Capture", "Profile Capture", "{52556FA7-F890-4624-9092-17A4B1D07457}"
+	ProjectSection(SolutionItems) = preProject
+		Profile Capture Phase 1 Analysis.sql = Profile Capture Phase 1 Analysis.sql
+	EndProjectSection
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ProfileCapture", "ProfileCapture\ProfileCapture.rptproj", "{65DD5C9E-6F39-4465-A002-C293C75A6AE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +155,14 @@ Global
 		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.ActiveCfg = Release
 		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.Build.0 = Release
 		{0562505A-C30A-44F3-9D5A-2E3AB25B889D}.Release|Default.Deploy.0 = Release
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Debug|Default.ActiveCfg = Debug
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Debug|Default.Build.0 = Debug
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Debug|Default.Deploy.0 = Debug
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.DebugLocal|Default.Build.0 = DebugLocal
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Release|Default.ActiveCfg = Release
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Release|Default.Build.0 = Release
+		{65DD5C9E-6F39-4465-A002-C293C75A6AE0}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,5 +175,6 @@ Global
 		{59C479EA-E621-4BC9-B3F9-E1042E0C3352} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{16A128A1-90CE-406B-A372-C3B54E1431D9} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{2AE18E2A-5E5D-4201-B54E-6325C83F6A44} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{52556FA7-F890-4624-9092-17A4B1D07457} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 	EndGlobalSection
 EndGlobal
