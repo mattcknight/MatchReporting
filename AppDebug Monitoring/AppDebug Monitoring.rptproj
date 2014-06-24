@@ -10,6 +10,10 @@
       <Name>MARP03.rds</Name>
       <FullPath>MARP03.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>MADW.rds</Name>
+      <FullPath>MADW.rds</FullPath>
+    </ProjectItem>
   </DataSources>
   <DataSets />
   <Reports>
@@ -20,6 +24,10 @@
     <ProjectItem>
       <Name>Debug by Codebase Above Threshold.rdl</Name>
       <FullPath>Debug by Codebase Above Threshold.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Debug Trend by Date for MessageText.rdl</Name>
+      <FullPath>Debug Trend by Date for MessageText.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Debugs by Codebase.rdl</Name>
@@ -58,8 +66,8 @@
       <FullPath>Maya_Hourly.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Debug Trend by Date for MessageText.rdl</Name>
-      <FullPath>Debug Trend by Date for MessageText.rdl</FullPath>
+      <Name>Low Performing Servers.rdl</Name>
+      <FullPath>Low Performing Servers.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

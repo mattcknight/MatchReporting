@@ -16,7 +16,7 @@ AND WebServer NOT LIKE '%213'
 AND WebServer NOT LIKE '%214'
 AND WebServer NOT LIKE '%500'
 AND WebServer <> 'DA1MAWS057'
-AND LogEntryDateTime >= CAST(DATEADD(DAY,-3,GETDATE()) AS DATE)
+AND LogEntryDateTime >= CAST(DATEADD(HOUR,-24,GETDATE()) AS DATE)
 AND CodebaseID = 36
 GROUP BY
 	CAST(LogEntryDateTime AS DATE)

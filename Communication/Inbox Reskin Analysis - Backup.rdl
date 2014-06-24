@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="MARP03">
+      <rd:DataSourceID>e35c2b93-ee0e-4e3b-842a-ad128a71677a</rd:DataSourceID>
+      <DataSourceReference>MARP03</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>37c266a4-9ad3-4c0b-a7d3-29fbd5a13d26</rd:ReportID>
+  <Width>8in</Width>
+  <Body>
+    <Height>0.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Inbox Reskin Analysis</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.36in</Top>
+        <Style />
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Value>Cohort</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Value>Users</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Value>Emails Sent</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Value>Initial Contact</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Value>Conversations</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Value>Subs</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Value>Conv Rate</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Value>Email Per Sub</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.22in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Cohort">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Cohort</rd:DefaultName>
+                      <Value>=Fields!Cohort.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Users">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Users</rd:DefaultName>
+                      <Value>=Fields!Users.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Emails_Sent">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Emails_Sent</rd:DefaultName>
+                      <Value>=Fields!Emails_Sent.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="InitialContact">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>InitialContact</rd:DefaultName>
+                      <Value>=Fields!InitialContact.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Conversations">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Conversations</rd:DefaultName>
+                      <Value>=Fields!Conversations.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Subs">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Subs</rd:DefaultName>
+                      <Value>=Fields!Subs.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ConvRate">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>ConvRate</rd:DefaultName>
+                      <Value>=Fields!ConvRate.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="EmailPerSub">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>EmailPerSub</rd:DefaultName>
+                      <Value>=Fields!EmailPerSub.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Users">
+          <DataField>Users</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Emails_Sent">
+          <DataField>Emails_Sent</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InitialContact">
+          <DataField>InitialContact</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Conversations">
+          <DataField>Conversations</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Subs">
+          <DataField>Subs</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ConvRate">
+          <DataField>ConvRate</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="EmailPerSub">
+          <DataField>EmailPerSub</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+DECLARE @StartDate DATETIME
+SELECT @StartDate = CAST('2014-06-11 14:00:00.000' AS DATETIME)
+
+
+IF object_id('tempdb.dbo.#InboxReskinUsers') IS NOT NULL DROP TABLE #InboxReskinUsers;
+SELECT 
+	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0') THEN 'Test' ELSE 'Control' END
+	,u.UserID
+INTO #InboxReskinUsers
+FROM [ProfileReadData].[dbo].[Users] u WITH (NOLOCK)
+WHERE u.SignupDt &gt;= @StartDate
+AND u.SiteCode = 1
+AND u.CountryCode = 1 -- US Only
+AND u.LoginDisabled NOT IN (1, 2) -- No Fraud
+
+
+IF object_id('tempdb.dbo.#Emailers') IS NOT NULL DROP TABLE #Emailers;
+SELECT 
+	u.Cohort
+	,Emails_Sent = COUNT(DISTINCT l.EmailHeaderID)
+	,InitialContact = COUNT(DISTINCT CASE WHEN l.IsResponse = 0 THEN l.EmailHeaderID END)
+	,Conversations = COUNT(DISTINCT CASE WHEN l.IsResponse = 0 THEN l.RecipientUserID END)
+INTO #Emailers
+FROM #InboxReskinUsers u
+INNER JOIN [Match_UserData].[dbo].[EmailHeaderLight] l WITH (NOLOCK) ON l.SenderUserID = u.UserID 
+	AND l.SendDate &gt;= @StartDate
+GROUP BY u.Cohort
+ORDER BY u.Cohort
+
+
+IF object_id('tempdb.dbo.#Subs') IS NOT NULL DROP TABLE #Subs;
+SELECT 
+	u.Cohort
+	,Subs = COUNT(DISTINCT u.UserID)
+INTO #Subs
+FROM #InboxReskinUsers u
+INNER JOIN billingdata.[dbo].[trx] t WITH (NOLOCK) ON t.UserID = u.UserID
+	AND t.StatusDt &gt;= @StartDate
+	AND t.luTrxTypeID In (1,8,12) -- New, BDC, Gift
+	AND t.luTrxStatusID = 1  -- SUCCESS
+	AND t.luTrxCategoryID IN (1,4) -- SALES and Gift Transfer
+JOIN BillingData.dbo.TrxDtl td WITH (NOLOCK) ON T.TrxID=TD.TrxID
+JOIN BillingData.dbo.AcctDtl ad WITH (NOLOCK) ON TD.AcctDtlID = AD.AcctDtlID
+	AND ad.BeginDt &lt;&gt; ad.EndDt
+JOIN BillingData.dbo.Acct act WITH (NOLOCK) ON ad.UserID = act.UserID
+JOIN BillingData.dbo.AcctOrder ao WITH (NOLOCK) ON ad.AcctOrderID = ao.AcctOrderID
+JOIN BillingData.dbo.ProdDtl pd WITH (NOLOCK) ON AD.ProdDtlID = PD.ProdDtlID
+JOIN BillingData.dbo.ProdGrp pg WITH (NOLOCK) ON PG.ProdGrpID = PD.ProdGrpID
+JOIN BillingData.dbo.Prod p WITH (NOLOCK) ON PD.ProdID = P.ProdID
+JOIN BillingData.dbo.luProdFeature lpf WITH (NOLOCK) ON P.luProdFeatureID=lpf.luProdFeatureID
+	AND lpf.luProdFeatureID = 1
+GROUP BY u.Cohort
+ORDER BY u.Cohort
+
+
+SELECT
+	u.Cohort
+	,Users = COUNT(DISTINCT u.UserID)
+	,e.Emails_Sent
+	,e.InitialContact
+	,e.Conversations
+	,s.Subs
+	,ConvRate = CAST(s.Subs AS DECIMAL(10,2)) / COUNT(DISTINCT u.UserID)
+	,EmailPerSub = CAST(s.Subs AS DECIMAL(10,2)) / e.Emails_Sent
+FROM #InboxReskinUsers u
+JOIN #Emailers e ON u.Cohort = e.Cohort
+JOIN #Subs s on u.Cohort = s.Cohort
+GROUP BY u.Cohort,e.Emails_Sent,e.InitialContact,e.Conversations, s.Subs
+ORDER BY 1
+
+
+DROP TABLE #InboxReskinUsers
+DROP TABLE #Emailers
+DROP TABLE #Subs</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -15,6 +15,9 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>1.27083in</Width>
             </TablixColumn>
             <TablixColumn>
@@ -102,6 +105,43 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Gender</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -560,6 +600,38 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Gender">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Gender.Value</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Gender</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="RC_Viewers">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -907,6 +979,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -933,7 +1006,7 @@
         <Top>0.36in</Top>
         <Left>0.11458in</Left>
         <Height>0.43in</Height>
-        <Width>13.32986in</Width>
+        <Width>14.32986in</Width>
         <Style />
       </Tablix>
       <Textbox Name="Textbox6">
@@ -943,16 +1016,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>2014 Pricing Strategy: Phase 3 - </Value>
+                <Value>2014 Pricing Strategy: Phase 4</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>Part 4</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Red</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1017,7 +1083,9 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Color>Green</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1293,7 +1361,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Group 01: Price Up: 2% of Population</Caption>
+            <Caption>Male: Group 01: Price Up 7.5%</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -1318,7 +1386,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Group01</DataSetName>
+        <DataSetName>Group01_Male</DataSetName>
         <Top>0.8425in</Top>
         <Left>0.11458in</Left>
         <Height>3.85417in</Height>
@@ -1410,7 +1478,8 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Auto</Type>
+                    <Type>Cross</Type>
+                    <Size>10pt</Size>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
@@ -1651,7 +1720,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Group 02: Price Up: 19% of Population</Caption>
+            <Caption>Male: Group 02: Control</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -1676,7 +1745,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Group02</DataSetName>
+        <DataSetName>Group02_Male</DataSetName>
         <Top>0.8425in</Top>
         <Left>5.18055in</Left>
         <Height>3.85417in</Height>
@@ -1691,11 +1760,333 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Milestones:</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 06/11: Launch Date</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.36in</Top>
+        <Left>14.47222in</Left>
+        <Height>0.72917in</Height>
+        <Width>1.48959in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Chart Name="Chart10">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart9_CategoryGroup2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!ScoreGroup.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!ScoreGroup.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!ScoreGroup.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Size</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Size">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Size.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style>
+                      <Format>0%</Format>
+                    </Style>
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style>
+                    <Color>Tomato</Color>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundHatchType>None</BackgroundHatchType>
+                  </Style>
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Visible>False</Visible>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Male Distribution</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>Population_Actual</DataSetName>
+        <Top>0.8425in</Top>
+        <Left>10.20486in</Left>
+        <Height>3.85417in</Height>
+        <Width>3.25347in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
       <Chart Name="Chart4">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart2_CategoryGroup3">
+              <Group Name="Chart4_CategoryGroup">
                 <GroupExpressions>
                   <GroupExpression>=Fields!Cohort.Value</GroupExpression>
                 </GroupExpressions>
@@ -1733,7 +2124,9 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Color>Green</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -2009,7 +2402,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Group 04: Price Down: 9% of Population</Caption>
+            <Caption>Female: Group 01: Price Up 7.5%</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -2034,12 +2427,12 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Group04</DataSetName>
-        <Top>4.81166in</Top>
+        <DataSetName>Group01_Female</DataSetName>
+        <Top>4.76611in</Top>
         <Left>0.11458in</Left>
         <Height>3.85417in</Height>
         <Width>4.96875in</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -2126,7 +2519,8 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Auto</Type>
+                    <Type>Cross</Type>
+                    <Size>10pt</Size>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
@@ -2367,7 +2761,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Group 05: Price Down: 61% of Population</Caption>
+            <Caption>Female: Group 02: Control</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -2392,447 +2786,26 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Group05</DataSetName>
-        <Top>4.81166in</Top>
-        <Left>5.15278in</Left>
+        <DataSetName>Group02_Female</DataSetName>
+        <Top>4.76611in</Top>
+        <Left>5.18055in</Left>
         <Height>3.85417in</Height>
         <Width>4.96875in</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <BackgroundColor>White</BackgroundColor>
-          <BackgroundGradientType>None</BackgroundGradientType>
-        </Style>
-      </Chart>
-      <Chart Name="Chart6">
-        <ChartCategoryHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Group Name="Chart2_CategoryGroup5">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!Cohort.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!Cohort.Value</Value>
-                </SortExpression>
-              </SortExpressions>
-              <Label>=Fields!Cohort.Value</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Label>Total Cash</Label>
-            </ChartMember>
-            <ChartMember>
-              <Label>Resign </Label>
-            </ChartMember>
-            <ChartMember>
-              <Label>RC to Sub </Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartSeriesHierarchy>
-        <ChartData>
-          <ChartSeriesCollection>
-            <ChartSeries Name="Total_Cash">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!Total_Cash.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Primary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-            <ChartSeries Name="Resign__">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!Resign__.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Type>Auto</Type>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Type>Line</Type>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Secondary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-            <ChartSeries Name="RC_to_Sub__">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!RC_to_Sub__.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Type>Auto</Type>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Type>Line</Type>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Secondary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-          </ChartSeriesCollection>
-        </ChartData>
-        <ChartAreas>
-          <ChartArea Name="Default">
-            <ChartCategoryAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartCategoryAxes>
-            <ChartValueAxes>
-              <ChartAxis Name="Primary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                  <Format>'$'#,0;('$'#,0)</Format>
-                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Minimum>NaN</Minimum>
-                <Maximum>NaN</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-              <ChartAxis Name="Secondary">
-                <Style>
-                  <FontSize>8pt</FontSize>
-                  <Format>0%</Format>
-                </Style>
-                <ChartAxisTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                  </Style>
-                </ChartAxisTitle>
-                <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                    </Border>
-                  </Style>
-                </ChartMajorGridLines>
-                <ChartMinorGridLines>
-                  <Style>
-                    <Border>
-                      <Color>Gainsboro</Color>
-                      <Style>Dotted</Style>
-                    </Border>
-                  </Style>
-                </ChartMinorGridLines>
-                <ChartMinorTickMarks>
-                  <Length>0.5</Length>
-                </ChartMinorTickMarks>
-                <CrossAt>NaN</CrossAt>
-                <Location>Opposite</Location>
-                <Minimum>NaN</Minimum>
-                <Maximum>0.5</Maximum>
-                <ChartAxisScaleBreak>
-                  <Style />
-                </ChartAxisScaleBreak>
-              </ChartAxis>
-            </ChartValueAxes>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-            </Style>
-          </ChartArea>
-        </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <Position>BottomCenter</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption>Control: 9% of Popluation</Caption>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>General</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-            </Style>
-          </ChartTitle>
-        </ChartTitles>
-        <Palette>BrightPastel</Palette>
-        <ChartBorderSkin>
-          <Style>
-            <BackgroundColor>Gray</BackgroundColor>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <Color>White</Color>
-          </Style>
-        </ChartBorderSkin>
-        <ChartNoDataMessage Name="NoDataMessage">
-          <Caption>No Data Available</Caption>
-          <Style>
-            <BackgroundGradientType>None</BackgroundGradientType>
-            <TextAlign>General</TextAlign>
-            <VerticalAlign>Top</VerticalAlign>
-          </Style>
-        </ChartNoDataMessage>
-        <DataSetName>Group03</DataSetName>
-        <Top>0.8425in</Top>
-        <Left>10.19097in</Left>
-        <Height>3.85417in</Height>
-        <Width>3.25347in</Width>
-        <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Color>LightGrey</Color>
-            <Style>Solid</Style>
-          </Border>
-          <BackgroundColor>White</BackgroundColor>
-          <BackgroundGradientType>None</BackgroundGradientType>
-        </Style>
-      </Chart>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Milestones:</Value>
-                <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 05/30: Re-lauch of scoring model</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 06/11: Test ended, see Phase 4</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.36in</Top>
-        <Left>13.61458in</Left>
-        <Height>1.52084in</Height>
-        <Width>2.59376in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
-      </Textbox>
-      <Chart Name="Chart9">
+      </Chart>
+      <Chart Name="Chart11">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart9_CategoryGroup">
+              <Group Name="Chart9_CategoryGroup3">
                 <GroupExpressions>
                   <GroupExpression>=Fields!ScoreGroup.Value</GroupExpression>
                 </GroupExpressions>
@@ -2868,14 +2841,17 @@
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Color>Tomato</Color>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundHatchType>None</BackgroundHatchType>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Shape</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -2903,7 +2879,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -2974,11 +2950,12 @@
             </ChartCategoryAxes>
             <ChartValueAxes>
               <ChartAxis Name="Primary">
+                <Visible>False</Visible>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -3050,28 +3027,9 @@
             </Style>
           </ChartArea>
         </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <Position>BottomCenter</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Population Assumption</Caption>
+            <Caption>Female Distribution</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -3096,9 +3054,9 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Population</DataSetName>
-        <Top>4.81166in</Top>
-        <Left>10.19097in</Left>
+        <DataSetName>Population_Actual_Female</DataSetName>
+        <Top>4.76611in</Top>
+        <Left>10.20486in</Left>
         <Height>3.85417in</Height>
         <Width>3.25347in</Width>
         <ZIndex>8</ZIndex>
@@ -3111,11 +3069,28 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Chart Name="Chart10">
+      <Chart Name="Chart7">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart9_CategoryGroup2">
+              <Group Name="Chart7_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Gender.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Gender.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Gender.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart7_SeriesGroup">
                 <GroupExpressions>
                   <GroupExpression>=Fields!ScoreGroup.Value</GroupExpression>
                 </GroupExpressions>
@@ -3126,13 +3101,6 @@
                 </SortExpression>
               </SortExpressions>
               <Label>=Fields!ScoreGroup.Value</Label>
-            </ChartMember>
-          </ChartMembers>
-        </ChartCategoryHierarchy>
-        <ChartSeriesHierarchy>
-          <ChartMembers>
-            <ChartMember>
-              <Label>Size</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -3158,7 +3126,6 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Type>Shape</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -3186,7 +3153,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -3261,7 +3228,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -3354,7 +3321,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Population Actual</Caption>
+            <Caption>Population by Gender</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -3379,11 +3346,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Population_Actual</DataSetName>
-        <Top>4.81166in</Top>
-        <Left>13.61458in</Left>
-        <Height>3.85417in</Height>
-        <Width>3.25347in</Width>
+        <DataSetName>Population_Gender</DataSetName>
+        <Top>1.15862in</Top>
+        <Left>13.5in</Left>
+        <Height>3.53805in</Height>
+        <Width>3in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -3421,6 +3388,7 @@
         <CommandText>SELECT 
 	[Score Group] = ScoreGroup
 	,[Cohort]
+	,[Gender]
 	,[RC Viewers] = RCViewers
 	,[Pmnt Viewers] = PmntViewers
 	,[Subs]
@@ -3431,7 +3399,8 @@
 	,[ARPU]
 	,[Resignations]
 	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4</CommandText>
+FROM WorkDB.dbo.MK_PriceTest4
+ORDER BY Gender, ScoreGroup, Cohort</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -3441,6 +3410,10 @@ FROM WorkDB.dbo.MK_PriceTest3_Phase4</CommandText>
         </Field>
         <Field Name="Cohort">
           <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RC_Viewers">
@@ -3485,12 +3458,13 @@ FROM WorkDB.dbo.MK_PriceTest3_Phase4</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="Group01">
+    <DataSet Name="Group01_Male">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SELECT 
 	[Score Group] = ScoreGroup
 	,[Cohort]
+	,[Gender]
 	,[RC Viewers] = RCViewers
 	,[Pmnt Viewers] = PmntViewers
 	,[Subs]
@@ -3501,8 +3475,9 @@ FROM WorkDB.dbo.MK_PriceTest3_Phase4</CommandText>
 	,[ARPU]
 	,[Resignations]
 	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-WHERE ScoreGroup = 'Group 01'</CommandText>
+FROM WorkDB.dbo.MK_PriceTest4
+WHERE ScoreGroup = 'Group 01'
+AND Gender = 'Male'</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -3512,6 +3487,10 @@ WHERE ScoreGroup = 'Group 01'</CommandText>
         </Field>
         <Field Name="Cohort">
           <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RC_Viewers">
@@ -3556,12 +3535,13 @@ WHERE ScoreGroup = 'Group 01'</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="Group02">
+    <DataSet Name="Group02_Male">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SELECT 
 	[Score Group] = ScoreGroup
 	,[Cohort]
+	,[Gender]
 	,[RC Viewers] = RCViewers
 	,[Pmnt Viewers] = PmntViewers
 	,[Subs]
@@ -3572,8 +3552,9 @@ WHERE ScoreGroup = 'Group 01'</CommandText>
 	,[ARPU]
 	,[Resignations]
 	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-WHERE ScoreGroup = 'Group 02'</CommandText>
+FROM WorkDB.dbo.MK_PriceTest4 
+WHERE ScoreGroup = 'Group 02'
+AND Gender = 'Male'</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -3583,6 +3564,10 @@ WHERE ScoreGroup = 'Group 02'</CommandText>
         </Field>
         <Field Name="Cohort">
           <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RC_Viewers">
@@ -3627,223 +3612,19 @@ WHERE ScoreGroup = 'Group 02'</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="Group04">
+    <DataSet Name="Population_Actual">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SELECT 
-	[Score Group] = ScoreGroup
-	,[Cohort]
-	,[RC Viewers] = RCViewers
-	,[Pmnt Viewers] = PmntViewers
-	,[Subs]
-	,[RC to Pmnt %] = RC_Pmnt
-	,[Pmnt to Sub %] = Pmnt_Sub
-	,[RC to Sub %] = RC_Sub
-	,[Total Cash] = TotalCash
-	,[ARPU]
-	,[Resignations]
-	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-WHERE ScoreGroup = 'Group 04'</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="Score_Group">
-          <DataField>Score Group</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cohort">
-          <DataField>Cohort</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RC_Viewers">
-          <DataField>RC Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_Viewers">
-          <DataField>Pmnt Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Subs">
-          <DataField>Subs</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Pmnt__">
-          <DataField>RC to Pmnt %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_to_Sub__">
-          <DataField>Pmnt to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Sub__">
-          <DataField>RC to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total_Cash">
-          <DataField>Total Cash</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ARPU">
-          <DataField>ARPU</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Resignations">
-          <DataField>Resignations</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Resign__">
-          <DataField>Resign %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Group05">
-      <Query>
-        <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SELECT 
-	[Score Group] = ScoreGroup
-	,[Cohort]
-	,[RC Viewers] = RCViewers
-	,[Pmnt Viewers] = PmntViewers
-	,[Subs]
-	,[RC to Pmnt %] = RC_Pmnt
-	,[Pmnt to Sub %] = Pmnt_Sub
-	,[RC to Sub %] = RC_Sub
-	,[Total Cash] = TotalCash
-	,[ARPU]
-	,[Resignations]
-	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-WHERE ScoreGroup = 'Group 05'</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="Score_Group">
-          <DataField>Score Group</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cohort">
-          <DataField>Cohort</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RC_Viewers">
-          <DataField>RC Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_Viewers">
-          <DataField>Pmnt Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Subs">
-          <DataField>Subs</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Pmnt__">
-          <DataField>RC to Pmnt %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_to_Sub__">
-          <DataField>Pmnt to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Sub__">
-          <DataField>RC to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total_Cash">
-          <DataField>Total Cash</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ARPU">
-          <DataField>ARPU</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Resignations">
-          <DataField>Resignations</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Resign__">
-          <DataField>Resign %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Group03">
-      <Query>
-        <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SELECT 
-	[Score Group] = ScoreGroup
-	,[Cohort]
-	,[RC Viewers] = RCViewers
-	,[Pmnt Viewers] = PmntViewers
-	,[Subs]
-	,[RC to Pmnt %] = RC_Pmnt
-	,[Pmnt to Sub %] = Pmnt_Sub
-	,[RC to Sub %] = RC_Sub
-	,[Total Cash] = TotalCash
-	,[ARPU]
-	,[Resignations]
-	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-WHERE ScoreGroup = 'Group 03'</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="Score_Group">
-          <DataField>Score Group</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Cohort">
-          <DataField>Cohort</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RC_Viewers">
-          <DataField>RC Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_Viewers">
-          <DataField>Pmnt Viewers</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Subs">
-          <DataField>Subs</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Pmnt__">
-          <DataField>RC to Pmnt %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Pmnt_to_Sub__">
-          <DataField>Pmnt to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="RC_to_Sub__">
-          <DataField>RC to Sub %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Total_Cash">
-          <DataField>Total Cash</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ARPU">
-          <DataField>ARPU</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="Resignations">
-          <DataField>Resignations</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Resign__">
-          <DataField>Resign %</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Population">
-      <Query>
-        <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SELECT * FROM WorkDB.dbo.MK_PriceTest3_Population ORDER BY ScoreGroup</CommandText>
+        <CommandText>DECLARE @TotalSize INT
+SELECT @TotalSize = SUM(RCViewers) FROM WorkDB.dbo.MK_PriceTest4 WHERE Gender = 'Male'
+
+SELECT
+	ScoreGroup = ScoreGroup
+	,Size = SUM(RCViewers) / CAST(@TotalSize AS DECIMAL(10,2))
+FROM WorkDB.dbo.MK_PriceTest4
+WHERE Gender = 'Male'
+GROUP BY ScoreGroup
+ORDER BY ScoreGroup</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -3857,23 +3638,208 @@ WHERE ScoreGroup = 'Group 03'</CommandText>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="Population_Actual">
+    <DataSet Name="Group01_Female">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SELECT 
+	[Score Group] = ScoreGroup
+	,[Cohort]
+	,[Gender]
+	,[RC Viewers] = RCViewers
+	,[Pmnt Viewers] = PmntViewers
+	,[Subs]
+	,[RC to Pmnt %] = RC_Pmnt
+	,[Pmnt to Sub %] = Pmnt_Sub
+	,[RC to Sub %] = RC_Sub
+	,[Total Cash] = TotalCash
+	,[ARPU]
+	,[Resignations]
+	,[Resign %] = ResignRate
+FROM WorkDB.dbo.MK_PriceTest4
+WHERE ScoreGroup = 'Group 01'
+AND Gender = 'Female'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Score_Group">
+          <DataField>Score Group</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RC_Viewers">
+          <DataField>RC Viewers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Pmnt_Viewers">
+          <DataField>Pmnt Viewers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Subs">
+          <DataField>Subs</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RC_to_Pmnt__">
+          <DataField>RC to Pmnt %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Pmnt_to_Sub__">
+          <DataField>Pmnt to Sub %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RC_to_Sub__">
+          <DataField>RC to Sub %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Total_Cash">
+          <DataField>Total Cash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ARPU">
+          <DataField>ARPU</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Resignations">
+          <DataField>Resignations</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Resign__">
+          <DataField>Resign %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Group02_Female">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SELECT 
+	[Score Group] = ScoreGroup
+	,[Cohort]
+	,[Gender]
+	,[RC Viewers] = RCViewers
+	,[Pmnt Viewers] = PmntViewers
+	,[Subs]
+	,[RC to Pmnt %] = RC_Pmnt
+	,[Pmnt to Sub %] = Pmnt_Sub
+	,[RC to Sub %] = RC_Sub
+	,[Total Cash] = TotalCash
+	,[ARPU]
+	,[Resignations]
+	,[Resign %] = ResignRate
+FROM WorkDB.dbo.MK_PriceTest4
+WHERE ScoreGroup = 'Group 02'
+AND Gender = 'Female'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Score_Group">
+          <DataField>Score Group</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RC_Viewers">
+          <DataField>RC Viewers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Pmnt_Viewers">
+          <DataField>Pmnt Viewers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Subs">
+          <DataField>Subs</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RC_to_Pmnt__">
+          <DataField>RC to Pmnt %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Pmnt_to_Sub__">
+          <DataField>Pmnt to Sub %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RC_to_Sub__">
+          <DataField>RC to Sub %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Total_Cash">
+          <DataField>Total Cash</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ARPU">
+          <DataField>ARPU</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Resignations">
+          <DataField>Resignations</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Resign__">
+          <DataField>Resign %</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Population_Actual_Female">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>DECLARE @TotalSize INT
-SELECT @TotalSize = SUM(RCViewers) FROM WorkDB.dbo.MK_PriceTest3_Phase4
+SELECT @TotalSize = SUM(RCViewers) FROM WorkDB.dbo.MK_PriceTest4 WHERE Gender = 'Female'
 
 SELECT
 	ScoreGroup = ScoreGroup
 	,Size = SUM(RCViewers) / CAST(@TotalSize AS DECIMAL(10,2))
-FROM WorkDB.dbo.MK_PriceTest3_Phase4
-GROUP BY ScoreGroup
-ORDER BY ScoreGroup</CommandText>
+FROM WorkDB.dbo.MK_PriceTest4
+WHERE Gender = 'Female'
+GROUP BY ScoreGroup, Gender
+ORDER BY ScoreGroup, Gender</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="ScoreGroup">
           <DataField>ScoreGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Size">
+          <DataField>Size</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Population_Gender">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>DECLARE @TotalSize INT
+SELECT @TotalSize = SUM(RCViewers) FROM WorkDB.dbo.MK_PriceTest4
+
+SELECT
+	ScoreGroup = ScoreGroup
+	,Gender
+	,Size = SUM(RCViewers) / CAST(@TotalSize AS DECIMAL(10,2))
+FROM WorkDB.dbo.MK_PriceTest4
+GROUP BY ScoreGroup, Gender
+ORDER BY ScoreGroup, Gender</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ScoreGroup">
+          <DataField>ScoreGroup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Size">

@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2014 Price Targeting", "201
 		Phase 3 Part 2.sql = Phase 3 Part 2.sql
 		Phase 3 Part 3.sql = Phase 3 Part 3.sql
 		Phase 3 Part 4.sql = Phase 3 Part 4.sql
+		Phase 4.sql = Phase 4.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site Health Monitoring", "Site Health Monitoring", "{E1E2E767-6F9E-4B81-A0DA-113F4F272FB6}"

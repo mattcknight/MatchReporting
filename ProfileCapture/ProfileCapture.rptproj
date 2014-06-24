@@ -17,6 +17,10 @@
       <Name>Profile Capture Phase 1 at 25 per.rdl</Name>
       <FullPath>Profile Capture Phase 1 at 25 per.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Profile Capture Phase 2 at 6_25 per.rdl</Name>
+      <FullPath>Profile Capture Phase 2 at 6_25 per.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

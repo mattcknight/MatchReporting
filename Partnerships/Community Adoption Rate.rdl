@@ -50,6 +50,7 @@
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
+                    <Type>Auto</Type>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
@@ -81,6 +82,7 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>M/d/yy</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -110,7 +112,6 @@
                   <Length>0.5</Length>
                 </ChartMinorTickMarks>
                 <CrossAt>NaN</CrossAt>
-                <Scalar>true</Scalar>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
                 <IncludeZero>false</IncludeZero>
@@ -241,6 +242,7 @@
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontSize>8pt</FontSize>
             </Style>
+            <Position>BottomCenter</Position>
             <ChartLegendTitle>
               <Caption />
               <Style>
@@ -270,9 +272,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.44667in</Top>
+        <Top>1.155in</Top>
         <Left>0.155in</Left>
-        <Height>7.48958in</Height>
+        <Height>6.78125in</Height>
         <Width>14.375in</Width>
         <Style>
           <Border>
@@ -321,6 +323,198 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.96875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.92708in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="MetricValue">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!MetricValue.Value)</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>MetricValue</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="MetricValue1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!MetricValue.Value)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>MetricValue1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="GGS">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!GGS.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!GGS.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="GGS">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!GGS.Value</Value>
+                            <Style>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Right</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>GGS</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>LightGrey</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Right</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>LightGrey</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.49875in</Top>
+        <Left>0.155in</Left>
+        <Height>0.5in</Height>
+        <Width>1.89583in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
     </ReportItems>
     <Height>8.17542in</Height>
     <Style />
@@ -350,26 +544,24 @@ SET NOCOUNT ON
 
 select 
 	MetricDate = CAST(psc.CreateDt AS DATE)
-	,u.GenderGenderSeek
 	,GGS = CASE 
-		WHEN u.GenderGenderSeek = 1 THEN 'Gay Men'
+		WHEN u.GenderGenderSeek = 1 THEN 'Men'
 		WHEN u.GenderGenderSeek = 2 THEN 'Men'
-		WHEN u.GenderGenderSeek = 3 THEN 'Gay Women'
+		WHEN u.GenderGenderSeek = 3 THEN 'Women'
 		WHEN u.GenderGenderSeek = 4 THEN 'Women'
 		END
 	,MetricValue = COUNT(*)
 from [ProfileReadData].[dbo].[proSelfCommunity] psc with (nolock)
 inner join profilereaddata.dbo.users u with (nolock) on psc.userid = u.userid
 where u.LoginDisabled = 0
-and psc.CreateDt &lt; CAST(GETDATE() AS DATE)
 and psc.CreateDt &gt;= '2014-02-18'
+AND psc.CreateDt &lt; CAST(GETDATE() AS DATE)
 group by 
 	CAST(psc.CreateDt AS DATE)
-	,u.GenderGenderSeek
 	,CASE 
-		WHEN u.GenderGenderSeek = 1 THEN 'Gay Men'
+		WHEN u.GenderGenderSeek = 1 THEN 'Men'
 		WHEN u.GenderGenderSeek = 2 THEN 'Men'
-		WHEN u.GenderGenderSeek = 3 THEN 'Gay Women'
+		WHEN u.GenderGenderSeek = 3 THEN 'Women'
 		WHEN u.GenderGenderSeek = 4 THEN 'Women'
 		END
 order by 1,2</CommandText>
@@ -379,10 +571,6 @@ order by 1,2</CommandText>
         <Field Name="MetricDate">
           <DataField>MetricDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="GenderGenderSeek">
-          <DataField>GenderGenderSeek</DataField>
-          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
         <Field Name="GGS">
           <DataField>GGS</DataField>

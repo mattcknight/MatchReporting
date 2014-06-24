@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="MADW">
+      <rd:DataSourceID>4fbe3380-59f2-4130-90ba-854663b81978</rd:DataSourceID>
+      <DataSourceReference>MADW</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>f7de1b09-a686-41fe-8f14-44dfbfe689d5</rd:ReportID>
+  <Width>8in</Width>
+  <Body>
+    <Height>0.79in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Low Performing Servers</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.36in</Top>
+        <Style />
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Value>Data Center</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Value>Web Server Name</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Value>Cnt</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Value>Mean</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Value>St Dev</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Value>Allowed Variance</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Value>Actual Variance</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Value>Pct Miss</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.22in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.22in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DataCenter">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>DataCenter</rd:DefaultName>
+                      <Value>=Fields!DataCenter.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="WebServerName">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>WebServerName</rd:DefaultName>
+                      <Value>=Fields!WebServerName.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Cnt">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Cnt</rd:DefaultName>
+                      <Value>=Fields!Cnt.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Mean">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Mean</rd:DefaultName>
+                      <Value>=Fields!Mean.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="St_Dev">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>St_Dev</rd:DefaultName>
+                      <Value>=Fields!St_Dev.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Allowed_Variance">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Allowed_Variance</rd:DefaultName>
+                      <Value>=Fields!Allowed_Variance.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Actual_Variance">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Actual_Variance</rd:DefaultName>
+                      <Value>=Fields!Actual_Variance.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Pct_Miss">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Pct_Miss</rd:DefaultName>
+                      <Value>=Fields!Pct_Miss.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="DataCenter">
+          <DataField>DataCenter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WebServerName">
+          <DataField>WebServerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cnt">
+          <DataField>Cnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Mean">
+          <DataField>Mean</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="St_Dev">
+          <DataField>St_Dev</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Allowed_Variance">
+          <DataField>Allowed_Variance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Actual_Variance">
+          <DataField>Actual_Variance</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Pct_Miss">
+          <DataField>Pct_Miss</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>MADW</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+SELECT -- Raw Data
+	DataCenter = CASE WHEN WebServerName LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+	,WebServerName
+	,Cnt = COUNT(1)
+INTO #Page
+FROM [DW].[dbo].[Page] WITH (NOLOCK)
+WHERE WeekOfYear = DATEPART(WEEK,GETDATE())
+AND PageDt &gt;= DATEADD(MINUTE,-120,GETDATE())
+AND PageDt &lt; DATEADD(MINUTE,-45,GETDATE())
+AND WebServerName NOT LIKE '%141'
+AND WebServerName NOT LIKE '%142'
+AND WebServerName NOT LIKE '%143'
+AND WebServerName NOT LIKE '%144'
+AND WebServerName NOT LIKE '%145'
+AND WebServerName NOT LIKE '%146'
+AND WebServerName NOT LIKE '%147'
+AND WebServerName NOT LIKE '%148'
+AND WebServerName NOT LIKE '%149'
+AND WebServerName NOT LIKE '%150'
+AND WebServerName NOT LIKE '%151'
+AND WebServerName NOT LIKE '%152'
+AND WebServerName NOT LIKE '%153'
+AND WebServerName NOT LIKE '%154'
+AND WebServerName NOT LIKE '%211'
+AND WebServerName NOT LIKE '%212'
+AND WebServerName NOT LIKE '%213'
+AND WebServerName NOT LIKE '%214'
+AND WebServerName NOT LIKE '%500'
+AND WebServerName NOT LIKE 'DA0%'
+AND WebServerName NOT LIKE '%MIWS%'
+AND WebServerName NOT LIKE '%NEW'
+AND WebServerName NOT LIKE 'DA3%'
+AND WebServerName NOT LIKE 'EC3%'
+AND WebServerName IS NOT NULL
+AND WebServerName &lt;&gt; 'DA1MAWS057'
+GROUP BY 
+	 CASE WHEN WebServerName LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+	 ,WebServerName
+ORDER BY 
+	 CASE WHEN WebServerName LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+
+SELECT -- StDev and Mean
+	DataCenter
+	,stdev_SlowPages = STDEV(Cnt)
+	,Mean_SlowPages = 
+		(
+			(SELECT MAX(Cnt) 
+			FROM (SELECT TOP 50 PERCENT Cnt FROM #Page WHERE DataCenter = a.DataCenter ORDER BY Cnt) AS BottomHalf)
+			+
+			(SELECT MIN(Cnt) 
+			FROM (SELECT TOP 50 PERCENT Cnt FROM #Page WHERE DataCenter = a.DataCenter ORDER BY Cnt DESC) AS TopHalf)
+		) / 2
+INTO #PageStDev
+FROM #Page a
+GROUP BY DataCenter
+
+SELECT -- Find servers outside the StDev x2
+	p.DataCenter
+	,p.WebServerName
+	,Cnt
+	,Mean = CAST(ps.Mean_SlowPages AS DECIMAL(10,0))
+	,St_Dev = CAST(ps.stdev_SlowPages AS DECIMAL(10,0))
+	,Allowed_Variance = CAST(ps.stdev_SlowPages * 2 AS DECIMAL(10,0))
+	,Actual_Variance = ps.Mean_SlowPages - Cnt
+	,Pct_Miss = CAST((ps.Mean_SlowPages - Cnt) / CAST(ps.stdev_SlowPages * 2 AS DECIMAL(10,0)) - 1 AS DECIMAL(10,2))
+FROM #Page p
+JOIN #PageStDev ps ON p.DataCenter = ps.DataCenter
+WHERE (ps.Mean_SlowPages - Cnt) / CAST(ps.stdev_SlowPages * 2 AS DECIMAL(10,0)) - 1 &gt;= 0.25
+GROUP BY p.DataCenter, p.WebServerName, p.Cnt, ps.Mean_SlowPages, ps.stdev_SlowPages
+HAVING (ps.Mean_SlowPages - Cnt) &gt; (ps.stdev_SlowPages * 2)
+ORDER BY 3 DESC
+
+DROP TABLE #Page
+DROP TABLE #PageStDev</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

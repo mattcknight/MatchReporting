@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="MARP03">
+      <rd:DataSourceID>4e457725-5aae-40fa-a81c-69f06b1aa555</rd:DataSourceID>
+      <DataSourceReference>MARP03</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>8442e8f4-744b-4cae-a7c3-8a7cf680ed3e</rd:ReportID>
+  <Width>7in</Width>
+  <Body>
+    <Height>0.63in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Slow Databases</Value>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.21in</Height>
+      </Textbox>
+      <Table Name="table1">
+        <Top>0.21in</Top>
+        <Header>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Value>Data Source Alias</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Value>Total</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Value>CV</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <Value>DP</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Value>Total Time</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Value>Db Time</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Value>Ratio</Value>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DataSourceAlias">
+                      <rd:DefaultName>DataSourceAlias</rd:DefaultName>
+                      <Value>=Fields!DataSourceAlias.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Total">
+                      <rd:DefaultName>Total</rd:DefaultName>
+                      <Value>=Fields!Total.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CV">
+                      <rd:DefaultName>CV</rd:DefaultName>
+                      <Value>=Fields!CV.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DP">
+                      <rd:DefaultName>DP</rd:DefaultName>
+                      <Value>=Fields!DP.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TotalTime">
+                      <rd:DefaultName>TotalTime</rd:DefaultName>
+                      <Value>=Fields!TotalTime.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DbTime">
+                      <rd:DefaultName>DbTime</rd:DefaultName>
+                      <Value>=Fields!DbTime.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Ratio">
+                      <rd:DefaultName>Ratio</rd:DefaultName>
+                      <Value>=Fields!Ratio.Value</Value>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.21in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+        </TableColumns>
+        <DataSetName>DataSet1</DataSetName>
+      </Table>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="DataSourceAlias">
+          <DataField>DataSourceAlias</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CV">
+          <DataField>CV</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DP">
+          <DataField>DP</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalTime">
+          <DataField>TotalTime</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="DbTime">
+          <DataField>DbTime</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Ratio">
+          <DataField>Ratio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON 
+
+IF OBJECT_ID('tempdb..#SlowPages') IS NOT NULL DROP TABLE #SlowPages
+
+SELECT  
+	LogDay = CAST(pdt.LogEntryDateTime AS DATE)
+	,ph.WebServer
+	,p.[Page]
+	,ds.DataSourceAlias
+	,DSAlias =  CASE
+		WHEN ds.DataSourceAlias LIKE '%mass%' THEN 'Session'
+		WHEN ds.DataSourceAlias = 'MASESS' THEN 'Session'
+		WHEN ds.DataSourceAlias = 'DAL16' THEN 'Read'
+		WHEN ds.DataSourceAlias LIKE '%masr%' THEN 'Read'
+		WHEN ds.DataSourceAlias = 'DAL17\MAWRITE01' THEN 'Write'
+		WHEN ds.DataSourceAlias = 'MAREG' THEN 'Reg'
+		WHEN ds.DataSourceAlias = 'MAREGWRITE' THEN 'Reg'
+		WHEN ds.DataSourceAlias LIKE '%masa85%' THEN 'Reg'
+		WHEN ds.DataSourceAlias = 'MAOSDB\MAOSDB01' THEN 'OSDB'
+		WHEN ds.DataSourceAlias = 'MASchEng' THEN 'Search Engine'
+		WHEN ds.DataSourceAlias = 'MasCache' THEN 'Cache'
+		WHEN ds.DataSourceAlias = 'MAPHOTO' THEN 'Photo'
+		WHEN ds.DataSourceAlias LIKE '%masp%' THEN 'Photo'
+		WHEN ds.DataSourceAlias = 'CHINT' THEN 'Chem Int'
+		ELSE ds.DataSourceAlias
+		END
+	,pr.ProcName
+    ,DataCenter = CASE WHEN ph.WebServer LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+	,TotalTime = ph.ExecutionTime
+	,DBTime = ph.DbTime
+INTO #SlowPages
+FROM ReportsDevelopment.dbo.PageThresholdHeader ph WITH (NOLOCK)
+JOIN ReportsDevelopment.dbo.PageThresholdPage p WITH (NOLOCK) ON ph.PageId = p.PageId
+LEFT JOIN ReportsDevelopment.dbo.PageThresholdDetail pdt WITH (NOLOCK) ON ph.SeqNum = pdt.SeqNum
+LEFT JOIN ReportsDevelopment.dbo.pageThresholdProcName pr WITH (NOLOCK) ON pr.ProcNameId = pdt.ProcNameId
+LEFT JOIN ReportsDevelopment.dbo.PageThresholdDataSourceAlias ds WITH (NOLOCK) ON ds.DataSourceAliasId = pdt.DataSourceAliasId
+WHERE ph.LogEntryDateTime &gt;= DATEADD(Minute,-10,GETDATE())
+--WHERE ph.LogEntryDateTime &gt;= '2014-06-05 13:10'
+--AND ph.LogEntryDateTime &lt; '2014-06-05 13:20'
+--WHERE ph.LogEntryDateTime &gt;= '2014-06-05 22:30'
+--AND ph.LogEntryDateTime &lt; '2014-06-05 22:40'
+AND ph.ExecutionTime &gt;= 5000
+
+IF OBJECT_ID('tempdb..#tmpSlowPages') IS NOT NULL DROP TABLE #tmpSlowPages
+
+SELECT
+	WebServer
+	,DataSourceAlias
+	--,ProcName
+	,COUNT(1) AS Total
+	,COALESCE(SUM(CASE WHEN DataCenter = 'DuPont' THEN 1 END),0) AS DuPont
+	,COALESCE(SUM(CASE WHEN DataCenter = 'ClearView' THEN 1 END),0) AS ClearView
+	,TotalTime = AVG(TotalTime)
+	,DbTime = AVG(DbTime)
+	,RatioPageToDb = AVG(DbTime) / CAST(AVG(TotalTime) AS DECIMAL(20,2))
+INTO #tmpSlowPages
+FROM #SlowPages
+GROUP BY WebServer, DataSourceAlias
+ORDER BY 1,2,3 DESC
+
+SELECT DataSourceAlias, Total = SUM(Total), CV = SUM(ClearView), DP = SUM(DuPont), TotalTime = SUM(TotalTime), DbTime = SUM(DbTime), Ratio = AVG(RatioPageToDb)
+FROM #tmpSlowPages
+WHERE RatioPageToDb &gt; 0.5
+GROUP BY DataSourceAlias
+HAVING SUM(Total) &gt; 1000
+ORDER BY 2 DESC, 1</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

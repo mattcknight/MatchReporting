@@ -1,0 +1,1197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.40625in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.83333in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Data Center</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Data Source Alias</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Proc Name</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Occurance</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Avg Db Time (s)</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DataCenter">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DataCenter.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DataCenter</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DataSourceAlias">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DataSourceAlias.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DataSourceAlias</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ProcName">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ProcName.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ProcName</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cnt_Occurance">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cnt_Occurance.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cnt_Occurance</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Avg_ProcTime">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Avg_ProcTime.Value</Value>
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Avg_ProcTime</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Databases</DataSetName>
+        <Top>0.27945in</Top>
+        <Left>0.125in</Left>
+        <Height>0.42in</Height>
+        <Width>7.51041in</Width>
+        <Style />
+      </Tablix>
+      <Tablix Name="table2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.40625in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.83333in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.27083in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Data Center</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Web Server</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox27</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Occurance</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Mean</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>StDev</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DataSourceAlias2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DC.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DataSourceAlias</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Total2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Server.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Total</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox28">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cnt">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cnt.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cnt</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TotalTime2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Mean.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TotalTime</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DbTime2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!StDev.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DbTime</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group2">
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Servers</DataSetName>
+        <Top>1.29771in</Top>
+        <Left>0.125in</Left>
+        <Height>0.42in</Height>
+        <Width>7.51041in</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Tablix>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Slow Databases</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>0.01556in</Top>
+        <Left>0.125in</Left>
+        <Height>0.22222in</Height>
+        <Width>1.3125in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Slow Web Servers</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>1.03382in</Top>
+        <Left>0.125in</Left>
+        <Height>0.22222in</Height>
+        <Width>1.3125in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>1.76542in</Height>
+    <Style />
+  </Body>
+  <Width>7.71875in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="MARP03">
+      <DataSourceReference>MARP03</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>4e457725-5aae-40fa-a81c-69f06b1aa555</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="MADW">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=DA0MARP009\MADW01</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>74f8094b-1d27-45ba-aee5-22f13727979f</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Databases">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON 
+
+IF OBJECT_ID('tempdb..#SlowPages') IS NOT NULL DROP TABLE #SlowPages
+SELECT
+	DataCenter = CASE WHEN ph.WebServer LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+	,ds.DataSourceAlias
+	,pr.ProcName
+	,TotalTime = ph.ExecutionTime
+	,ProcTime = pdt.ComputedExecTime
+INTO #SlowPages
+FROM ReportsDevelopment.dbo.PageThresholdHeader ph WITH (NOLOCK)
+JOIN ReportsDevelopment.dbo.PageThresholdDetail pdt WITH (NOLOCK) ON ph.SeqNum = pdt.SeqNum 
+	AND pdt.LogEntryDateTime &gt;= DATEADD(MINUTE,-60,GETDATE()) 
+	AND pdt.ComputedExecTime &gt; 0
+JOIN ReportsDevelopment.dbo.pageThresholdProcName pr WITH (NOLOCK) ON pr.ProcNameId = pdt.ProcNameId
+JOIN ReportsDevelopment.dbo.PageThresholdDataSourceAlias ds WITH (NOLOCK) ON ds.DataSourceAliasId = pdt.DataSourceAliasId
+WHERE ph.LogEntryDateTime &gt;= DATEADD(MINUTE,-60,GETDATE()) -- past 1 hour
+AND ph.ExecutionTime &gt;= 5000
+AND ph.ComputedDbExecTime / ph.ExecutionTime &gt;= 0.75 -- Page time is more than 75% due to DB slowness
+AND WebServer NOT LIKE '%141'
+AND WebServer NOT LIKE '%142'
+AND WebServer NOT LIKE '%143'
+AND WebServer NOT LIKE '%144'
+AND WebServer NOT LIKE '%145'
+AND WebServer NOT LIKE '%146'
+AND WebServer NOT LIKE '%147'
+AND WebServer NOT LIKE '%148'
+AND WebServer NOT LIKE '%149'
+AND WebServer NOT LIKE '%150'
+AND WebServer NOT LIKE '%151'
+AND WebServer NOT LIKE '%152'
+AND WebServer NOT LIKE '%153'
+AND WebServer NOT LIKE '%154'
+AND WebServer NOT LIKE '%211'
+AND WebServer NOT LIKE '%212'
+AND WebServer NOT LIKE '%213'
+AND WebServer NOT LIKE '%214'
+AND WebServer NOT LIKE '%500'
+AND WebServer NOT LIKE 'DA0%'
+AND WebServer NOT LIKE '%MIWS%'
+AND WebServer NOT LIKE '%NEW'
+AND WebServer NOT LIKE 'DA3%'
+AND WebServer NOT LIKE 'EC3%'
+AND WebServer &lt;&gt; 'DA1MAWS057'
+
+-- Standard Deviation
+IF OBJECT_ID('tempdb..#SlowPagesStDevByDC') IS NOT NULL DROP TABLE #SlowPagesStDevByDC
+SELECT
+	DataCenter
+	,DataSourceAlias
+	,ProcName
+	,stdev_ProdTime = STDEV(ProcTime)
+	,Mean_ProcTime = 
+		(
+			(SELECT MAX(ProcTime) 
+			FROM (SELECT TOP 50 PERCENT ProcTime FROM #SlowPages WHERE DataCenter = sp.DataCenter AND DataSourceAlias = sp.DataSourceAlias AND ProcName = sp.ProcName ORDER BY ProcTime) AS BottomHalf)
+			+
+			(SELECT MIN(ProcTime) 
+			FROM (SELECT TOP 50 PERCENT ProcTime FROM #SlowPages WHERE DataCenter = sp.DataCenter AND DataSourceAlias = sp.DataSourceAlias AND ProcName = sp.ProcName ORDER BY ProcTime DESC) AS TopHalf)
+		) / 2
+INTO #SlowPagesStDevByDC
+FROM #SlowPages sp
+GROUP BY DataCenter, DataSourceAlias, ProcName
+
+IF OBJECT_ID('tempdb..#AvgDataSummary') IS NOT NULL DROP TABLE #AvgDataSummary
+SELECT
+	DataCenter
+	,DataSourceAlias
+	,ProcName
+	,Avg_Mean_ProcTime = AVG(Mean_ProcTime) / 1000.00
+	,Avg_StDev_ProcTime = AVG(stdev_ProdTime) / 1000.00
+INTO #AvgDataSummary
+FROM #SlowPagesStDevByDC
+WHERE stdev_ProdTime IS NOT NULL
+GROUP BY 
+	DataCenter
+	,DataSourceAlias
+	,ProcName
+HAVING AVG(Mean_ProcTime) / 1000.00 &gt; 4.0
+ORDER BY 
+	DataCenter
+	,AVG(Mean_ProcTime) DESC
+
+IF OBJECT_ID('tempdb..#SlowPagesBadServers') IS NOT NULL DROP TABLE #SlowPagesBadServers
+SELECT 
+	sp.DataCenter
+	,sp.DataSourceAlias
+	,sp.ProcName
+	,spdc.Avg_Mean_ProcTime
+	,spdc.Avg_StDev_ProcTime
+	,ProcTime = sp.ProcTime / 1000.00
+INTO #SlowPagesBadServers
+FROM #SlowPages sp
+JOIN #AvgDataSummary spdc ON sp.DataCenter = spdc.DataCenter
+	AND sp.DataSourceAlias = spdc.DataSourceAlias
+	AND sp.ProcName = spdc.ProcName
+ORDER BY sp.DataCenter,sp.DataSourceAlias, sp.ProcTime DESC
+
+-- Slow due to DbTime
+SELECT
+	DataCenter
+	,DataSourceAlias
+	,ProcName
+	,Cnt_Occurance = COUNT(1)
+	,Avg_ProcTime = AVG(ProcTime)
+FROM #SlowPagesBadServers
+GROUP BY DataCenter, DataSourceAlias, ProcName, Avg_Mean_ProcTime, Avg_StDev_ProcTime
+HAVING (COUNT(1) - Avg_Mean_ProcTime) &gt; (Avg_StDev_ProcTime * 2) AND COUNT(1) &gt; 300 -- More than 10 per minute
+ORDER BY 1,4 DESC
+
+DROP TABLE #SlowPages
+DROP TABLE #SlowPagesBadServers
+DROP TABLE #SlowPagesStDevByDC
+DROP TABLE #AvgDataSummary</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="DataCenter">
+          <DataField>DataCenter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataSourceAlias">
+          <DataField>DataSourceAlias</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProcName">
+          <DataField>ProcName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cnt_Occurance">
+          <DataField>Cnt_Occurance</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Avg_ProcTime">
+          <DataField>Avg_ProcTime</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Servers">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+DECLARE 
+	@StartDate DATETIME
+	,@MinRangeToMonitor INT
+	,@ExecutionTimeThreshold INT
+	,@PerPageTime FLOAT
+SELECT 
+	@MinRangeToMonitor = 10
+	,@StartDate = DATEADD(MINUTE,-@MinRangeToMonitor,@StartDate)
+	,@ExecutionTimeThreshold = 3000
+	,@PerPageTime = 0.20
+
+IF OBJECT_ID('tempdb..#SlowPages') IS NOT NULL DROP TABLE #SlowPages
+SELECT
+	LogDay = CAST(ph.LogEntryDateTime AS DATE)
+	,LogHr = DATEPART(HOUR,ph.LogEntryDateTime)
+	,LogMin = DATEPART(MINUTE,ph.LogEntryDateTime)
+	,DataCenter = CASE WHEN ph.WebServer LIKE 'DA%' THEN 'Clearview' ELSE 'Dupont' END
+	,ph.WebServer
+INTO #SlowPages
+FROM ReportsDevelopment.dbo.PageThresholdHeader ph WITH (NOLOCK)
+WHERE ph.LogEntryDateTime &gt;= @StartDate
+AND ph.LogEntryDateTime &lt; DATEADD(MINUTE,@MinRangeToMonitor,@StartDate)
+AND ph.ComputedDbExecTime / ph.ExecutionTime &lt; @PerPageTime
+AND ph.ExecutionTime &gt;= @ExecutionTimeThreshold
+AND WebServer IS NOT NULL
+AND WebServer NOT LIKE '%141'
+AND WebServer NOT LIKE '%142'
+AND WebServer NOT LIKE '%143'
+AND WebServer NOT LIKE '%144'	
+AND WebServer NOT LIKE '%145'
+AND WebServer NOT LIKE '%146'
+AND WebServer NOT LIKE '%147'
+AND WebServer NOT LIKE '%148'
+AND WebServer NOT LIKE '%149'
+AND WebServer NOT LIKE '%150'
+AND WebServer NOT LIKE '%151'
+AND WebServer NOT LIKE '%152'
+AND WebServer NOT LIKE '%153'
+AND WebServer NOT LIKE '%154'
+AND WebServer NOT LIKE '%211'
+AND WebServer NOT LIKE '%212'
+AND WebServer NOT LIKE '%213'
+AND WebServer NOT LIKE '%214'
+AND WebServer NOT LIKE '%500'
+AND WebServer NOT LIKE 'DA0%'
+AND WebServer NOT LIKE '%MIWS%'
+AND WebServer NOT LIKE '%NEW'
+AND WebServer NOT LIKE 'DA3%'
+AND WebServer NOT LIKE 'EC3%'
+AND WebServer &lt;&gt; 'DA1MAWS057'
+
+
+-- Standard Deviation
+IF OBJECT_ID('tempdb..#SlowPagesByDCandServer') IS NOT NULL DROP TABLE #SlowPagesByDCandServer
+SELECT 
+	DataCenter
+	,WebServer
+	,Cnt = COUNT(1) 
+INTO #SlowPagesByDCandServer
+FROM #SlowPages 
+GROUP BY DataCenter, WebServer
+
+
+IF OBJECT_ID('tempdb..#SlowPagesStDevByDC_2') IS NOT NULL DROP TABLE #SlowPagesStDevByDC_2
+SELECT
+	DataCenter
+	,stdev_SlowPages = STDEV(Cnt)
+	,Avg_SlowPages = AVG(Cnt)
+	,Mean_SlowPages = 
+		(
+			(SELECT MAX(Cnt) 
+			FROM (SELECT TOP 50 PERCENT Cnt FROM #SlowPagesByDCandServer WHERE DataCenter = a.DataCenter ORDER BY Cnt) AS BottomHalf)
+			+
+			(SELECT MIN(Cnt) 
+			FROM (SELECT TOP 50 PERCENT Cnt FROM #SlowPagesByDCandServer WHERE DataCenter = a.DataCenter ORDER BY Cnt DESC) AS TopHalf)
+		) / 2
+INTO #SlowPagesStDevByDC_2
+FROM #SlowPagesByDCandServer a
+--WHERE cast(substring(webserver,8,3) as int)%2 = 0
+GROUP BY DataCenter
+
+
+
+IF OBJECT_ID('tempdb..#SlowPagesBadServers') IS NOT NULL DROP TABLE #SlowPagesBadServers
+SELECT 
+	sp.DataCenter
+	,sp.WebServer
+	,spdc2.stdev_SlowPages
+	,spdc2.Mean_SlowPages
+	,spdc2.Avg_SlowPages
+INTO #SlowPagesBadServers
+FROM #SlowPages sp
+JOIN #SlowPagesStDevByDC_2 spdc2 ON sp.DataCenter = spdc2.DataCenter
+ORDER BY sp.DataCenter
+
+DROP TABLE #SlowPages
+DROP TABLE #SlowPagesByDCandServer
+DROP TABLE #SlowPagesStDevByDC_2
+
+-- Slow due to Server Time
+SELECT
+	[DC] = DataCenter
+	,[Server] = WebServer
+	,[Cnt] = COUNT(1)
+	,[Avg] = CAST(Avg_SlowPages AS INT)
+	,[Mean] = CAST(Mean_SlowPages AS INT)
+	,[StDev] = CAST(stdev_SlowPages AS INT)
+FROM #SlowPagesBadServers
+--WHERE cast(substring(webserver,8,3) as int)%2 = 0
+GROUP BY DataCenter, WebServer, Mean_SlowPages, stdev_SlowPages, Avg_SlowPages
+HAVING (COUNT(1) - Mean_SlowPages) &gt; (stdev_SlowPages * 2) 
+	AND COUNT(1) &gt; Avg_SlowPages * 1.5
+	AND COUNT(1) &gt; (1 * @MinRangeToMonitor)
+	AND CAST(stdev_SlowPages AS INT) &gt; 0
+ORDER BY 1,3 DESC
+
+DROP TABLE #SlowPagesBadServers</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="DC">
+          <DataField>DC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Server">
+          <DataField>Server</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cnt">
+          <DataField>Cnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Avg">
+          <DataField>Avg</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Mean">
+          <DataField>Mean</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StDev">
+          <DataField>StDev</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>8442e8f4-744b-4cae-a7c3-8a7cf680ed3e</rd:ReportID>
+</Report>

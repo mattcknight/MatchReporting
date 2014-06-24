@@ -51,6 +51,7 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
+              <Type>Line</Type>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -267,6 +268,7 @@
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -336,8 +338,8 @@
         <DataSetName>dsRTNDaily</DataSetName>
         <Top>0.375in</Top>
         <Left>0.125in</Left>
-        <Height>8.25917in</Height>
-        <Width>15.73833in</Width>
+        <Height>6.88417in</Height>
+        <Width>12.8425in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -354,7 +356,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Realtime Notifications</Value>
+                <Value>Realtime Notifications Past 30 days</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -380,10 +382,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>8.92376in</Height>
+    <Height>7.45501in</Height>
     <Style />
   </Body>
-  <Width>16.03126in</Width>
+  <Width>16.06251in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -393,12 +395,7 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DA1MADB802">
-      <DataSourceReference>DA1MADB802</DataSourceReference>
-      <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>1d3e8d1f-dd88-4062-b3d5-2ce226b287ba</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="DataSource1">
+    <DataSource Name="MADW">
       <DataSourceReference>MADW</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>90f8f140-6c77-448b-b567-d3a119268759</rd:DataSourceID>
@@ -407,7 +404,7 @@
   <DataSets>
     <DataSet Name="dsRTNDaily">
       <Query>
-        <DataSourceName>DataSource1</DataSourceName>
+        <DataSourceName>MADW</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
@@ -430,7 +427,7 @@ FROM
 	FROM MARP.Match_4.dbo.RTNAlerts rtn WITH (NOLOCK)
 	WHERE rtn.FromUserID &lt;&gt; 0 -- anonymous profile views
 	AND rtn.ToUserID &lt;&gt; 30610710 -- Keynote user
-	AND rtn.AlertCreateDt &gt;= DATEADD(DAY,-60,GETDATE())
+	AND rtn.AlertCreateDt &gt;= DATEADD(DAY,-30,GETDATE())
 	AND rtn.AlertCreateDt &lt; CAST(GETDATE() AS DATE)
 	GROUP BY CAST(rtn.AlertCreateDt AS DATE)
 
@@ -439,8 +436,8 @@ FROM
 	SELECT CAST(p.PageDt AS DATE) AS MetricDate, CntCreated = 0, COUNT(*) AS CntPresented, CntClicked = 0
 	FROM DW.dbo.Page p WITH (NOLOCK)
 	WHERE p.PageCode = 6904321
-	AND p.WeekOfYear &gt;= DATEPART(WEEK,DATEADD(DAY,-60,GETDATE()))
-	AND p.PageDt &gt;= DATEADD(DAY,-60,GETDATE())
+	AND p.WeekOfYear &gt;= DATEPART(WEEK,DATEADD(DAY,-30,GETDATE()))
+	AND p.PageDt &gt;= DATEADD(DAY,-30,GETDATE())
 	AND p.PageDt &lt; CAST(GETDATE() AS DATE)
 	GROUP BY CAST(p.PageDt AS DATE)
 
@@ -450,8 +447,8 @@ FROM
 	FROM DW.dbo.Page p WITH (NOLOCK)
 	JOIN Match_4.dbo.PageCodesDynamic pc ON p.PageCode = pc.PageCode
 	WHERE p.[ClickEventID] = 1067
-	AND p.WeekOfYear &gt;= DATEPART(WEEK,DATEADD(DAY,-60,GETDATE()))
-	AND p.PageDt &gt;= DATEADD(DAY,-60,GETDATE())
+	AND p.WeekOfYear &gt;= DATEPART(WEEK,DATEADD(DAY,-30,GETDATE()))
+	AND p.PageDt &gt;= DATEADD(DAY,-30,GETDATE())
 	AND p.PageDt &lt; CAST(GETDATE() AS DATE)
 	GROUP BY CAST(p.PageDt AS DATE)
 ) x
@@ -463,6 +460,7 @@ SELECT
 	,CntPresented
 	,CntClicked
 FROM #tmpRTNAnalytics
+WHERE MetricDate &lt; CAST(GETDATE() AS DATE)
 ORDER BY 1
 
 DROP TABLE  #tmpRTNAnalytics</CommandText>
