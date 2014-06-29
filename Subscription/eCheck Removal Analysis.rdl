@@ -601,7 +601,7 @@
                             <TextRun>
                               <Value>=Fields!RC_to_Pmnt__.Value</Value>
                               <Style>
-                                <Format>0%</Format>
+                                <Format>0.00%</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -633,7 +633,7 @@
                             <TextRun>
                               <Value>=Fields!Pmnt_to_Sub__.Value</Value>
                               <Style>
-                                <Format>0%</Format>
+                                <Format>0.00%</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -665,7 +665,7 @@
                             <TextRun>
                               <Value>=Fields!RC_to_Sub__.Value</Value>
                               <Style>
-                                <Format>0%</Format>
+                                <Format>0.00%</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -795,7 +795,7 @@
                             <TextRun>
                               <Value>=Fields!Resign__.Value</Value>
                               <Style>
-                                <Format>0%</Format>
+                                <Format>0.00%</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1505,6 +1505,15 @@
             <TextRuns>
               <TextRun>
                 <Value>- 05/28: Launch Date @ 50% test</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 06/14: Test disabled</Value>
                 <Style />
               </TextRun>
             </TextRuns>

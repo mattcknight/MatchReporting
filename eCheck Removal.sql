@@ -1,7 +1,10 @@
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-IF object_id('tempdb.dbo.#allRCViewers') IS NOT NULL DROP TABLE #allRCViewers;
+DECLARE @StartDate DATETIME, @EndDate DATETIME
+SELECT @StartDate = '2014-05-28 14:00:00', @EndDate = '2014-06-14'
+
+IF object_id('tempdb.dbo.#allRCViewers_tmp') IS NOT NULL DROP TABLE #allRCViewers_tmp;
 SELECT DISTINCT
     sal.[SID]
     ,sal.UserID
@@ -9,16 +12,36 @@ SELECT DISTINCT
 		WHEN RIGHT(LEFT(u.TestingGuid, 12), 1) IN ('0','1','2','3','4','5','6','7') THEN '01 - Control'
 		WHEN RIGHT(LEFT(u.TestingGuid, 12), 1) IN ('8','9','A','B','C','D','E','F') THEN '02 - Test'
 		END
-INTO #allRCViewers
+	,u.SignupDt
+INTO #allRCViewers_tmp
 FROM [Match_4].[dbo].[SiteAssetLog] sal WITH (NOLOCK)
 JOIN [Match_4].[dbo].[luSiteAsset] sa WITH (NOLOCK) ON sa.luSiteAssetID = sal.luSiteAssetID
 JOIN [ProfileReadData].[dbo].[Users] u WITH (NOLOCK) ON u.UserID = sal.UserID 
-	AND u.LoginDisabled = 0 -- remove fraud
+	AND u.LoginDisabled NOT IN  (1,2) -- remove fraud
+	AND u.SiteCode = 1
 WHERE sa.AssetKey = 'RateCard'
-AND sal.LogDateTime >= '2014-05-28 12:00:00'
+AND sal.LogDateTime >= @StartDate
+AND sal.LogDateTime < @EndDate
+CREATE INDEX idx_#allRCViewers_tmp1 on #allRCViewers_tmp(UserID)
+CREATE INDEX idx_#allRCViewers_tmp2 on #allRCViewers_tmp(UserID, SID)
+
+if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
+select brc.userid 
+into #Fraud_Users 
+from #allRCViewers_tmp rd
+INNER JOIN [Match_4].[dbo].[billresigncomm] brc WITH (NOLOCK) on rd.userID = brc .UserID
+WHERE brc.resigntype = 'K'
+AND DATEDIFF (ss, rd.SignUpDt ,brc.resigndt) < 604800 -- 7 days
+AND brc.resigncode not in (42 ,112, 1025)
+
+IF object_id('tempdb.dbo.#allRCViewers') IS NOT NULL DROP TABLE #allRCViewers; 
+select us.*
+into #allRCViewers
+from #allRCViewers_tmp us 
+left join #Fraud_Users fr on fr.UserID = us.UserID
+where fr.UserID IS NULL
 CREATE INDEX idx_#allRCViewers1 on #allRCViewers(UserID)
 CREATE INDEX idx_#allRCViewers2 on #allRCViewers(UserID, SID)
-
 
 IF object_id('tempdb.dbo.#rcViewCnt') IS NOT NULL DROP TABLE #rcViewCnt;
 SELECT 
@@ -42,7 +65,8 @@ FROM [Match_4].[dbo].[SiteAssetLog] sal WITH (NOLOCK)
 JOIN [Match_4].[dbo].[luSiteAsset] sa WITH (NOLOCK) ON sa.luSiteAssetID = sal.luSiteAssetID
 JOIN #allRCViewers cc ON sal.UserID = cc.UserID AND sal.[SID] = cc.[SID]
 WHERE sa.AssetKey = 'PaymentPage'
-AND sal.LogDateTime >= '2014-05-28 12:00:00'
+AND sal.LogDateTime >= @StartDate
+AND sal.LogDateTime < @EndDate
 AND cc.Cohort IS NOT NULL
 create index idx_tmp2a on #allPmtViewers(UserID)
 create index idx_tmp2b on #allPmtViewers(UserID, SID)
@@ -90,7 +114,8 @@ JOIN BillingData.dbo.luProdFeature lpf WITH (NOLOCK) ON P.luProdFeatureID=lpf.lu
 JOIN #allPmtViewers a WITH (NOLOCK) ON t.userid=a.UserID AND a.SID = ao.SID AND a.LogDateTime < t.CreateDt
 JOIN BillingData.dbo.Promo prom WITH (NOLOCK) ON prom.PromoID = ao.PromoID 
 LEFT JOIN BillingData.dbo.PromoDiscount promdis WITH (NOLOCK) ON ao.PromoID = promdis.PromoID
-WHERE t.CreateDt >= '2014-05-28 12:00'
+WHERE t.CreateDt >= @StartDate
+AND t.CreateDt < @EndDate
 AND t.luTrxTypeID In (1,8,12) -- New, BDC, Gift
 AND t.luTrxStatusID = 1  -- SUCCESS
 AND t.luTrxCategoryID IN (1,4) -- SALES and Gift Transfer
@@ -130,7 +155,8 @@ FROM #trx a
 LEFT JOIN #resignations b ON a.UserID = b.userid
 INNER JOIN BillingData.dbo.Trx c ON a.userid = c.userid 
 	AND c.luTrxStatusID = 1
-	AND c.CreateDt >= '2014-05-28 12:00'
+	AND c.CreateDt >= @StartDate
+	AND c.CreateDt < @EndDate
 GROUP BY Cohort
 ORDER BY Cohort
 
@@ -176,7 +202,7 @@ SELECT
 	,[ARPU]
 	,[Resignations]
 	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest4
+FROM WorkDB.dbo.MK_eCheckRemoval
 
 
 --TRUNCATE TABLE WorkDB.dbo.MK_eCheckRemoval;
@@ -186,11 +212,11 @@ FROM WorkDB.dbo.MK_PriceTest4
 --	,RCViewers INT
 --	,PmntViewers INT
 --	,Subs INT
---	,RC_Pmnt DECIMAL(10,2)
---	,Pmnt_Sub DECIMAL(10,2)
---	,RC_Sub DECIMAL(10,2)
---	,TotalCash DECIMAL(10,2)
---	,ARPU DECIMAL(10,2)
+--	,RC_Pmnt DECIMAL(18,4)
+--	,Pmnt_Sub DECIMAL(18,4)
+--	,RC_Sub DECIMAL(18,4)
+--	,TotalCash DECIMAL(18,4)
+--	,ARPU DECIMAL(18,4)
 --	,Resignations INT
---	,ResignRate DECIMAL(10,2)
+--	,ResignRate DECIMAL(18,4)
 -- );

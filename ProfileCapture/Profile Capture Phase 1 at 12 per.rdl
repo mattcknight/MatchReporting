@@ -2515,7 +2515,7 @@ SELECT
 	,ProfileSubmit = COUNT(DISTINCT CASE WHEN ps.firstsubmitdt IS NOT NULL THEN ps.UserID END)
 	,ProfileApproved = COUNT(DISTINCT CASE WHEN ps.firstapproveddt IS NOT NULL THEN ps.UserID END)
 	,PhotoApproved = COUNT(DISTINCT CASE WHEN ps.photoid &gt; 0 AND ps.firstapproveddt IS NOT NULL THEN ps.UserID END)
-	,Subs = COUNT(DISTINCT t.UserID)
+	,Subs = COUNT(DISTINCT CASE WHEN p.prodid IS NOT NULL THEN t.UserID END)
 INTO #tmpProfileCapture
 FROM ProfileReadData.dbo.Users u WITH (NOLOCK)
 LEFT JOIN profilereaddata.dbo.proself ps WITH (NOLOCK) ON ps.userid = u.userid

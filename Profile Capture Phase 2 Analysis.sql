@@ -2,7 +2,7 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
 DECLARE @StartDate DATETIME
-SELECT @StartDate = '2014-06-18 13:30'
+SELECT @StartDate = '2014-06-25 13:30'
 
 -- Profile completeness per user
 IF object_id('tempdb.dbo.#tmpProfileCapture') IS NOT NULL DROP TABLE #tmpProfileCapture;
@@ -16,13 +16,22 @@ SELECT
 		END
 	,Users = COUNT(DISTINCT u.UserID)
 	,ProfileCreate = COUNT(DISTINCT ps.UserID)
-	,ProfileSubmit = COUNT(DISTINCT CASE WHEN ps.firstsubmitdt IS NOT NULL THEN ps.UserID END)
+	,ProfileSubmit = COUNT(DISTINCT CASE WHEN pss.firstsubmitdt IS NOT NULL THEN pss.UserID END)
 	,ProfileApproved = COUNT(DISTINCT CASE WHEN ps.firstapproveddt IS NOT NULL THEN ps.UserID END)
-	,PhotoApproved = COUNT(DISTINCT CASE WHEN ps.photoid > 0 AND ps.firstapproveddt IS NOT NULL THEN ps.UserID END)
-	,Subs = COUNT(DISTINCT t.UserID)
+	,PhotoApproved = COUNT(DISTINCT CASE WHEN ps.firstapproveddt IS NOT NULL THEN pp.UserID END)
+	,Subs = COUNT(DISTINCT CASE WHEN p.prodid IS NOT NULL THEN t.UserID END)
 INTO #tmpProfileCapture
 FROM ProfileReadData.dbo.Users u WITH (NOLOCK)
+JOIN WorkDB.dbo.vRegSessionInfo rs ON u.UserID = rs.UserID 
+	AND rs.PlatformID = 0
+LEFT JOIN WorkDB.dbo.vProfileSubmitSessionInfo pss ON u.UserID = pss.UserID 
+	AND pss.PlatformID = 0
+	AND pss.SID = rs.SID
 LEFT JOIN profilereaddata.dbo.proself ps WITH (NOLOCK) ON ps.userid = u.userid
+LEFT JOIN profilereaddata.dbo.proPhoto pp WITH (NOLOCK) ON pp.userid = u.userid		
+	AND ps.PhotoID = pp.PhotoID 
+	AND pp.UploadDt <= DATEADD(MINUTE,60,pss.FirstSubmitDt) 
+	AND ps.photoid > 0
 LEFT JOIN billingdata.dbo.acctorder ao WITH (NOLOCK) ON ao.UserID = u.UserID
 LEFT JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
 LEFT JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid

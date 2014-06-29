@@ -1,44 +1,66 @@
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-DECLARE @StartDate DATETIME
-SELECT @StartDate = '2014-06-18 13:30'
+DECLARE @StartDate DATETIME, @EndDate DATETIME
+SELECT 
+	@StartDate = '2014-06-19'
+	,@EndDate = '2014-06-27 14:00'
 
-IF object_id('tempdb.dbo.#allRCViewers') IS NOT NULL DROP TABLE #allRCViewers;
+IF object_id('tempdb.dbo.#allRCViewers_tmp') IS NOT NULL DROP TABLE #allRCViewers_tmp;
 SELECT DISTINCT
 	sal.UserID
 	,Decile = RIGHT(LEFT(u.TestingGuid, 18), 1)
 	,Cohort = CASE   
-		WHEN RIGHT(LEFT(u.TestingGuid, 18), 1) IN ('1','3','5','7','9','B','D','F') AND sa.Details.value('(//RateCardLog/IsTabbed)[1]', 'nvarchar(max)') = 'true' THEN 'Test'
-		WHEN RIGHT(LEFT(u.TestingGuid, 18), 1) IN ('0','2','4','6','8','A','C','E') AND sa.Details.value('(//RateCardLog/IsTabbed)[1]', 'nvarchar(max)') = 'false' THEN 'Control'
+		WHEN RIGHT(LEFT(u.TestingGuid, 18), 1) IN ('1','3','5','7','9','B','D','F') THEN 'Test'
+		WHEN RIGHT(LEFT(u.TestingGuid, 18), 1) IN ('0','2','4','6','8','A','C','E') THEN 'Control'
 		END
 	,sal.[SID]
 	,sal.LogDateTime
 	,SignupDt = CAST(u.SignupDt AS DATE)
-INTO #allRCViewers
+	,NewReg = CASE WHEN SignupDt< @StartDate THEN 1 ELSE 0 END
+INTO #allRCViewers_tmp
 FROM [Match_4].[dbo].[SiteAssetLog] sal WITH (NOLOCK)
 JOIN [Match_4].[dbo].[luSiteAsset] sa WITH (NOLOCK) ON sa.luSiteAssetID = sal.luSiteAssetID
 JOIN [ProfileReadData].[dbo].[Users] u WITH (NOLOCK) ON u.UserID = sal.UserID 
-	AND u.LoginDisabled = 0 -- remove fraud
+	AND u.LoginDisabled NOT IN (1,2) -- remove fraud
 	AND u.SiteCode = 1 -- Site Code 1 only
 WHERE sa.AssetKey = 'RateCard'
 AND sal.LogDateTime >= @StartDate
+AND sal.LogDateTime < @EndDate
 AND sa.Details.value('(//RateCardLog/PromoId)[1]', 'nvarchar(max)') <> 'default' -- Only Promo takers
 AND sa.Details.value('(//RateCardLog/IsCommunication)[1]', 'nvarchar(max)') = 'false' -- Not in communication path
 AND sa.Details.value('(//RateCardLog/IsOneClick)[1]', 'nvarchar(max)') = 'false' -- Not 1-Click
 AND sa.Details.value('(//RateCardLog/IsMobile)[1]', 'nvarchar(max)') = 'false' -- No mobile users
-CREATE INDEX idx_#allRCViewers1 on #allRCViewers(UserID)
-CREATE INDEX idx_#allRCViewers2 on #allRCViewers(UserID, SID)
+CREATE INDEX idx_#allRCViewers_tmp1 on #allRCViewers_tmp(UserID)
+CREATE INDEX idx#allRCViewers_tmp2 on #allRCViewers_tmp(UserID, SID)
+
+-- Ivans Fraud Rule
+if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
+select brc.userid 
+into #Fraud_Users 
+from #allRCViewers_tmp rd
+INNER JOIN [Match_4].[dbo].[billresigncomm] brc WITH (NOLOCK) on rd.userID = brc .UserID
+WHERE brc.resigntype = 'K'
+AND DATEDIFF (ss, rd.SignUpDt ,brc.resigndt) < 604800 -- 7 days
+AND brc.resigncode not in (42 ,112, 1025)
+
+if object_id('tempdb.dbo.#allRCViewers') is not null drop table #allRCViewers; 
+select us.*
+into #allRCViewers
+from #allRCViewers_tmp us 
+left join #Fraud_Users fr on fr.UserID = us.UserID
+where fr.UserID IS NULL
 
 
 IF object_id('tempdb.dbo.#rcViewCnt') IS NOT NULL DROP TABLE #rcViewCnt;
 SELECT 
 	Cohort
+	,NewReg
 	,Users = COUNT(DISTINCT UserID)
 INTO #rcViewCnt
 FROM #allRCViewers
 WHERE Cohort IS NOT NULL
-GROUP BY Cohort
+GROUP BY Cohort, NewReg
 
 
 ---- PAYMENT PAGE VIEWS
@@ -46,31 +68,31 @@ IF object_id('tempdb.dbo.#allPmtViewers') IS NOT NULL DROP TABLE #allPmtViewers;
 SELECT DISTINCT
 	sal.[SID] 
 	,sal.UserID
-	,cc.Cohort 
+	,cc.Cohort
+	,cc.NewReg
 	,sal.LogDateTime 
 	,cc.SignupDt
 INTO #allPmtViewers
 FROM [Match_4].[dbo].[SiteAssetLog] sal WITH (NOLOCK)
-JOIN [Match_4].[dbo].[luSiteAsset] sa WITH (NOLOCK) ON sa.luSiteAssetID = sal.luSiteAssetID
-JOIN #allRCViewers cc ON sal.UserID = cc.UserID AND sal.[SID] = cc.[SID]
+INNER JOIN [Match_4].[dbo].[luSiteAsset] sa WITH (NOLOCK) ON sa.luSiteAssetID = sal.luSiteAssetID
+INNER JOIN #allRCViewers cc ON sal.UserID = cc.UserID AND sal.[SID] = cc.[SID]
 WHERE sa.AssetKey = 'PaymentPage'
 AND sal.LogDateTime >= @StartDate
-AND cc.Cohort IS NOT NULL
+AND sal.LogDateTime < @EndDate
+--AND cc.Cohort IS NOT NULL
 create index idx_tmp2a on #allPmtViewers(UserID)
 create index idx_tmp2b on #allPmtViewers(UserID, SID)
-
 
 
 ---- DISTINCT PAYMENT PAGE VIEWERS
 IF object_id('tempdb.dbo.#pmtViewCnt') IS NOT NULL DROP TABLE #pmtViewCnt;        
 SELECT 
 	Cohort
+	,NewReg
 	,Users = COUNT(DISTINCT UserID)
 INTO #pmtViewCnt
 FROM #allPmtViewers
-GROUP BY Cohort
-
--- SELECT * FROM #pmtViewCnt
+GROUP BY Cohort, NewReg
 
 
 ---- PAYMENTS RECIEVED
@@ -88,6 +110,7 @@ SELECT DISTINCT
 	,current_EndDt = AD.EndDt
 	,ao.[SID]
 	,a.Cohort
+	,a.NewReg
 	,ao.PromoID
 	,prom.Descr
 	,a.SignupDt
@@ -109,6 +132,7 @@ JOIN #allPmtViewers a WITH (NOLOCK) ON t.userid=a.UserID AND a.SID = ao.SID AND 
 JOIN BillingData.dbo.Promo prom WITH (NOLOCK) ON prom.PromoID = ao.PromoID 
 LEFT JOIN BillingData.dbo.PromoDiscount promdis WITH (NOLOCK) ON ao.PromoID = promdis.PromoID
 WHERE t.CreateDt >= @StartDate
+AND t.CreateDt < @EndDate
 AND t.luTrxTypeID In (1,8,12) -- New, BDC, Gift
 AND t.luTrxStatusID = 1  -- SUCCESS
 AND t.luTrxCategoryID IN (1,4) -- SALES and Gift Transfer
@@ -129,6 +153,7 @@ AND CancelDt IS NOT NULL
 IF object_id('tempdb.dbo.#trxSummary') IS NOT NULL DROP TABLE #trxSummary;                    
 SELECT 
 	a.Cohort
+	,a.NewReg
 	,subs = COUNT(DISTINCT a.UserID)
 	,totalCash = SUM(CAST(ISNULL(c.PreTaxAmt, 0.00) AS NUMERIC(18, 2)))
 	,sum_square_totalCash = SUM(CAST(ISNULL(c.PreTaxAmt, 0.00) AS NUMERIC(18, 2)) * CAST(ISNULL(c.PreTaxAmt, 0.00) AS NUMERIC(18, 2)))
@@ -149,14 +174,16 @@ LEFT JOIN #resignations b ON a.UserID = b.userid
 INNER JOIN BillingData.dbo.Trx c ON a.userid = c.userid 
 	AND c.luTrxStatusID = 1 
 	AND c.CreateDt >= @StartDate
-GROUP BY a.Cohort
-ORDER BY a.Cohort
+	AND c.CreateDt < @EndDate
+GROUP BY a.Cohort, a.NewReg
+ORDER BY a.Cohort, a.NewReg
 
 
 DELETE FROM WorkDB.dbo.MK_PromoRateCard;
-INSERT INTO WorkDB.dbo.MK_PromoRateCard (Cohort,RCViewers,PmntViewers,Subs,RC_Pmnt,Pmnt_Sub,RC_Sub,TotalCash,ARPU,Resignations,ResignRate)
+INSERT INTO WorkDB.dbo.MK_PromoRateCard (Cohort,NewReg,RCViewers,PmntViewers,Subs,RC_Pmnt,Pmnt_Sub,RC_Sub,TotalCash,ARPU,Resignations,ResignRate)
 SELECT
 	[Cohort] = r.Cohort
+	,[NewReg] = r.NewReg
 	,[RC Viewers] = SUM(ISNULL(r.Users, 0))
 	,[Pmnt Viewers] = SUM(ISNULL(p.Users, 0))
 	,[Subs] = SUM(ISNULL(t.subs, 0))
@@ -170,8 +197,8 @@ SELECT
 FROM #rcViewCnt r
 LEFT JOIN #pmtViewCnt p ON r.Cohort = p.Cohort
 LEFT JOIN #trxSummary t ON r.Cohort = t.Cohort
-GROUP BY r.Cohort
-ORDER BY r.Cohort
+GROUP BY r.Cohort, r.NewReg
+ORDER BY r.Cohort, r.NewReg
 
 
 DROP TABLE #allRCViewers
@@ -184,6 +211,7 @@ DROP TABLE #trxSummary
 
 SELECT 
 	[Cohort]
+	,[NewReg]
 	,[RC Viewers] = RCViewers
 	,[Pmnt Viewers] = PmntViewers
 	,[Subs]
@@ -195,20 +223,19 @@ SELECT
 	,[Resign %] = ResignRate
 FROM WorkDB.dbo.MK_PromoRateCard
 
-
-
 --TRUNCATE TABLE WorkDB.dbo.MK_PromoRateCard;
 --DROP TABLE WorkDB.dbo.MK_PromoRateCard;
 --CREATE TABLE WorkDB.dbo.MK_PromoRateCard (
 --	Cohort VARCHAR(MAX)
+--	,NewReg INT
 --	,RCViewers INT
 --	,PmntViewers INT
 --	,Subs INT
---	,RC_Pmnt DECIMAL(10,2)
---	,Pmnt_Sub DECIMAL(10,2)
---	,RC_Sub DECIMAL(10,2)
---	,TotalCash DECIMAL(10,2)
---	,ARPU DECIMAL(10,2)
+--	,RC_Pmnt DECIMAL(18,4)
+--	,Pmnt_Sub DECIMAL(18,4)
+--	,RC_Sub DECIMAL(18,4)
+--	,TotalCash DECIMAL(18,4)
+--	,ARPU DECIMAL(18,4)
 --	,Resignations INT
---	,ResignRate DECIMAL(10,2)
+--	,ResignRate DECIMAL(18,4)
 -- );
