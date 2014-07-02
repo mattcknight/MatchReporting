@@ -15,7 +15,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>25%</Value>
+                <Value>50%</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>Red</Color>
@@ -1299,12 +1299,12 @@
 SET NOCOUNT ON
 
 DECLARE @StartDate DATETIME, @EndDate DATETIME
-SELECT @StartDate = '2014-06-16 13:00', @EndDate = '2014-07-02 12:00'
+SELECT @StartDate = '2014-07-02 13:00', @EndDate = '2014-07-30 12:00'
 
 
 IF object_id('tempdb.dbo.#InboxReskinUsers') IS NOT NULL DROP TABLE #InboxReskinUsers;
 SELECT 
-	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0','1','2','3') THEN 'Test' ELSE 'Control' END
+	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0','1','2','3','4','5','6','7') THEN 'Test' ELSE 'Control' END
 	,u.UserID
 	,u.SignupDt
 INTO #InboxReskinUsers_tmp

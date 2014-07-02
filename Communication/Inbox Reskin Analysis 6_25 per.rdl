@@ -1315,13 +1315,31 @@ IF object_id('tempdb.dbo.#InboxReskinUsers') IS NOT NULL DROP TABLE #InboxReskin
 SELECT 
 	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0') THEN 'Test' ELSE 'Control' END
 	,u.UserID
-INTO #InboxReskinUsers
+	,u.SignupDt
+INTO #InboxReskinUsers_tmp
 FROM [ProfileReadData].[dbo].[Users] u WITH (NOLOCK)
 WHERE u.SignupDt &gt;= @StartDate
 AND u.SignupDt &lt; @EndDate
 AND u.SiteCode = 1
 AND u.CountryCode = 1 -- US Only
-AND u.LoginDisabled NOT IN (1, 2) -- No Fraud
+
+-- Ivans Fraud Rule
+if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
+select brc.userid 
+into #Fraud_Users 
+from #InboxReskinUsers_tmp rd
+INNER JOIN [Match_4].[dbo].[billresigncomm] brc WITH (NOLOCK) on rd.userID = brc .UserID
+WHERE brc.resigntype = 'K'
+AND DATEDIFF (ss, rd.SignUpDt ,brc.resigndt) &lt; 604800 -- 7 days
+AND brc.resigncode not in (42 ,112, 1025)
+
+
+if object_id('tempdb.dbo.#phase4pop') is not null drop table #phase4pop; 
+select us.*
+into #InboxReskinUsers
+from #InboxReskinUsers_tmp us 
+left join #Fraud_Users fr on fr.UserID = us.UserID
+where fr.UserID IS NULL
 
 
 IF object_id('tempdb.dbo.#Emailers') IS NOT NULL DROP TABLE #Emailers;

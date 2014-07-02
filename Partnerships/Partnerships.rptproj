@@ -10,12 +10,16 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>Communities - MLB Registration.rdl</Name>
-      <FullPath>Communities - MLB Registration.rdl</FullPath>
+      <Name>MLB Registration.rdl</Name>
+      <FullPath>MLB Registration.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Community Adoption Rate.rdl</Name>
       <FullPath>Community Adoption Rate.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Mensa Registration.rdl</Name>
+      <FullPath>Mensa Registration.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

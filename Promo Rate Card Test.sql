@@ -195,8 +195,8 @@ SELECT
 	,[Resignations] = ISNULL(SUM(NULLIF(resignations, 0)),0)
 	,[Resign %] = ISNULL(SUM(NULLIF(resignations, 0.00)) / CAST(SUM(NULLIF(t.subs, 0.00)) AS DECIMAL(10,2)),0.00)
 FROM #rcViewCnt r
-LEFT JOIN #pmtViewCnt p ON r.Cohort = p.Cohort
-LEFT JOIN #trxSummary t ON r.Cohort = t.Cohort
+LEFT JOIN #pmtViewCnt p ON r.Cohort = p.Cohort AND r.NewReg = p.NewReg
+LEFT JOIN #trxSummary t ON r.Cohort = t.Cohort AND r.NewReg = t.NewReg
 GROUP BY r.Cohort, r.NewReg
 ORDER BY r.Cohort, r.NewReg
 
@@ -208,6 +208,7 @@ DROP TABLE #trx
 DROP TABLE #resignations
 DROP TABLE #pmtViewCnt
 DROP TABLE #trxSummary
+
 
 SELECT 
 	[Cohort]
@@ -222,6 +223,7 @@ SELECT
 	,[Resignations]
 	,[Resign %] = ResignRate
 FROM WorkDB.dbo.MK_PromoRateCard
+
 
 --TRUNCATE TABLE WorkDB.dbo.MK_PromoRateCard;
 --DROP TABLE WorkDB.dbo.MK_PromoRateCard;

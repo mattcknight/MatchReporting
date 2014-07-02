@@ -55,7 +55,7 @@ SELECT
 	,IsResub
 	,PackageMonthKey
 	,CardType
-	,LoginDisabled = CASE WHEN LoginDisabled = 0 THEN 0 ELSE 1 END
+	,LoginDisabled = CASE WHEN LoginDisabled NOT IN (1,2) THEN 0 ELSE 1 END
 	,Cnt_Total = SUM(CASE WHEN luTrxStatusID IN (1,2) THEN 1 ELSE 0 END)
 	,Cnt_Failed = SUM(CASE WHEN luTrxStatusID = 2 THEN 1 ELSE 0 END)
 FROM #tmpTransactions2

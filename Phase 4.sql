@@ -2,9 +2,9 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
 DECLARE @StartDate DATETIME
-SELECT @StartDate = '2014-06-11 13:35:00'
+SELECT @StartDate = '2014-06-11 14:00:00'
 
-IF object_id('tempdb.dbo.#phase4pop') IS NOT NULL DROP TABLE #phase4pop;  
+IF object_id('tempdb.dbo.#phase4pop_tmp') IS NOT NULL DROP TABLE #phase4pop_tmp;  
 SELECT 
 	DISTINCT 
 	sil.UserID
@@ -13,19 +13,38 @@ SELECT
 		WHEN si.Details.value('(//Score)[1]', 'NUMERIC(20,5)') = 1 THEN 'Group 01'
 		WHEN si.Details.value('(//Score)[1]', 'NUMERIC(20,5)') = 0 THEN 'Group 02'
 		END 
-	,ScoreRoundedDown = CAST(CASE WHEN si.Details.value('(//ScoreRoundedDown)[1]', 'VARCHAR(100)') = 'true' THEN 1 ELSE 0 END AS BIT)
 	,sil.[SID]
 	,Decile = RIGHT(LEFT(u.TestingGuid, 4), 1)
 	,SignupDt = CAST(u.SignupDt AS DATE)
-INTO #phase4pop
+	,NewReg = CASE WHEN SignupDt< @StartDate THEN 1 ELSE 0 END
+INTO #phase4pop_tmp
 FROM [Match_4].[dbo].[SiteInstrumentationLog] sil WITH (NOLOCK)
 JOIN [Match_4].[dbo].[luSiteInstrumentation] si WITH (NOLOCK) ON si.luSiteInstrumentationID = sil.luSiteInstrumentationID 
 	AND si.AssetKey='PriceTargetingV2Evaluated'
+	and si.Details.value('(//IsInTest)[1]', 'nvarchar(max)') = 'True'
+	and si.Details.value('(//Score)[1]', 'INT') = 1
 JOIN [ProfileReadData].[dbo].[Users] u WITH (NOLOCK) ON u.UserID = sil.UserID 
-	AND u.LoginDisabled = 0 -- remove fraud
 	AND u.SiteCode = 1
 WHERE sil.LogDateTime >= @StartDate
-CREATE INDEX idx_#phase4pop on #phase4pop(UserID)
+CREATE INDEX idx_#phase4pop_tmp on #phase4pop_tmp(UserID)
+
+-- Ivans Fraud Rule
+if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
+select brc.userid 
+into #Fraud_Users 
+from #phase4pop_tmp rd
+INNER JOIN [Match_4].[dbo].[billresigncomm] brc WITH (NOLOCK) on rd.userID = brc .UserID
+WHERE brc.resigntype = 'K'
+AND DATEDIFF (ss, rd.SignUpDt ,brc.resigndt) < 604800 -- 7 days
+AND brc.resigncode not in (42 ,112, 1025)
+
+
+if object_id('tempdb.dbo.#phase4pop') is not null drop table #phase4pop; 
+select us.*
+into #phase4pop
+from #phase4pop_tmp us 
+left join #Fraud_Users fr on fr.UserID = us.UserID
+where fr.UserID IS NULL
 
 
 IF object_id('tempdb.dbo.#RateCardViews') IS NOT NULL DROP TABLE #RateCardViews; 
@@ -52,10 +71,14 @@ SELECT DISTINCT
 	,UserGroup = CASE
 		WHEN p4.ScoreGroup = 'Group 01' THEN
 			CASE   
-				WHEN p4.Decile IN ('0','1','2','3') THEN '01 - Control (25%)'
-				WHEN p4.Decile IN ('8','9','A','B','C','D','E','F') THEN '02 - 7.5% Up (75%)'
+				WHEN p4.Decile IN ('0','1','2','3') THEN 'Control'
+				WHEN p4.Decile IN ('4','5','6','7','8','9','A','B','C','D','E','F') THEN 'Test (7.5% Up)'
 				END
 		WHEN p4.ScoreGroup = 'Group 02' THEN '03 - Control'
+		END
+	,PromoRateCardTest = CASE   
+		WHEN p4.Decile IN ('1','3','5','7','9','B','D','F') THEN 'Test'
+		WHEN p4.Decile IN ('0','2','4','6','8','A','C','E') THEN 'Control'
 		END
 	,p4.SignupDt
     ,sal.LogDateTime
@@ -223,15 +246,15 @@ GROUP BY r.ScoreGroup, r.UserGroup
 ORDER BY r.ScoreGroup, r.UserGroup
 
 
---DROP TABLE #phase4pop
---DROP TABLE #RateCardViews
---DROP TABLE #allRCViewers
---DROP TABLE #rcViewCnt
---DROP TABLE #allPmtViewers
-----DROP TABLE #trx
---DROP TABLE #resignations
---DROP TABLE #pmtViewCnt
-----DROP TABLE #trxSummary
+DROP TABLE #phase4pop
+DROP TABLE #RateCardViews
+DROP TABLE #allRCViewers
+DROP TABLE #rcViewCnt
+DROP TABLE #allPmtViewers
+DROP TABLE #trx
+DROP TABLE #resignations
+DROP TABLE #pmtViewCnt
+DROP TABLE #trxSummary
 
 SELECT 
 	[Score Group] = ScoreGroup
@@ -247,23 +270,7 @@ SELECT
 	,[Resignations]
 	,[Resign %] = ResignRate
 FROM WorkDB.dbo.MK_PriceTest4
-WHERE ScoreGroup = 'Group 01'
 
-SELECT 
-	[Score Group] = ScoreGroup
-	,[Cohort]
-	,[RC Viewers] = RCViewers
-	,[Pmnt Viewers] = PmntViewers
-	,[Subs]
-	,[RC to Pmnt %] = RC_Pmnt
-	,[Pmnt to Sub %] = Pmnt_Sub
-	,[RC to Sub %] = RC_Sub
-	,[Total Cash] = TotalCash
-	,[ARPU]
-	,[Resignations]
-	,[Resign %] = ResignRate
-FROM WorkDB.dbo.MK_PriceTest4
-WHERE ScoreGroup = 'Group 02'
 
 
 --TRUNCATE TABLE WorkDB.dbo.MK_PriceTest4;
@@ -274,11 +281,11 @@ WHERE ScoreGroup = 'Group 02'
 --	,RCViewers INT
 --	,PmntViewers INT
 --	,Subs INT
---	,RC_Pmnt DECIMAL(10,2)
---	,Pmnt_Sub DECIMAL(10,2)
---	,RC_Sub DECIMAL(10,2)
---	,TotalCash DECIMAL(10,2)
---	,ARPU DECIMAL(10,2)
+--	,RC_Pmnt DECIMAL(18,4)
+--	,Pmnt_Sub DECIMAL(18,4)
+--	,RC_Sub DECIMAL(18,4)
+--	,TotalCash DECIMAL(18,4)
+--	,ARPU DECIMAL(18,4)
 --	,Resignations INT
---	,ResignRate DECIMAL(10,2)
+--	,ResignRate DECIMAL(18,4)
 -- );

@@ -80,9 +80,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Profile Capture", "Profile Capture", "{52556FA7-F890-4624-9092-17A4B1D07457}"
 	ProjectSection(SolutionItems) = preProject
 		Profile Capture Phase 1 Analysis.sql = Profile Capture Phase 1 Analysis.sql
+		Profile Capture Phase 2 Analysis.sql = Profile Capture Phase 2 Analysis.sql
 	EndProjectSection
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ProfileCapture", "ProfileCapture\ProfileCapture.rptproj", "{65DD5C9E-6F39-4465-A002-C293C75A6AE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscription", "Subscription", "{740826E2-2F24-465D-811D-192F36B33F64}"
+	ProjectSection(SolutionItems) = preProject
+		eCheck Removal.sql = eCheck Removal.sql
+		Promo Rate Card Test.sql = Promo Rate Card Test.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,5 +184,6 @@ Global
 		{16A128A1-90CE-406B-A372-C3B54E1431D9} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{2AE18E2A-5E5D-4201-B54E-6325C83F6A44} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{52556FA7-F890-4624-9092-17A4B1D07457} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{740826E2-2F24-465D-811D-192F36B33F64} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 	EndGlobalSection
 EndGlobal
