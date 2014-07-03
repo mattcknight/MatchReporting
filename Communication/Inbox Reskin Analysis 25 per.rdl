@@ -1248,7 +1248,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 06/18: Dial-up to 25% (see next report)</Value>
+                <Value>- 06/18: at 25%</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 07/02: Dial-up to 50% (see next report)</Value>
                 <Style />
               </TextRun>
             </TextRuns>

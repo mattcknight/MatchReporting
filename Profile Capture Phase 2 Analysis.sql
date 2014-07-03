@@ -115,9 +115,11 @@ JOIN #RateCardViews rc ON pc.Cohort = rc.Cohort
 GROUP BY pc.Cohort,Users,ProfileCreate,ProfileSubmit,ProfileApproved,PhotoApproved,Subs,rc.Viewers
 ORDER BY pc.Cohort
 
-SELECT * FROM WorkDB.dbo.MK_ProfileCapturePhase2
-
 DROP TABLE #tmpProfileCapture
+drop table #Fraud_Users
+drop table #ProfileCapture
+DROP TABLE #Summary
+DROP TABLE #RateCardViews 
 
 --TRUNCATE TABLE WorkDB.dbo.MK_ProfileCapturePhase2;
 --DROP TABLE WorkDB.dbo.MK_ProfileCapturePhase2;
