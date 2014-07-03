@@ -1,7 +1,7 @@
 ﻿SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-select 
+SELECT 
 	MetricDate = CAST(psc.CreateDt AS DATE)
 	,u.GenderGenderSeek
 	,GGS = CASE 
@@ -13,7 +13,7 @@ select
 	,MetricValue = COUNT(*)
 from [ProfileReadData].[dbo].[proSelfCommunity] psc with (nolock)
 inner join profilereaddata.dbo.users u with (nolock) on psc.userid = u.userid
-where psc.cfgCommunityID = 35
+where psc.cfgCommunityID = 35 -- Mensa
 group by 
 	CAST(psc.CreateDt AS DATE)
 	,u.GenderGenderSeek
@@ -27,9 +27,6 @@ order by 1,2
 
 
 
-SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-SET NOCOUNT ON
-
 select 
 	MetricDate = CAST(psc.CreateDt AS DATE)
 	,GGS = CASE 
@@ -41,7 +38,7 @@ select
 	,MetricValue = COUNT(*)
 from [ProfileReadData].[dbo].[proSelfCommunity] psc with (nolock)
 inner join profilereaddata.dbo.users u with (nolock) on psc.userid = u.userid
-where psc.cfgCommunityID = 35
+where psc.cfgCommunityID <> 35 -- Not Mensa (MLB)
 AND u.LoginDisabled NOT IN (1,2)
 and psc.CreateDt >= '2014-02-18'
 AND psc.CreateDt < CAST(GETDATE() AS DATE)

@@ -121,6 +121,8 @@ drop table #ProfileCapture
 DROP TABLE #Summary
 DROP TABLE #RateCardViews 
 
+SELECT * FROM WorkDB.dbo.MK_ProfileCapturePhase2
+
 --TRUNCATE TABLE WorkDB.dbo.MK_ProfileCapturePhase2;
 --DROP TABLE WorkDB.dbo.MK_ProfileCapturePhase2;
 --CREATE TABLE WorkDB.dbo.MK_ProfileCapturePhase2 (
