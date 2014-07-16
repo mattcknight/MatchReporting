@@ -30,20 +30,20 @@
       <FullPath>IM Conversations.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Inbox Reskin Analysis 25 per.rdl</Name>
-      <FullPath>Inbox Reskin Analysis 25 per.rdl</FullPath>
+      <Name>2-Inbox Reskin Analysis 25 per.rdl</Name>
+      <FullPath>2-Inbox Reskin Analysis 25 per.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Inbox Reskin Analysis 6_25 per.rdl</Name>
-      <FullPath>Inbox Reskin Analysis 6_25 per.rdl</FullPath>
+      <Name>3-Inbox Reskin Analysis 50 per.rdl</Name>
+      <FullPath>3-Inbox Reskin Analysis 50 per.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>1-Inbox Reskin Analysis 6_25 per.rdl</Name>
+      <FullPath>1-Inbox Reskin Analysis 6_25 per.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>RTN_Hourly.rdl</Name>
       <FullPath>RTN_Hourly.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Inbox Reskin Analysis 50 per.rdl</Name>
-      <FullPath>Inbox Reskin Analysis 50 per.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

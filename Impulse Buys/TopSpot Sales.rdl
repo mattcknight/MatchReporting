@@ -87,7 +87,7 @@
                   </Style>
                   <ChartMarker>
                     <Type>Square</Type>
-                    <Size>10pt</Size>
+                    <Size>4pt</Size>
                     <Style>
                       <Border>
                         <Width>0.25pt</Width>
@@ -241,7 +241,7 @@
                   <Format>n0</Format>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Total Purchased</Caption>
+                  <Caption>Total UNITS Purchased</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -274,10 +274,10 @@
               <ChartAxis Name="Secondary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>0.00;(0.00)</Format>
+                  <Format>0;(0)</Format>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Avg Purchase Per User</Caption>
+                  <Caption>Avg  UNITS Purchase Per User</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -351,10 +351,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1in</Top>
+        <Top>3.25in</Top>
         <Left>0.125in</Left>
         <Height>5.14584in</Height>
-        <Width>14.05209in</Width>
+        <Width>19.18751in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -371,7 +371,15 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>2014 TopSpot Sales and Revenue</Value>
+                <Value>TopSpot </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Sales and Revenue</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -408,7 +416,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>3.5M</Value>
+                <Value>3.0M</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -452,7 +460,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>`</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -548,12 +556,21 @@
             </TextRuns>
             <Style />
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 07/09: Added Multi-Pack sales (1, 5 and 10 packs) at 87.5% test</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1in</Top>
-        <Left>14.29167in</Left>
-        <Height>5.14584in</Height>
-        <Width>4.90626in</Width>
+        <Top>0.66666in</Top>
+        <Left>0.125in</Left>
+        <Height>2.42709in</Height>
+        <Width>5.57292in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -585,8 +602,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MetricValue</rd:DefaultName>
-        <Top>0.68055in</Top>
-        <Left>1.4375in</Left>
+        <Top>8.53125in</Top>
+        <Left>3.53125in</Left>
         <Height>0.20833in</Height>
         <Width>1.32292in</Width>
         <ZIndex>4</ZIndex>
@@ -616,8 +633,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.68055in</Top>
-        <Left>0.125in</Left>
+        <Top>8.53125in</Top>
+        <Left>2.21875in</Left>
         <Height>0.20833in</Height>
         <Width>1.27083in</Width>
         <ZIndex>5</ZIndex>
@@ -631,12 +648,967 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.67708in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.84375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.79167in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.25in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.16667in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.84375in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.26042in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.30208in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cohort</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Buyers</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Pack Size</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total Purchased</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Avg Purchased</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Revenue</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Revenue Per Unit</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Revenue Per User</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Cohort">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Cohort.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Cohort</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Buyers">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Buyers.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Buyers</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="units">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!units.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>units</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Total_Purchased">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Total_Purchased.Value</Value>
+                              <Style>
+                                <Format>n0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Total_Purchased</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Avg_Purchased">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Avg_Purchased.Value</Value>
+                              <Style>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Avg_Purchased</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Revenue">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Revenue.Value</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Revenue</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Revenue_Per_Unit">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Revenue_Per_Unit.Value</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Revenue_Per_Unit</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Revenue_Per_User">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Revenue_Per_User.Value</Value>
+                              <Style>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Revenue_Per_User</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>MultiPack</DataSetName>
+        <Top>12.78694in</Top>
+        <Left>0.125in</Left>
+        <Height>0.5in</Height>
+        <Width>8.13542in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Chart Name="Chart2">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart2_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!MetricDate.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!MetricDate.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!MetricDate.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Metric Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="MetricValue">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!MetricValue.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Type>Auto</Type>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>M-d</Format>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>2</Interval>
+                <IntervalType>Days</IntervalType>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Scalar>true</Scalar>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>'$'#,0;('$'#,0);'-'</Format>
+                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>Revenue_per_day</DataSetName>
+        <Top>8.85292in</Top>
+        <Left>0.125in</Left>
+        <Height>3.44792in</Height>
+        <Width>19.18751in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TopSpot </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Revenue / day</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>8.53125in</Top>
+        <Left>0.125in</Left>
+        <Height>0.20833in</Height>
+        <Width>1.97916in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TopSpot </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Multipack Test</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>12.42709in</Top>
+        <Left>0.125in</Left>
+        <Height>0.20833in</Height>
+        <Width>3.45833in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>14.04167in</Height>
-    <Style />
+    <Height>13.28694in</Height>
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
   <Width>19.53125in</Width>
   <Page>
+    <PageHeight>22in</PageHeight>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -664,9 +1636,28 @@ IF OBJECT_ID('tempdb..#tmpTopSpotPurchases') IS NOT NULL
 DECLARE
     @FloorDate DATE,
     @CeilingDate DATE = dateadd(day, 1, getdate())
- 
-SELECT @FloorDate = '2014-01-15'-- MIN(BeginDt)
-FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
+SELECT @FloorDate = '2014-01-15'
+
+IF OBJECT_ID('tempdb..#tmpTSSales') IS NOT NULL DROP TABLE #tmpTSSales
+SELECT 
+	ad.UserID
+	,ad.AcctDtlID
+	,p.Units
+	,ad.BeginDt
+INTO #tmpTSSales
+FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.ProdDtlID = pd.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
+	AND t.lutrxstatusid = 1 
+	AND t.lutrxcategoryid = 1
+WHERE luprodfeatureid = 26
+AND luCancelTypeID = 14
+AND ad.createdt &gt; @FloorDate
+
+
+IF OBJECT_ID('tempdb..#tmpTopSpotPurchases') IS NOT NULL DROP TABLE #tmpTopSpotPurchases
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -678,25 +1669,19 @@ AS (
     )
 SELECT 
 	dd.PurchaseDate
-    ,PurchaseCount = COUNT(adts.AcctDtlID)
-    ,DistinctUserCount = COUNT(DISTINCT adts.UserID)
+    ,PurchaseCount = SUM(ts.Units)
+    ,DistinctUserCount = COUNT(DISTINCT ts.UserID)
     ,NewUserCount = ISNULL(newusers.NewUserCount,0)
-	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(COUNT(DISTINCT adts.UserID),0))
-	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
+	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(ts.AcctDtlID) / NULLIF(COUNT(DISTINCT ts.UserID),0))
+	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(ts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
 INTO #tmpTopSpotPurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
-	AND adts.luProdFeatureID = 26 
-	AND adts.IsComplimentary = 0 
-	AND adts.SuppressFromUser = 0
+LEFT JOIN #tmpTSSales ts ON dd.PurchaseDate = CAST(ts.BeginDt AS DATE) 
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM BillingData.dbo.ImpulseFeatureLog
-		WHERE luProdFeatureID = 26
-		AND IsComplimentary = 0 
-		AND SuppressFromUser = 0
+		FROM #tmpTSSales
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt
@@ -707,7 +1692,11 @@ OPTION (maxrecursion 2000)
 
 SELECT *
 FROM #tmpTopSpotPurchases
-WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
+--WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))
+ORDER BY PurchaseDate
+
+DROP TABLE #tmpTSSales
+DROP TABLE #tmpTopSpotPurchases</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -741,6 +1730,7 @@ WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
 
 SELECT MetricValue = SUM(t.PreTaxAmt)
 FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
@@ -752,6 +1742,107 @@ INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.lu
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
+        <Field Name="MetricValue">
+          <DataField>MetricValue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="MultiPack">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+SELECT Cohort = CASE WHEN RIGHT(LEFT(u.TestingGuid, 36), 1) IN ('4', '5') THEN 'Control' ELSE 'Test' END
+	,Buyers = count(DISTINCT ad.UserID)
+	,units
+	,Total_Purchased = count(*) * units
+	,Avg_Purchased = (count(*) * units) * 1.00 / count(DISTINCT ad.UserID)
+	,Revenue = SUM(ad.SalesPrice)
+	,Revenue_Per_Unit = SUM(ad.salesprice) / (count(*) * units)
+	,Revenue_Per_User = SUM(ad.salesprice) / count(DISTINCT ad.UserID)
+FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.proddtlid = pd.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid AND p.luProdFeatureID = 26
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid AND t.lutrxstatusid = 1 AND t.lutrxcategoryid = 1
+INNER JOIN ProfileReadData.dbo.Users u ON ad.UserID = u.UserID
+WHERE luCancelTypeID = 14 AND ad.createdt &gt; '2014-07-09 14:00'
+GROUP BY CASE WHEN RIGHT(LEFT(u.TestingGuid, 36), 1) IN ('4', '5') THEN 'Control' ELSE 'Test' END
+	,units
+ORDER BY CASE WHEN RIGHT(LEFT(u.TestingGuid, 36), 1) IN ('4', '5') THEN 'Control' ELSE 'Test' END
+	,units</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Cohort">
+          <DataField>Cohort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Buyers">
+          <DataField>Buyers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="units">
+          <DataField>units</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="Total_Purchased">
+          <DataField>Total_Purchased</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Avg_Purchased">
+          <DataField>Avg_Purchased</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Revenue">
+          <DataField>Revenue</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Revenue_Per_Unit">
+          <DataField>Revenue_Per_Unit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Revenue_Per_User">
+          <DataField>Revenue_Per_User</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Revenue_per_day">
+      <Query>
+        <DataSourceName>MARP03</DataSourceName>
+        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+
+DECLARE
+    @FloorDate DATE,
+    @CeilingDate DATE = dateadd(day, 1, getdate())
+SELECT @FloorDate = '2014-01-15'
+
+SELECT
+	MetricDate = CAST(t.CreateDt AS DATE)
+	,MetricValue = SUM(t.PreTaxAmt)
+FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
+INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid 
+	AND t.lutrxtypeid = 14 
+	AND t.lutrxstatusid = 1 
+	AND t.lutrxcategoryid IN (1, 4)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 26 -- TopSpot
+WHERE t.CreateDt &gt; @FloorDate
+GROUP BY CAST(t.CreateDt AS DATE)
+ORDER BY CAST(t.CreateDt AS DATE)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="MetricDate">
+          <DataField>MetricDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
         <Field Name="MetricValue">
           <DataField>MetricValue</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>

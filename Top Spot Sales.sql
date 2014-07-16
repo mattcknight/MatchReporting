@@ -9,7 +9,7 @@ DECLARE
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
 SELECT @FloorDate = '2014-01-15'-- MIN(BeginDt)
-FROM BillingData.dbo.AcctDtlTopSpot
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -21,19 +21,25 @@ AS (
     )
 SELECT 
 	dd.PurchaseDate
-    ,PurchaseCount = COUNT(adib.AcctDtlID)
-    ,DistinctUserCount = COUNT(DISTINCT adib.UserID)
+    ,PurchaseCount = COUNT(adts.AcctDtlID)
+    ,DistinctUserCount = COUNT(DISTINCT adts.UserID)
     ,NewUserCount = ISNULL(newusers.NewUserCount,0)
-	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(adib.AcctDtlID) / NULLIF(COUNT(DISTINCT adib.UserID),0))
-	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adib.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
+	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(COUNT(DISTINCT adts.UserID),0))
+	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
 INTO #tmpTopSpotPurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.[dbo].[AcctDtlImpulseBuys] adib On dd.PurchaseDate = cast(adib.BeginDt AS DATE) AND adib.luProdFeatureID = 26
+LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
+	AND adts.luProdFeatureID = 26 
+	AND adts.IsComplimentary = 0 
+	AND adts.SuppressFromUser = 0
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM BillingData.dbo.AcctDtlTopSpot
+		FROM BillingData.dbo.ImpulseFeatureLog
+		WHERE luProdFeatureID = 26
+		AND IsComplimentary = 0 
+		AND SuppressFromUser = 0
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt

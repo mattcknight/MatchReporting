@@ -87,7 +87,7 @@
                   </Style>
                   <ChartMarker>
                     <Type>Square</Type>
-                    <Size>10pt</Size>
+                    <Size>4pt</Size>
                     <Style>
                       <Border>
                         <Width>0.25pt</Width>
@@ -350,9 +350,9 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Sales</DataSetName>
+        <DataSetName>DataSet1</DataSetName>
         <Top>0.75in</Top>
-        <Left>0.11458in</Left>
+        <Left>0.125in</Left>
         <Height>5.14584in</Height>
         <Width>14.05209in</Width>
         <Style>
@@ -371,7 +371,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Undercover </Value>
+                <Value>MatchMe</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -393,7 +393,7 @@
         <Top>0.125in</Top>
         <Left>0.125in</Left>
         <Height>0.20833in</Height>
-        <Width>3.45833in</Width>
+        <Width>2.35416in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -469,34 +469,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 03/19: Launch date (Price test in Denver and St. Louis)</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 04/16: Remove Price Test</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 04/16 Add Miami and Seattle to test geos</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 06/18: Dialed-up to 100%, Added price and duration test</Value>
+                <Value>- 07/09: Initial Launch at 25%  </Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -506,8 +479,8 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.75in</Top>
         <Left>14.29167in</Left>
-        <Height>1.19792in</Height>
-        <Width>3.60417in</Width>
+        <Height>0.88542in</Height>
+        <Width>1.85418in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -540,7 +513,7 @@
         </Paragraphs>
         <rd:DefaultName>MetricValue</rd:DefaultName>
         <Top>6.43055in</Top>
-        <Left>0.55208in</Left>
+        <Left>0.5625in</Left>
         <Height>0.20833in</Height>
         <Width>1.32292in</Width>
         <ZIndex>4</ZIndex>
@@ -571,9 +544,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>6.43055in</Top>
-        <Left>0.11458in</Left>
+        <Left>0.125in</Left>
         <Height>0.20833in</Height>
-        <Width>0.39583in</Width>
+        <Width>0.41666in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -827,8 +800,8 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>Revenue_per_day</DataSetName>
-        <Top>6.74479in</Top>
-        <Left>0.11458in</Left>
+        <Top>6.69271in</Top>
+        <Left>0.125in</Left>
         <Height>3.44792in</Height>
         <Width>14.05209in</Width>
         <ZIndex>6</ZIndex>
@@ -848,7 +821,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Undercover </Value>
+                <Value>MatchMe </Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -870,7 +843,7 @@
         <Top>6.15278in</Top>
         <Left>0.125in</Left>
         <Height>0.20833in</Height>
-        <Width>3.45833in</Width>
+        <Width>2.35416in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -883,10 +856,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10.34375in</Height>
+    <Height>10.14063in</Height>
     <Style />
   </Body>
-  <Width>18.07292in</Width>
+  <Width>16.34375in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -903,21 +876,38 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Sales">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
-
-IF OBJECT_ID('tempdb..#tmpTopSpotPurchases') IS NOT NULL
-	DROP TABLE  #tmpTopSpotPurchases
  
 DECLARE
     @FloorDate DATE,
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
-SELECT @FloorDate = '2014-03-19'-- MIN(BeginDt)
-FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
+SELECT @FloorDate = '2014-07-01'
+
+
+IF OBJECT_ID('tempdb..#tmpMMSales') IS NOT NULL DROP TABLE  #tmpMMSales
+SELECT 
+	ad.UserID
+	,ad.AcctDtlID
+	,ad.BeginDt
+INTO #tmpMMSales
+FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
+INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.ProdDtlID = pd.proddtlid
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid AND p.luProdFeatureID = 30
+INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
+	AND t.lutrxstatusid = 1 
+	AND t.lutrxcategoryid = 1
+WHERE luCancelTypeID = 14
+AND ad.createdt &gt; @FloorDate
+
+
+IF OBJECT_ID('tempdb..#tmpMatchMePurchases') IS NOT NULL DROP TABLE  #tmpMatchMePurchases
+
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -934,20 +924,14 @@ SELECT
     ,NewUserCount = ISNULL(newusers.NewUserCount,0)
 	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(COUNT(DISTINCT adts.UserID),0))
 	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
-INTO #tmpTopSpotPurchases
+INTO #tmpMatchMePurchases
 FROM cteDateDriver dd
-LEFT JOIN BillingData.dbo.ImpulseFeatureLog adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE) 
-	AND adts.luProdFeatureID = 27
-	AND adts.IsComplimentary = 0 
-	AND adts.SuppressFromUser = 0
+LEFT JOIN #tmpMMSales adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE)
 LEFT JOIN (
 	SELECT minBeginDt, NewUserCount = count(UserID)
 	FROM (
 		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM BillingData.dbo.ImpulseFeatureLog
-		WHERE luProdFeatureID = 27
-		AND IsComplimentary = 0 
-		AND SuppressFromUser = 0
+		FROM #tmpMMSales
 		GROUP BY UserID
 		) x
 	GROUP BY minBeginDt
@@ -957,7 +941,7 @@ ORDER BY 1
 OPTION (maxrecursion 2000)
 
 SELECT *
-FROM #tmpTopSpotPurchases
+FROM #tmpMatchMePurchases
 --WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
@@ -992,14 +976,18 @@ FROM #tmpTopSpotPurchases
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
 
-SELECT MetricValue = SUM(t.PreTaxAmt)
+SELECT MetricValue = SUM(ad.SalesPrice)
 FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
 INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
+	AND ad.luCancelTypeID = 14
 INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
-INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid AND t.lutrxtypeid = 14 AND t.lutrxstatusid = 1 AND t.lutrxcategoryid IN (1, 4)
+INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
+	AND t.lutrxstatusid = 1 
+	AND t.lutrxcategoryid = 1
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 27 -- Undercover</CommandText>
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 30 -- Reply For Free</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -1018,7 +1006,7 @@ SET NOCOUNT ON
 DECLARE
     @FloorDate DATE,
     @CeilingDate DATE = dateadd(day, 1, getdate())
-SELECT @FloorDate = '2014-03-19'
+SELECT @FloorDate = '2014-07-09'
 
 SELECT
 	MetricDate = CAST(t.CreateDt AS DATE)
@@ -1031,7 +1019,7 @@ INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
 	AND t.lutrxstatusid = 1 
 	AND t.lutrxcategoryid IN (1, 4)
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 27 -- Undercover
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 30 -- MatchMe
 WHERE t.CreateDt &gt; @FloorDate
 GROUP BY CAST(t.CreateDt AS DATE)
 ORDER BY CAST(t.CreateDt AS DATE)</CommandText>

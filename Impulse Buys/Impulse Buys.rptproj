@@ -22,6 +22,10 @@
       <FullPath>TopSpot Sales.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>TopSpot Supressed Users.rdl</Name>
+      <FullPath>TopSpot Supressed Users.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>TopSpot Top 10.rdl</Name>
       <FullPath>TopSpot Top 10.rdl</FullPath>
     </ProjectItem>
@@ -34,8 +38,12 @@
       <FullPath>Undercover Top 10.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>TopSpot Supressed Users.rdl</Name>
-      <FullPath>TopSpot Supressed Users.rdl</FullPath>
+      <Name>MatchMe Sales.rdl</Name>
+      <FullPath>MatchMe Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MatchMe Top 10.rdl</Name>
+      <FullPath>MatchMe Top 10.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

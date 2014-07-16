@@ -1294,12 +1294,50 @@
             </TextRuns>
             <Style />
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 06/19: Promo Rate Card test created - had a negative impact to this test</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 06/27: Promo Rate Card test ended</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>** This report measures 06/27 2:00pm to present</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.36in</Top>
         <Left>12.48263in</Left>
-        <Height>0.72917in</Height>
-        <Width>2.37501in</Width>
+        <Height>1.82292in</Height>
+        <Width>4.52084in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1583,7 +1621,7 @@
     <Height>5.03042in</Height>
     <Style />
   </Body>
-  <Width>15.01042in</Width>
+  <Width>17.13542in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

@@ -15,7 +15,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>6.25%</Value>
+                <Value>50%</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>Red</Color>
@@ -29,7 +29,7 @@
         <Top>0.11375in</Top>
         <Left>0.11458in</Left>
         <Height>0.25in</Height>
-        <Width>2.1875in</Width>
+        <Width>3in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -969,7 +969,7 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style>
-                      <Format>0.00%</Format>
+                      <Format>0.00;(0.00)</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
@@ -1248,16 +1248,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 06/11: Launch Date @ 6.25%</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 06/18: Dial-up to 25% (see next report)</Value>
+                <Value>- 07/02: at 50%</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1294,34 +1285,36 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="MARP03">
-      <DataSourceReference>MARP03</DataSourceReference>
+    <DataSource Name="MARP01">
+      <DataSourceReference>MARP01</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>e35c2b93-ee0e-4e3b-842a-ad128a71677a</rd:DataSourceID>
+      <rd:DataSourceID>99f9fb4f-eea4-469a-a147-b03dd252f77b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MARP01</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
 DECLARE @StartDate DATETIME, @EndDate DATETIME
-SELECT @StartDate = '2014-06-11 14:00', @EndDate = '2014-06-16 12:00'
+SELECT @StartDate = '2014-07-02 13:00', @EndDate = '2014-07-30 12:00'
 
 
 IF object_id('tempdb.dbo.#InboxReskinUsers') IS NOT NULL DROP TABLE #InboxReskinUsers;
 SELECT 
-	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0') THEN 'Test' ELSE 'Control' END
+	Cohort = CASE WHEN RIGHT(LEFT(u.TestingGUID, 7), 1) IN ('0','1','2','3','4','5','6','7') THEN 'Test' ELSE 'Control' END
 	,u.UserID
 	,u.SignupDt
 INTO #InboxReskinUsers_tmp
 FROM [ProfileReadData].[dbo].[Users] u WITH (NOLOCK)
+JOIN [WorkDB].[dbo].[vRegSessionInfo] r WITH (NOLOCK) ON r.UserID = u.UserID AND r.PlatformID = 0
 WHERE u.SignupDt &gt;= @StartDate
 AND u.SignupDt &lt; @EndDate
 AND u.SiteCode = 1
 AND u.CountryCode = 1 -- US Only
+
 
 -- Ivans Fraud Rule
 if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
@@ -1350,7 +1343,9 @@ SELECT
 	,Conversations = COUNT(DISTINCT CASE WHEN l.IsResponse = 0 THEN l.RecipientUserID END)
 INTO #Emailers
 FROM #InboxReskinUsers u
-INNER JOIN [Match_UserData].[dbo].[EmailHeaderLight] l WITH (NOLOCK) ON l.SenderUserID = u.UserID 
+INNER JOIN [WorkDB].[dbo].[vEmailHeaderSessionInfo] l WITH (NOLOCK) ON l.SenderUserID = u.UserID
+	AND l.EmailAreaID = 0
+	AND l.PlatformID = 0
 	AND l.SendDate &gt;= @StartDate
 	AND l.SendDate &lt; @EndDate
 GROUP BY u.Cohort

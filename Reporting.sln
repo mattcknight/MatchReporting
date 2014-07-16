@@ -11,7 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{F1584A1B-B78
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Impulse Buys", "Impulse Buys", "{0626E704-DC83-49B3-B806-B22D1EBE4E52}"
 	ProjectSection(SolutionItems) = preProject
+		MatchMe Sales and Revenue.sql = MatchMe Sales and Revenue.sql
+		Reply for Free Sales and Revenue.sql = Reply for Free Sales and Revenue.sql
 		Top Spot Sales.sql = Top Spot Sales.sql
+		TopSpot analysis for Free TopSpot automation.sql = TopSpot analysis for Free TopSpot automation.sql
 		TopSpot Average Impressions per Buyer.sql = TopSpot Average Impressions per Buyer.sql
 		TopSpot Price and Duration Test.sql = TopSpot Price and Duration Test.sql
 		TopSpot Total Revenue.sql = TopSpot Total Revenue.sql
@@ -79,6 +82,7 @@ Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Subscription", "Subscriptio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Profile Capture", "Profile Capture", "{52556FA7-F890-4624-9092-17A4B1D07457}"
 	ProjectSection(SolutionItems) = preProject
+		Phase 1 at 6_25 per.sql = Phase 1 at 6_25 per.sql
 		Profile Capture Phase 1 Analysis.sql = Profile Capture Phase 1 Analysis.sql
 		Profile Capture Phase 2 Analysis.sql = Profile Capture Phase 2 Analysis.sql
 	EndProjectSection
@@ -89,6 +93,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscription", "Subscriptio
 	ProjectSection(SolutionItems) = preProject
 		eCheck Removal.sql = eCheck Removal.sql
 		Promo Rate Card Test.sql = Promo Rate Card Test.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search Impressions", "Search Impressions", "{4C282F9F-EFB9-4150-8026-B4D6D001AC9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communication", "Communication", "{CDBCC452-483D-4C3B-AD44-57709487C20C}"
+	ProjectSection(SolutionItems) = preProject
+		IM Conversation.sql = IM Conversation.sql
+		Inbox Reskin Analysis - IM initiations.sql = Inbox Reskin Analysis - IM initiations.sql
+		Inbox Reskin Analysis 25 per.sql = Inbox Reskin Analysis 25 per.sql
+		Inbox Reskin Analysis 50 per.sql = Inbox Reskin Analysis 50 per.sql
+		Inbox Reskin Analysis 6_25 per.sql = Inbox Reskin Analysis 6_25 per.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppFabric", "AppFabric", "{D5FB2CD6-A8ED-4CFE-BF2C-CD076BA23B2A}"
+	ProjectSection(SolutionItems) = preProject
+		API Analysis.sql = API Analysis.sql
 	EndProjectSection
 EndProject
 Global
@@ -185,5 +205,8 @@ Global
 		{2AE18E2A-5E5D-4201-B54E-6325C83F6A44} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{52556FA7-F890-4624-9092-17A4B1D07457} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 		{740826E2-2F24-465D-811D-192F36B33F64} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{4C282F9F-EFB9-4150-8026-B4D6D001AC9D} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{CDBCC452-483D-4C3B-AD44-57709487C20C} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
+		{D5FB2CD6-A8ED-4CFE-BF2C-CD076BA23B2A} = {F1584A1B-B78D-472F-83AB-0496F18D013B}
 	EndGlobalSection
 EndGlobal

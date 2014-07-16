@@ -969,7 +969,7 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style>
-                      <Format>0.00%</Format>
+                      <Format>0.00;(0.00)</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
@@ -1248,7 +1248,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 06/18: at 25%</Value>
+                <Value>- 06/16: at 25%</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1294,16 +1294,16 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="MARP03">
-      <DataSourceReference>MARP03</DataSourceReference>
+    <DataSource Name="MARP01">
+      <DataSourceReference>MARP01</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>e35c2b93-ee0e-4e3b-842a-ad128a71677a</rd:DataSourceID>
+      <rd:DataSourceID>7375e7af-9e64-4933-af26-f9bb9f53cd50</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MARP01</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
@@ -1318,10 +1318,12 @@ SELECT
 	,u.SignupDt
 INTO #InboxReskinUsers_tmp
 FROM [ProfileReadData].[dbo].[Users] u WITH (NOLOCK)
+JOIN [WorkDB].[dbo].[vRegSessionInfo] r WITH (NOLOCK) ON r.UserID = u.UserID AND r.PlatformID = 0
 WHERE u.SignupDt &gt;= @StartDate
 AND u.SignupDt &lt; @EndDate
 AND u.SiteCode = 1
 AND u.CountryCode = 1 -- US Only
+
 
 -- Ivans Fraud Rule
 if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
@@ -1350,7 +1352,9 @@ SELECT
 	,Conversations = COUNT(DISTINCT CASE WHEN l.IsResponse = 0 THEN l.RecipientUserID END)
 INTO #Emailers
 FROM #InboxReskinUsers u
-INNER JOIN [Match_UserData].[dbo].[EmailHeaderLight] l WITH (NOLOCK) ON l.SenderUserID = u.UserID 
+INNER JOIN [WorkDB].[dbo].[vEmailHeaderSessionInfo] l WITH (NOLOCK) ON l.SenderUserID = u.UserID
+	AND l.EmailAreaID = 0
+	AND l.PlatformID = 0
 	AND l.SendDate &gt;= @StartDate
 	AND l.SendDate &lt; @EndDate
 GROUP BY u.Cohort

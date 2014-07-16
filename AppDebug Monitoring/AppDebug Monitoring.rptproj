@@ -7,12 +7,12 @@
       <FullPath>Debug.rds</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>MARP03.rds</Name>
-      <FullPath>MARP03.rds</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>MADW.rds</Name>
       <FullPath>MADW.rds</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MARP03.rds</Name>
+      <FullPath>MARP03.rds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSets />
@@ -46,6 +46,10 @@
       <FullPath>IAP Hourly.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Low Performing Servers.rdl</Name>
+      <FullPath>Low Performing Servers.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Match8 Application Restart.rdl</Name>
       <FullPath>Match8 Application Restart.rdl</FullPath>
     </ProjectItem>
@@ -66,8 +70,8 @@
       <FullPath>Maya_Hourly.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Low Performing Servers.rdl</Name>
-      <FullPath>Low Performing Servers.rdl</FullPath>
+      <Name>PTDirect Match Settlement Service.rdl</Name>
+      <FullPath>PTDirect Match Settlement Service.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
