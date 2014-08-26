@@ -2521,7 +2521,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>12.5%</Value>
+                <Value>25% Test Cohorts (No Control)</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>Red</Color>
@@ -2847,8 +2847,8 @@
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-DECLARE @StartDate DATETIME, @EndDate DATETIME
-SELECT @StartDate = '2014-06-30 13:30', @EndDate = '2014-07-23 16:00'
+DECLARE @StartDate DATETIME
+SELECT @StartDate = '2014-07-23 16:00'
 
 -- All users who registered on Site Code 1, PlatformID 0 in the US after the test start date
 IF object_id('tempdb.dbo.#tmpProfileCapture') IS NOT NULL DROP TABLE #tmpProfileCapture;
@@ -2857,18 +2857,17 @@ SELECT
 	,u.SignupDt
 	,rs.[SID]
 	,Cohort = CASE 
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('A','8') THEN 'v1'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('B','9') THEN 'v2'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('C','E') THEN 'v3'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('D','F') THEN 'v4'
+		WHEN right(left(u.TestingGuid, 11), 1) IN ('A','8','0','1') THEN 'v1'
+		WHEN right(left(u.TestingGuid, 11), 1) IN ('B','9','2','3') THEN 'v2'
+		WHEN right(left(u.TestingGuid, 11), 1) IN ('C','E','4','5') THEN 'v3'
+		WHEN right(left(u.TestingGuid, 11), 1) IN ('D','F','6','7') THEN 'v4'
 		ELSE 'Control' 
 		END
 INTO #tmpProfileCapture
 FROM ProfileReadData.dbo.Users u WITH (NOLOCK)
-JOIN WorkDB.dbo.vRegSessionInfo rs ON u.UserID = rs.UserID 
+INNER JOIN WorkDB.dbo.vRegSessionInfo rs ON u.UserID = rs.UserID 
 	AND rs.PlatformID = 0
 WHERE u.signupdt &gt;= @StartDate
-AND u.SignupDt &lt; @EndDate
 AND u.countrycode = 1 -- US only
 AND u.sitecode = 1 -- US and CA only
 

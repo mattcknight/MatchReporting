@@ -469,7 +469,16 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 07/09: Initial Launch at 25%  </Value>
+                <Value>- 07/09: Initial Launch at 25% </Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 08/05: Dial-up to 50% test, added price test</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -479,8 +488,8 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.75in</Top>
         <Left>14.29167in</Left>
-        <Height>0.88542in</Height>
-        <Width>1.85418in</Width>
+        <Height>1.07292in</Height>
+        <Width>3.63543in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -859,7 +868,7 @@
     <Height>10.14063in</Height>
     <Style />
   </Body>
-  <Width>16.34375in</Width>
+  <Width>18.0625in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

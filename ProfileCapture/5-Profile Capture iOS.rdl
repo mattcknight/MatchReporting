@@ -2476,16 +2476,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 06/18: Initial Launch</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 06/30: Dial-up to 12.5%</Value>
+                <Value>- 08/05: Initial Launch</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -2493,8 +2484,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.18625in</Top>
-        <Left>15.34598in</Left>
+        <Top>0.68625in</Top>
+        <Left>16.21056in</Left>
         <Height>0.86458in</Height>
         <Width>1.65625in</Width>
         <ZIndex>9</ZIndex>
@@ -2515,16 +2506,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Profile Capture: Phase 2 - </Value>
+                <Value>Profile Capture: iOS</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>12.5%</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Red</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2817,7 +2801,7 @@
     <Height>10.16888in</Height>
     <Style />
   </Body>
-  <Width>17.55208in</Width>
+  <Width>18.58333in</Width>
   <Page>
     <PageHeight>100in</PageHeight>
     <PageWidth>100in</PageWidth>
@@ -2847,8 +2831,8 @@
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-DECLARE @StartDate DATETIME, @EndDate DATETIME
-SELECT @StartDate = '2014-06-30 13:30', @EndDate = '2014-07-23 16:00'
+DECLARE @StartDate DATETIME
+SELECT @StartDate = '2014-08-05 17:00'
 
 -- All users who registered on Site Code 1, PlatformID 0 in the US after the test start date
 IF object_id('tempdb.dbo.#tmpProfileCapture') IS NOT NULL DROP TABLE #tmpProfileCapture;
@@ -2856,28 +2840,34 @@ SELECT
 	u.UserID
 	,u.SignupDt
 	,rs.[SID]
-	,Cohort = CASE 
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('A','8') THEN 'v1'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('B','9') THEN 'v2'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('C','E') THEN 'v3'
-		WHEN right(left(u.TestingGuid, 11), 1) IN ('D','F') THEN 'v4'
-		ELSE 'Control' 
+	,Device = CASE 
+		WHEN os.device_os IN ('iOS','iPhoneOS','iPhone','iPhone6') THEN 'iOS'
+		ELSE 'Other'
 		END
+,Cohort = CASE 
+	WHEN RIGHT(LEFT(u.TestingGuid, 5), 1) IN ( '0', 'F' ) THEN 'v1'
+	WHEN RIGHT(LEFT(u.TestingGuid, 5), 1) IN ( '1', 'E' ) THEN 'v2'
+	WHEN RIGHT(LEFT(u.TestingGuid, 5), 1) IN ( '3', 'C' ) THEN 'v4'
+	WHEN RIGHT(LEFT(u.TestingGuid, 5), 1) IN ( '4', 'B' ) THEN 'v5'
+	ELSE 'Control'
+	END
 INTO #tmpProfileCapture
 FROM ProfileReadData.dbo.Users u WITH (NOLOCK)
-JOIN WorkDB.dbo.vRegSessionInfo rs ON u.UserID = rs.UserID 
-	AND rs.PlatformID = 0
+INNER JOIN WorkDB.dbo.vRegSessionInfo rs ON u.UserID = rs.UserID 
+	AND rs.PlatformID = 24
+JOIN MADW.DW.dbo.WURFL_UserAgent wua WITH (NOLOCK) ON rs.WURFL_UserAgentKey = wua.WURFL_UserAgentKey
+JOIN MADW.DW.dbo.Wurfl_SessionDevice d WITH (NOLOCK) ON D.Wurfl_SessionDeviceKey = wua.Wurfl_SessionDeviceKey
+JOIN MADW.DW.dbo.Wurfl_SessionDeviceOS os WITH (NOLOCK) ON OS.Wurfl_SessionDeviceOSKey = wua.Wurfl_SessionDeviceOSKey
 WHERE u.signupdt &gt;= @StartDate
-AND u.SignupDt &lt; @EndDate
 AND u.countrycode = 1 -- US only
 AND u.sitecode = 1 -- US and CA only
 
 
 -- Find Fraud Users
 if object_id ('tempdb.dbo.#Fraud_Users') is not null drop table #Fraud_Users
-select brc.userid 
-into #Fraud_Users 
-from #tmpProfileCapture rd
+SELECT brc.userid 
+INTO #Fraud_Users 
+FROM #tmpProfileCapture rd
 INNER JOIN [Match_4].[dbo].[BillResignComm] brc WITH (NOLOCK) on rd.userID = brc .UserID
 WHERE brc.resigntype = 'K'
 AND DATEDIFF (ss, rd.SignupDt ,brc.resigndt) &lt; 604800 -- 7 days
@@ -2886,11 +2876,12 @@ AND brc.resigncode not in (42 ,112, 1025)
 
 -- Remove Fraud Users from pool
 if object_id('tempdb.dbo.#ProfileCapture') is not null drop table #ProfileCapture; 
-select us.*
-into #ProfileCapture
-from #tmpProfileCapture us 
-left join #Fraud_Users fr on fr.UserID = us.UserID
-where fr.UserID IS NULL
+SELECT us.*
+INTO #ProfileCapture
+FROM #tmpProfileCapture us 
+LEFT JOIN #Fraud_Users fr on fr.UserID = us.UserID
+WHERE fr.UserID IS NULL
+AND Device = 'iOS'
 
 
 IF object_id('tempdb.dbo.#Summary') IS NOT NULL DROP TABLE #Summary;
@@ -2905,7 +2896,7 @@ SELECT
 INTO #Summary
 FROM #ProfileCapture u
 LEFT JOIN [WorkDB].[dbo].[vProfileSubmitSessionInfo] pss ON u.UserID = pss.UserID 
-	AND pss.PlatformID = 0
+	AND pss.PlatformID = 24
 	AND pss.[SID] = u.[SID]
 LEFT JOIN [ProfileReadData].[dbo].[proSelf] ps WITH (NOLOCK) ON ps.userid = u.userid 
 	AND ps.CreateDt &lt; DATEADD(MINUTE,90,u.SignupDt)
@@ -2938,9 +2929,28 @@ JOIN #ProfileCapture p ON sal.UserID = p.UserID
 WHERE sa.AssetKey = 'RateCard'
 GROUP BY Cohort
 
+--TRUNCATE TABLE WorkDB.dbo.MK_ProfileCapture_iOS;
+--DROP TABLE WorkDB.dbo.MK_ProfileCapture_iOS;
+--CREATE TABLE WorkDB.dbo.MK_ProfileCapture_iOS (
+--	Cohort VARCHAR(MAX)
+--	,Users INT
+--	,ProfileCreate INT
+--	,ProfileSubmit INT
+--	,ProfileApproved INT
+--	,PhotoApproved INT
+--	,RCViewers INT
+--	,Subs INT
+--	,ProfileCreateRate DECIMAL(18,4)
+--	,ProfileSubmitRate DECIMAL(18,4)
+--	,ProfileApprovedRate DECIMAL(18,4)
+--	,PhotoApprovedRate DECIMAL(18,4)
+--	,RCViewRate DECIMAL(18,4)
+--	,SubsPerUserRate DECIMAL(18,4)
+--	,SubsPerRCViewerRate DECIMAL(18,4)
+-- );
 
-DELETE FROM WorkDB.dbo.MK_ProfileCapturePhase2;
-INSERT INTO WorkDB.dbo.MK_ProfileCapturePhase2 (Cohort,Users,ProfileCreate,ProfileSubmit,ProfileApproved,PhotoApproved,RCViewers,Subs,ProfileCreateRate,ProfileSubmitRate,ProfileApprovedRate,PhotoApprovedRate,RCViewRate,SubsPerUserRate,SubsPerRCViewerRate)
+DELETE FROM WorkDB.dbo.MK_ProfileCapture_iOS;
+INSERT INTO WorkDB.dbo.MK_ProfileCapture_iOS (Cohort,Users,ProfileCreate,ProfileSubmit,ProfileApproved,PhotoApproved,RCViewers,Subs,ProfileCreateRate,ProfileSubmitRate,ProfileApprovedRate,PhotoApprovedRate,RCViewRate,SubsPerUserRate,SubsPerRCViewerRate)
 SELECT
 	pc.Cohort
 	,Users
@@ -2968,7 +2978,7 @@ drop table #ProfileCapture
 DROP TABLE #Summary
 DROP TABLE #RateCardViews 
 
-SELECT * FROM WorkDB.dbo.MK_ProfileCapturePhase2</CommandText>
+SELECT * FROM WorkDB.dbo.MK_ProfileCapture_iOS</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

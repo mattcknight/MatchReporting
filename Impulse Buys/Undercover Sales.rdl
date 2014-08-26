@@ -917,7 +917,7 @@ DECLARE
     @CeilingDate DATE = dateadd(day, 1, getdate())
  
 SELECT @FloorDate = '2014-03-19'-- MIN(BeginDt)
-FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 26
+FROM BillingData.dbo.ImpulseFeatureLog WHERE luProdFeatureID = 27
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (

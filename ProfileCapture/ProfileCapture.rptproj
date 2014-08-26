@@ -29,6 +29,18 @@
       <Name>4-Profile Capture Phase 2 at 12_5.rdl</Name>
       <FullPath>4-Profile Capture Phase 2 at 12_5.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>5-Profile Capture Phase 2 at 25.rdl</Name>
+      <FullPath>5-Profile Capture Phase 2 at 25.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>5-Profile Capture Android.rdl</Name>
+      <FullPath>5-Profile Capture Android.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>5-Profile Capture iOS.rdl</Name>
+      <FullPath>5-Profile Capture iOS.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

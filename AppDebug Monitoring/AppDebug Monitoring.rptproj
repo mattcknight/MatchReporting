@@ -73,6 +73,10 @@
       <Name>PTDirect Match Settlement Service.rdl</Name>
       <FullPath>PTDirect Match Settlement Service.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>PTDirect Response Failure.rdl</Name>
+      <FullPath>PTDirect Response Failure.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

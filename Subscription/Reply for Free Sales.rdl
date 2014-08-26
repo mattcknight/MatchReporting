@@ -370,12 +370,30 @@
             </TextRuns>
             <Style />
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 08/05: Added California, Oregon, Washington and Arizona</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>- 08/22: Added all states (excl. Florida)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1in</Top>
+        <Top>0.75in</Top>
         <Left>14.29167in</Left>
-        <Height>0.67709in</Height>
-        <Width>2.01043in</Width>
+        <Height>0.96876in</Height>
+        <Width>3.82293in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -505,7 +523,7 @@
     <Height>14.04167in</Height>
     <Style />
   </Body>
-  <Width>16.45833in</Width>
+  <Width>18.26041in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
