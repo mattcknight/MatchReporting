@@ -77,6 +77,10 @@
       <Name>PTDirect Response Failure.rdl</Name>
       <FullPath>PTDirect Response Failure.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>PTDirect Unsettled Batches.rdl</Name>
+      <FullPath>PTDirect Unsettled Batches.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>
