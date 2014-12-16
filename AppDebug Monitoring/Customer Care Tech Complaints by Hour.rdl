@@ -8,43 +8,65 @@
             <ChartMember>
               <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!PurchaseDate.Value</GroupExpression>
+                  <GroupExpression>=Fields!Dt.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!PurchaseDate.Value</Value>
+                  <Value>=Fields!Dt.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!PurchaseDate.Value</Label>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!DtName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!DtName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Hr.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Hr.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!Hr.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                  <Label>=Fields!DtName.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+              <Label>=Fields!Dt.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>Purchase Count</Label>
-            </ChartMember>
-            <ChartMember>
-              <Label>Distinct User Count</Label>
-            </ChartMember>
-            <ChartMember>
-              <Label>Avg Purchase Rate</Label>
+              <Label>Cnt</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="MetricValue">
+            <ChartSeries Name="Cnt">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!PurchaseCount.Value)</Y>
+                    <Y>=Sum(Fields!Cnt.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style>
-                      <Format>n0</Format>
-                    </Style>
+                    <Style />
                     <UseValueAsLabel>true</UseValueAsLabel>
                   </ChartDataLabel>
                   <Style />
@@ -71,86 +93,6 @@
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
             </ChartSeries>
-            <ChartSeries Name="MetricValueDist">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!DistinctUserCount.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style>
-                    <Border>
-                      <Width>0.5pt</Width>
-                    </Border>
-                  </Style>
-                  <ChartMarker>
-                    <Type>Square</Type>
-                    <Size>4pt</Size>
-                    <Style>
-                      <Border>
-                        <Width>0.25pt</Width>
-                      </Border>
-                    </Style>
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Type>Line</Type>
-              <Subtype>Smooth</Subtype>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Primary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
-            <ChartSeries Name="AvgPerUser">
-              <ChartDataPoints>
-                <ChartDataPoint>
-                  <ChartDataPointValues>
-                    <Y>=Sum(Fields!AvgPurchaseRate.Value)</Y>
-                  </ChartDataPointValues>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                  <Style />
-                  <ChartMarker>
-                    <Type>Auto</Type>
-                    <Style />
-                  </ChartMarker>
-                  <DataElementOutput>Output</DataElementOutput>
-                </ChartDataPoint>
-              </ChartDataPoints>
-              <Type>Line</Type>
-              <Style />
-              <ChartEmptyPoints>
-                <Style />
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-              </ChartEmptyPoints>
-              <ValueAxisName>Secondary</ValueAxisName>
-              <CategoryAxisName>Primary</CategoryAxisName>
-              <ChartSmartLabel>
-                <CalloutLineColor>Black</CalloutLineColor>
-                <MinMovingDistance>0pt</MinMovingDistance>
-              </ChartSmartLabel>
-            </ChartSeries>
           </ChartSeriesCollection>
         </ChartData>
         <ChartAreas>
@@ -159,7 +101,7 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>M-d</Format>
+                  <Format>d</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -167,7 +109,7 @@
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
-                <Interval>2</Interval>
+                <Interval>1</Interval>
                 <IntervalType>Days</IntervalType>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
@@ -178,6 +120,7 @@
                   </Style>
                 </ChartMajorGridLines>
                 <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -185,11 +128,13 @@
                     </Border>
                   </Style>
                 </ChartMinorGridLines>
+                <ChartMajorTickMarks>
+                  <IntervalType>Days</IntervalType>
+                </ChartMajorTickMarks>
                 <ChartMinorTickMarks>
                   <Length>0.5</Length>
                 </ChartMinorTickMarks>
                 <CrossAt>NaN</CrossAt>
-                <Scalar>true</Scalar>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
                 <ChartAxisScaleBreak>
@@ -238,14 +183,15 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>n0</Format>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Total Purchased</Caption>
+                  <Caption />
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Number</IntervalType>
                 <ChartMajorGridLines>
                   <Style>
                     <Border>
@@ -254,6 +200,7 @@
                   </Style>
                 </ChartMajorGridLines>
                 <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -274,16 +221,14 @@
               <ChartAxis Name="Secondary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>0.00;(0.00)</Format>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Avg Purchase Per User</Caption>
+                  <Caption>Axis Title</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
-                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -315,25 +260,6 @@
             </Style>
           </ChartArea>
         </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Legend1">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <Position>BottomLeft</Position>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -351,10 +277,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.75in</Top>
-        <Left>0.125in</Left>
-        <Height>5.14584in</Height>
-        <Width>14.05209in</Width>
+        <Top>0.53in</Top>
+        <Left>0.17583in</Left>
+        <Height>6.39583in</Height>
+        <Width>15.57292in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -364,230 +290,30 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Textbox Name="Textbox1">
+      <Textbox Name="textbox1">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>MatchMe</Value>
+                <Value>Customer Care Tech Complaints by Hour (14d)</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Red</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>Sales and Revenue</Value>
-                <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>18pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.125in</Top>
-        <Left>0.125in</Left>
-        <Height>0.20833in</Height>
-        <Width>2.35416in</Width>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.105in</Top>
+        <Left>0.17583in</Left>
+        <Height>0.33in</Height>
+        <Width>4.83334in</Width>
         <ZIndex>1</ZIndex>
         <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>2014 Revenue Goal:   $</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>3.0M</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.40277in</Top>
-        <Left>0.125in</Left>
-        <Height>0.20833in</Height>
-        <Width>1.97916in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Milestones:</Value>
-                <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 07/09: Initial Launch at 25% </Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 08/06: Dial-up to 50% test, added price test</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 09/11: Dial-up $1.99 price to 100% (end test)</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 10/16: Test New "Purchasing..." CTA copy</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 11/12: Dial-up "Purchasing..." CTA copy to 100%</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.75in</Top>
-        <Left>14.29167in</Left>
-        <Height>1.94792in</Height>
-        <Width>3.63543in</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="MetricValue">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Sum(Fields!MetricValue.Value, "RevenueYTD")</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Format>'$'#,0;('$'#,0)</Format>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>MetricValue</rd:DefaultName>
-        <Top>6.43055in</Top>
-        <Left>0.5625in</Left>
-        <Height>0.20833in</Height>
-        <Width>1.32292in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-          <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox4">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Total:</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.43055in</Top>
-        <Left>0.125in</Left>
-        <Height>0.20833in</Height>
-        <Width>0.41666in</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -598,41 +324,42 @@
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart2_CategoryGroup">
+              <Group Name="Chart1_CategoryGroup3">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!MetricDate.Value</GroupExpression>
+                  <GroupExpression>=Fields!Dt.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!MetricDate.Value</Value>
+                  <Value>=Fields!Dt.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!MetricDate.Value</Label>
+              <Label>=Fields!Dt.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>Metric Value</Label>
+              <Label>Cnt</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="MetricValue">
+            <ChartSeries Name="Cnt">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!MetricValue.Value)</Y>
+                    <Y>=Sum(Fields!Cnt.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
-                    <Type>Auto</Type>
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
@@ -664,7 +391,7 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>M-d</Format>
+                  <Format>d</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -672,7 +399,7 @@
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
-                <Interval>2</Interval>
+                <Interval>1</Interval>
                 <IntervalType>Days</IntervalType>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
@@ -683,6 +410,7 @@
                   </Style>
                 </ChartMajorGridLines>
                 <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -690,11 +418,13 @@
                     </Border>
                   </Style>
                 </ChartMinorGridLines>
+                <ChartMajorTickMarks>
+                  <IntervalType>Days</IntervalType>
+                </ChartMajorTickMarks>
                 <ChartMinorTickMarks>
                   <Length>0.5</Length>
                 </ChartMinorTickMarks>
                 <CrossAt>NaN</CrossAt>
-                <Scalar>true</Scalar>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
                 <ChartAxisScaleBreak>
@@ -743,8 +473,6 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <Format>'$'#,0;('$'#,0);'-'</Format>
-                  <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                 </Style>
                 <ChartAxisTitle>
                   <Caption />
@@ -752,7 +480,9 @@
                     <FontSize>8pt</FontSize>
                   </Style>
                 </ChartAxisTitle>
+                <IntervalType>Number</IntervalType>
                 <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -760,6 +490,7 @@
                   </Style>
                 </ChartMajorGridLines>
                 <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
                   <Style>
                     <Border>
                       <Color>Gainsboro</Color>
@@ -835,12 +566,12 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Revenue_per_day</DataSetName>
-        <Top>6.69271in</Top>
-        <Left>0.125in</Left>
-        <Height>3.44792in</Height>
-        <Width>14.05209in</Width>
-        <ZIndex>6</ZIndex>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>7.47833in</Top>
+        <Left>0.17583in</Left>
+        <Height>3.23958in</Height>
+        <Width>8.35417in</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -850,41 +581,320 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Textbox Name="Textbox5">
+      <Chart Name="Chart3">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup6">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Hr.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!Hr.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!Hr.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Cnt</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Cnt">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Cnt.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>d</Format>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Days</IntervalType>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMajorTickMarks>
+                  <IntervalType>Days</IntervalType>
+                </ChartMajorTickMarks>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Number</IntervalType>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>TodayByHour</DataSetName>
+        <Top>7.47833in</Top>
+        <Left>8.65104in</Left>
+        <Height>3.23958in</Height>
+        <Width>7.09771in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+      <Textbox Name="textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>MatchMe </Value>
+                <Value>By Day (14d)</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Red</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>Revenue Per Day</Value>
-                <Style>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>18pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.15278in</Top>
-        <Left>0.125in</Left>
-        <Height>0.20833in</Height>
-        <Width>2.35416in</Width>
-        <ZIndex>7</ZIndex>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>7.05333in</Top>
+        <Left>0.17583in</Left>
+        <Height>0.33in</Height>
+        <Width>1.36459in</Width>
+        <ZIndex>4</ZIndex>
         <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>By Hour Today</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>7.05333in</Top>
+        <Left>8.65104in</Left>
+        <Height>0.33in</Height>
+        <Width>1.57292in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -892,10 +902,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>10.14063in</Height>
+    <Height>12.27in</Height>
     <Style />
   </Body>
-  <Width>18.0625in</Width>
+  <Width>15.98438in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -908,7 +918,7 @@
     <DataSource Name="MARP03">
       <DataSourceReference>MARP03</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>32450834-6146-4ee3-8234-0f02ea0a4be1</rd:DataSourceID>
+      <rd:DataSourceID>8b22be04-7e70-48ba-b7bc-dc34ddd41b44</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -917,158 +927,90 @@
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
- 
-DECLARE
-    @FloorDate DATE,
-    @CeilingDate DATE = dateadd(day, 1, getdate())
- 
-SELECT @FloorDate = '2014-07-01'
 
+DECLARE @FromDate DATE
+SELECT @FromDate = CAST(DATEADD(DAY,-14,GETDATE()) AS DATE)
 
-IF OBJECT_ID('tempdb..#tmpMMSales') IS NOT NULL DROP TABLE  #tmpMMSales
 SELECT 
-	ad.UserID
-	,ad.AcctDtlID
-	,ad.BeginDt
-INTO #tmpMMSales
-FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
-INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.ProdDtlID = pd.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid AND p.luProdFeatureID = 30
-INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
-INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
-	AND t.lutrxstatusid = 1 
-	AND t.lutrxcategoryid = 1
-WHERE luCancelTypeID = 14
-AND ad.createdt &gt; @FloorDate
-
-
-IF OBJECT_ID('tempdb..#tmpMatchMePurchases') IS NOT NULL DROP TABLE  #tmpMatchMePurchases
-
-;
-WITH cteDateDriver(PurchaseDate)
-AS (
-	SELECT PurchaseDate = @FloorDate
-	UNION ALL
-	SELECT DATEADD(DAY, 1, PurchaseDate)
-	FROM cteDateDriver
-	WHERE PurchaseDate &lt; dateadd(day, -1, getdate())
-    )
-SELECT 
-	dd.PurchaseDate
-    ,PurchaseCount = COUNT(adts.AcctDtlID)
-    ,DistinctUserCount = COUNT(DISTINCT adts.UserID)
-    ,NewUserCount = ISNULL(newusers.NewUserCount,0)
-	,AvgPurchaseRateToday = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(COUNT(DISTINCT adts.UserID),0))
-	,AvgPurchaseRate = CONVERT(DECIMAL(10,3),1.00*COUNT(adts.AcctDtlID) / NULLIF(ISNULL(newusers.NewUserCount,0),0))
-INTO #tmpMatchMePurchases
-FROM cteDateDriver dd
-LEFT JOIN #tmpMMSales adts On dd.PurchaseDate = cast(adts.BeginDt AS DATE)
-LEFT JOIN (
-	SELECT minBeginDt, NewUserCount = count(UserID)
-	FROM (
-		SELECT UserID, minBeginDt = MIN(CAST(BeginDt AS DATE))
-		FROM #tmpMMSales
-		GROUP BY UserID
-		) x
-	GROUP BY minBeginDt
-	) newusers ON dd.PurchaseDate = newusers.minBeginDt
-GROUP BY dd.PurchaseDate, ISNULL(newusers.NewUserCount,0)
-ORDER BY 1
-OPTION (maxrecursion 2000)
-
-SELECT *
-FROM #tmpMatchMePurchases
---WHERE PurchaseDate &lt;= dateadd(day, -1, CAST(getdate() AS DATE))</CommandText>
+	Dt = CAST(id.[CreateDate] AS DATE)
+	,DtName = datename(dw,id.[CreateDate])
+	,Hr = DATEPART(HOUR,id.[CreateDate])
+	,Cnt = COUNT(*)
+FROM [ReportsFraud].[dbo].[IncidentData] id WITH (NOLOCK)
+WHERE id.[CreateDate] &gt;= @FromDate
+AND id.[PlatformInterface] = 'Match'
+AND id.[DispositionLevel1] = 'Technical'
+AND id.[DispositionLevel2] = 'Defect Reported - Not Fixed'
+AND datename(dw,id.[CreateDate]) NOT IN ('Saturday','Sunday')
+GROUP BY 
+	CAST(id.[CreateDate] AS DATE)
+	,datename(dw,id.[CreateDate])
+	,DATEPART(HOUR,id.[CreateDate])
+ORDER BY 1,3 DESC</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="PurchaseDate">
-          <DataField>PurchaseDate</DataField>
+        <Field Name="Dt">
+          <DataField>Dt</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="PurchaseCount">
-          <DataField>PurchaseCount</DataField>
+        <Field Name="DtName">
+          <DataField>DtName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hr">
+          <DataField>Hr</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="DistinctUserCount">
-          <DataField>DistinctUserCount</DataField>
+        <Field Name="Cnt">
+          <DataField>Cnt</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="NewUserCount">
-          <DataField>NewUserCount</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="AvgPurchaseRateToday">
-          <DataField>AvgPurchaseRateToday</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="AvgPurchaseRate">
-          <DataField>AvgPurchaseRate</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="RevenueYTD">
+    <DataSet Name="TodayByHour">
       <Query>
         <DataSourceName>MARP03</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
-SELECT MetricValue = SUM(ad.SalesPrice)
-FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
-INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
-	AND ad.luCancelTypeID = 14
-INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
-INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
-	AND t.lutrxstatusid = 1 
-	AND t.lutrxcategoryid = 1
-INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 30 -- Reply For Free</CommandText>
+DECLARE @FromDate DATE
+SELECT @FromDate = CAST(GETDATE() AS DATE)
+
+SELECT 
+	Dt = CAST(id.[CreateDate] AS DATE)
+	,DtName = datename(dw,id.[CreateDate])
+	,Hr = DATEPART(HOUR,id.[CreateDate])
+	,Cnt = COUNT(*)
+FROM [ReportsFraud].[dbo].[IncidentData] id WITH (NOLOCK)
+WHERE id.[CreateDate] &gt;= @FromDate
+AND id.[PlatformInterface] = 'Match'
+AND id.[DispositionLevel1] = 'Technical'
+AND id.[DispositionLevel2] = 'Defect Reported - Not Fixed'
+AND datename(dw,id.[CreateDate]) NOT IN ('Saturday','Sunday')
+GROUP BY 
+	CAST(id.[CreateDate] AS DATE)
+	,datename(dw,id.[CreateDate])
+	,DATEPART(HOUR,id.[CreateDate])
+ORDER BY 1,3 DESC</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
-        <Field Name="MetricValue">
-          <DataField>MetricValue</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="Revenue_per_day">
-      <Query>
-        <DataSourceName>MARP03</DataSourceName>
-        <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-SET NOCOUNT ON
-
-DECLARE
-    @FloorDate DATE,
-    @CeilingDate DATE = dateadd(day, 1, getdate())
-SELECT @FloorDate = '2014-07-09'
-
-SELECT
-	MetricDate = CAST(t.CreateDt AS DATE)
-	,MetricValue = SUM(t.PreTaxAmt)
-FROM billingdata.dbo.acctorder ao WITH (NOLOCK)
-INNER JOIN billingdata.dbo.acctdtl ad WITH (NOLOCK) ON ao.acctorderid = ad.acctorderid
-INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
-INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid 
-	AND t.lutrxtypeid = 14 
-	AND t.lutrxstatusid = 1 
-	AND t.lutrxcategoryid IN (1, 4)
-INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 30 -- MatchMe
-WHERE t.CreateDt &gt; @FloorDate
-GROUP BY CAST(t.CreateDt AS DATE)
-ORDER BY CAST(t.CreateDt AS DATE)</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="MetricDate">
-          <DataField>MetricDate</DataField>
+        <Field Name="Dt">
+          <DataField>Dt</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="MetricValue">
-          <DataField>MetricValue</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="DtName">
+          <DataField>DtName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hr">
+          <DataField>Hr</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Cnt">
+          <DataField>Cnt</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
@@ -1076,5 +1018,5 @@ ORDER BY CAST(t.CreateDt AS DATE)</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>cc15c6fa-7c82-4ebf-a7c7-070555dcaa13</rd:ReportID>
+  <rd:ReportID>6f502c78-88a9-4550-84f8-d4c24eb52ff6</rd:ReportID>
 </Report>

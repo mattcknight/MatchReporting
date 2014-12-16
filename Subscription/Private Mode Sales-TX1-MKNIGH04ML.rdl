@@ -23,7 +23,17 @@
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>Distinct User Count</Label>
+              <Group Name="Chart1_SeriesGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SubState.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!SubState.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!SubState.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -40,6 +50,7 @@
                       <Format>n0</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -48,6 +59,7 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
+              <Subtype>Stacked</Subtype>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -103,7 +115,6 @@
                   <Length>0.5</Length>
                 </ChartMinorTickMarks>
                 <CrossAt>NaN</CrossAt>
-                <Scalar>true</Scalar>
                 <Minimum>NaN</Minimum>
                 <Maximum>NaN</Maximum>
                 <ChartAxisScaleBreak>
@@ -229,6 +240,25 @@
             </Style>
           </ChartArea>
         </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Legend1">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <Position>BottomCenter</Position>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -245,7 +275,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>Sales</DataSetName>
         <Top>0.75in</Top>
         <Left>0.125in</Left>
         <Height>5.14584in</Height>
@@ -266,7 +296,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reply for Free</Value>
+                <Value>Private Mode</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -364,43 +394,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 07/09:  Initial Launch in Texas</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 08/05: Added California, Oregon, Washington and Arizona</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 08/22: Added all states (excl. Florida)</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 10/17: Added Florida</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 12/10: Added to Add-on page in sub flow (test)</Value>
+                <Value>- 10/15:  Initial Launch 50% test with restrictions</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -410,8 +404,8 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.75in</Top>
         <Left>14.29167in</Left>
-        <Height>1.4896in</Height>
-        <Width>3.82293in</Width>
+        <Height>0.96876in</Height>
+        <Width>3.00001in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -496,7 +490,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reply for Free</Value>
+                <Value>Private Mode</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -537,11 +531,259 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Tablix Name="SalesTable">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.03125in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.75in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Date</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Sub State</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Distinct Users</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Silver</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PurchaseDate">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PurchaseDate.Value</Value>
+                              <Style>
+                                <Format>M/d/yyyy</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PurchaseDate</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="SubState">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!SubState.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>SubState</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DistinctUserCount">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DistinctUserCount.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DistinctUserCount</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Sales</DataSetName>
+        <Top>6.76958in</Top>
+        <Left>0.125in</Left>
+        <Height>0.5in</Height>
+        <Width>2.78125in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
     </ReportItems>
     <Height>14.04167in</Height>
     <Style />
   </Body>
-  <Width>18.26041in</Width>
+  <Width>17.37499in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -551,42 +793,51 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="MARP03">
-      <DataSourceReference>MARP03</DataSourceReference>
-      <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>32450834-6146-4ee3-8234-0f02ea0a4be1</rd:DataSourceID>
+    <DataSource Name="MAREPORT">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=marp03\mareport01</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>e0a51538-8fa0-4a73-ad26-6283365c3861</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Sales">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MAREPORT</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
 DECLARE
     @FloorDate DATE,
     @CeilingDate DATE = dateadd(day, 1, getdate())
-SELECT @FloorDate = '2014-07-01'
+SELECT @FloorDate = '2014-10-01'
 
-IF OBJECT_ID('tempdb..#tmpRFFSales') IS NOT NULL DROP TABLE  #tmpRFFSales
+IF OBJECT_ID('tempdb..#tmpPMSales') IS NOT NULL DROP TABLE  #tmpPMSales
 SELECT 
 	ad.UserID
 	,ad.AcctDtlID
 	,ad.BeginDt
-INTO #tmpRFFSales
+	,SubState = CASE WHEN upv.UserID IS NULL THEN 'Non-Sub' ELSE 'Sub' END
+INTO #tmpPMSales
 FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
+LEFT JOIN Match_4.dbo.UserPrvFeature upv WITH (NOLOCK) ON ad.UserID = upv.UserID
+	AND upv.[luProdFeatureID] = 1
+	AND upv.BeginDt &lt;= ad.BeginDt
+	AND upv.EndDt &gt; ad.BeginDt
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.ProdDtlID = pd.proddtlid
 INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid
 INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtlid
 INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
 	AND t.lutrxstatusid = 1 
 	AND t.lutrxcategoryid = 1
-WHERE luprodfeatureid = 28
+WHERE p.luprodfeatureid = 29
 AND luCancelTypeID = 0
 AND ad.createdt &gt; @FloorDate
 
-IF OBJECT_ID('tempdb..#tmpRFFPurchases') IS NOT NULL DROP TABLE  #tmpRFFPurchases
+IF OBJECT_ID('tempdb..#tmpPMPurchases') IS NOT NULL DROP TABLE  #tmpPMPurchases
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -598,25 +849,30 @@ AS (
     )
 SELECT 
 	dd.PurchaseDate
-    ,DistinctUserCount = ISNULL(COUNT(DISTINCT rff.UserID),0)
-INTO #tmpRFFPurchases
+	,pm.SubState
+    ,DistinctUserCount = ISNULL(COUNT(DISTINCT pm.UserID),0)
+INTO #tmpPMPurchases
 FROM cteDateDriver dd
-LEFT JOIN #tmpRFFSales rff ON dd.PurchaseDate = CAST(rff.BeginDt AS DATE) 
-GROUP BY dd.PurchaseDate
+LEFT JOIN #tmpPMSales pm ON dd.PurchaseDate = CAST(pm.BeginDt AS DATE) 
+GROUP BY dd.PurchaseDate, pm.SubState
 ORDER BY 1
 OPTION (maxrecursion 2000)
 
 SELECT *
-FROM #tmpRFFPurchases
+FROM #tmpPMPurchases
 
-DROP TABLE #tmpRFFSales
-DROP TABLE #tmpRFFPurchases</CommandText>
+DROP TABLE #tmpPMSales
+DROP TABLE #tmpPMPurchases</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
         <Field Name="PurchaseDate">
           <DataField>PurchaseDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SubState">
+          <DataField>SubState</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DistinctUserCount">
           <DataField>DistinctUserCount</DataField>
@@ -626,7 +882,7 @@ DROP TABLE #tmpRFFPurchases</CommandText>
     </DataSet>
     <DataSet Name="RevenueYTD">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MAREPORT</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 
 SELECT MetricValue = SUM(ad.SalesPrice)
@@ -638,7 +894,7 @@ INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
 	AND t.lutrxstatusid = 1 
 	AND t.lutrxcategoryid = 1
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 28 -- Reply For Free</CommandText>
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 29 -- Private Mode</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

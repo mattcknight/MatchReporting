@@ -40,8 +40,11 @@
                       <Format>n0</Format>
                     </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Color>Tomato</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -245,7 +248,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>Sales</DataSetName>
         <Top>0.75in</Top>
         <Left>0.125in</Left>
         <Height>5.14584in</Height>
@@ -266,7 +269,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reply for Free</Value>
+                <Value>Private Mode</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -364,7 +367,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 07/09:  Initial Launch in Texas</Value>
+                <Value>- 10/15: Initial Launch 50% test with restrictions</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -373,7 +376,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 08/05: Added California, Oregon, Washington and Arizona</Value>
+                <Value>- 11/06: Dial-up to 87.5%</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -382,7 +385,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 08/22: Added all states (excl. Florida)</Value>
+                <Value>- 12/09: Dial-up to 100%</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -391,16 +394,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>- 10/17: Added Florida</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>- 12/10: Added to Add-on page in sub flow (test)</Value>
+                <Value>- 12/10: Added PM to Add-on page in sub flow (test)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -410,8 +404,8 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.75in</Top>
         <Left>14.29167in</Left>
-        <Height>1.4896in</Height>
-        <Width>3.82293in</Width>
+        <Height>1.19793in</Height>
+        <Width>3.34376in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -496,7 +490,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Reply for Free</Value>
+                <Value>Private Mode</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -541,7 +535,7 @@
     <Height>14.04167in</Height>
     <Style />
   </Body>
-  <Width>18.26041in</Width>
+  <Width>17.77082in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -551,30 +545,34 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="MARP03">
-      <DataSourceReference>MARP03</DataSourceReference>
-      <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>32450834-6146-4ee3-8234-0f02ea0a4be1</rd:DataSourceID>
+    <DataSource Name="MAREPORT">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=marp03\mareport01</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>e0a51538-8fa0-4a73-ad26-6283365c3861</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Sales">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MAREPORT</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SET NOCOUNT ON
 
 DECLARE
     @FloorDate DATE,
     @CeilingDate DATE = dateadd(day, 1, getdate())
-SELECT @FloorDate = '2014-07-01'
+SELECT @FloorDate = '2014-10-16'
 
-IF OBJECT_ID('tempdb..#tmpRFFSales') IS NOT NULL DROP TABLE  #tmpRFFSales
+IF OBJECT_ID('tempdb..#tmpPMSales') IS NOT NULL DROP TABLE  #tmpPMSales
 SELECT 
 	ad.UserID
 	,ad.AcctDtlID
 	,ad.BeginDt
-INTO #tmpRFFSales
+INTO #tmpPMSales
 FROM billingdata.dbo.acctdtl ad WITH (NOLOCK)
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON ad.ProdDtlID = pd.proddtlid
 INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON pd.prodid = p.prodid
@@ -582,11 +580,11 @@ INNER JOIN billingdata.dbo.trxdtl td WITH (NOLOCK) ON td.acctdtlid = ad.acctdtli
 INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
 	AND t.lutrxstatusid = 1 
 	AND t.lutrxcategoryid = 1
-WHERE luprodfeatureid = 28
+WHERE luprodfeatureid = 29
 AND luCancelTypeID = 0
 AND ad.createdt &gt; @FloorDate
 
-IF OBJECT_ID('tempdb..#tmpRFFPurchases') IS NOT NULL DROP TABLE  #tmpRFFPurchases
+IF OBJECT_ID('tempdb..#tmpPMPurchases') IS NOT NULL DROP TABLE  #tmpPMPurchases
 ;
 WITH cteDateDriver(PurchaseDate)
 AS (
@@ -598,19 +596,19 @@ AS (
     )
 SELECT 
 	dd.PurchaseDate
-    ,DistinctUserCount = ISNULL(COUNT(DISTINCT rff.UserID),0)
-INTO #tmpRFFPurchases
+    ,DistinctUserCount = ISNULL(COUNT(DISTINCT pm.UserID),0)
+INTO #tmpPMPurchases
 FROM cteDateDriver dd
-LEFT JOIN #tmpRFFSales rff ON dd.PurchaseDate = CAST(rff.BeginDt AS DATE) 
+LEFT JOIN #tmpPMSales pm ON dd.PurchaseDate = CAST(pm.BeginDt AS DATE) 
 GROUP BY dd.PurchaseDate
 ORDER BY 1
 OPTION (maxrecursion 2000)
 
 SELECT *
-FROM #tmpRFFPurchases
+FROM #tmpPMPurchases
 
-DROP TABLE #tmpRFFSales
-DROP TABLE #tmpRFFPurchases</CommandText>
+DROP TABLE #tmpPMSales
+DROP TABLE #tmpPMPurchases</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>
@@ -626,7 +624,7 @@ DROP TABLE #tmpRFFPurchases</CommandText>
     </DataSet>
     <DataSet Name="RevenueYTD">
       <Query>
-        <DataSourceName>MARP03</DataSourceName>
+        <DataSourceName>MAREPORT</DataSourceName>
         <CommandText>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 
 SELECT MetricValue = SUM(ad.SalesPrice)
@@ -638,7 +636,7 @@ INNER JOIN billingdata.dbo.trx t WITH (NOLOCK) ON t.trxid = td.trxid
 	AND t.lutrxstatusid = 1 
 	AND t.lutrxcategoryid = 1
 INNER JOIN billingdata.dbo.proddtl pd WITH (NOLOCK) ON pd.proddtlid = ad.proddtlid
-INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 28 -- Reply For Free</CommandText>
+INNER JOIN billingdata.dbo.prod p WITH (NOLOCK) ON p.prodid = pd.prodid AND p.luProdFeatureID = 29 -- Private Mode</CommandText>
         <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
       </Query>
       <Fields>

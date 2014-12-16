@@ -70,6 +70,10 @@
       <FullPath>Maya_Hourly.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>PTDirect Batch Settlement Report.rdl</Name>
+      <FullPath>PTDirect Batch Settlement Report.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>PTDirect Match Settlement Service.rdl</Name>
       <FullPath>PTDirect Match Settlement Service.rdl</FullPath>
     </ProjectItem>
@@ -78,8 +82,8 @@
       <FullPath>PTDirect Response Failure.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>PTDirect Unsettled Batches.rdl</Name>
-      <FullPath>PTDirect Unsettled Batches.rdl</FullPath>
+      <Name>Customer Care Tech Complaints by Hour.rdl</Name>
+      <FullPath>Customer Care Tech Complaints by Hour.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

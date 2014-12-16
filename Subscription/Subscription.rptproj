@@ -26,12 +26,16 @@
       <FullPath>Promo Rate Card Test Analysis.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Reply for Free Sales.rdl</Name>
+      <FullPath>Reply for Free Sales.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Subscriptions Site Code 1 Non US and Canada.rdl</Name>
       <FullPath>Subscriptions Site Code 1 Non US and Canada.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Reply for Free Sales.rdl</Name>
-      <FullPath>Reply for Free Sales.rdl</FullPath>
+      <Name>Private Mode Sales.rdl</Name>
+      <FullPath>Private Mode Sales.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
